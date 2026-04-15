@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_13-44-36",
+            "content": "@@ -180,17 +180,13 @@\n ln(%22\n-%25f%22, \n area\n+%22\n )%0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-45-05",
+            "content": "@@ -67,15 +67,11 @@\n , c \n-float64\n+int\n %0A   \n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-45-22",
+            "content": "@@ -185,10 +185,8 @@\n n(%22%25\n-.2\n f%22, \n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-45-44",
+            "content": "@@ -176,17 +176,18 @@\n mt.Print\n-f\n+ln\n (%22%25.2f%22,\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-46-00",
+            "content": "@@ -187,10 +187,8 @@\n %25.2f\n-%5Cn\n %22, a\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-46-08",
+            "content": "@@ -180,11 +180,20 @@\n rint\n-ln(\n+f(%22%25.2f%5Cn%22, \n area\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-47-21",
+            "content": "@@ -180,20 +180,11 @@\n rint\n-f(%22%25.2f%5Cn%22, \n+ln(\n area\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-48-07",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n    var a, b, c float64\n    fmt.Scan(&a, &b, &c)\n    p:= (a+b+c) / 2\n    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))\n    fmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "10"
+        }
+    ]
+}

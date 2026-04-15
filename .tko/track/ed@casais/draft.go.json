@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_08-33-37",
+            "content": "@@ -1,11 +1,8 @@\n-   \n package \n@@ -41,230 +41,28 @@\n     \n-var n int;%0A    var casal int%0A    fmt.Scan(&n)%0A    for(int i=0; i%3Cn; i++)%7B%0A        var a, b int; %0A        fmt.Scan(&a, &b)%0A    %7D%0A        if(a %3C 0 && b %3E 0) %7B%0A            casal++%0A        %7D%0A        fmt.Println(casal)%0A    %7D%0A    %0A\n+fmt.Println(%22qxcode%22)%0A%7D\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-13_09-13-40",
+            "content": "@@ -97,11 +97,14 @@\n  for\n+(int\n  i\n-:\n =0; \n@@ -111,16 +111,17 @@\n i%3Cn; i++\n+)\n %7B%0A      \n@@ -260,15 +260,14 @@\n )%0A    %7D%0A\n-%0A\n     %0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-03-13_09-15-05",
+            "content": "@@ -162,16 +162,17 @@\n &b)%0A    \n+%7D\n %0A       \n@@ -223,23 +223,16 @@\n       %7D%0A\n-    %7D%0A%0A\n         \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-13_09-15-29",
+            "content": "@@ -212,24 +212,37 @@\n casal++%0A    \n+    %7D%0A    %7D%0A%0A\n         fmt.\n@@ -260,34 +260,8 @@\n al)%0A\n-        %7D%0A    %7D%0A%0A        %0A\n     \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-13_09-15-42",
+            "content": "@@ -228,29 +228,8 @@\n     \n-%0A        %7D%0A    %7D%0A    \n fmt.\n@@ -243,16 +243,33 @@\n (casal)%0A\n+        %7D%0A    %7D%0A%0A\n         \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-13_09-16-14",
+            "content": "@@ -173,16 +173,17 @@\n       if\n+(\n a %3C 0 &&\n@@ -188,16 +188,17 @@\n && b %3E 0\n+)\n  %7B%0A     \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-13_09-16-44",
+            "content": "@@ -173,17 +173,16 @@\n       if\n- \n a %3C 0 &&\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-13_09-16-54",
+            "content": "@@ -228,63 +228,8 @@\n    %0A\n-        %7D else if a %3E 0 && b %3C 0 %7B%0A            casal++%0A\n     \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-13_09-17-41",
+            "content": "@@ -193,10 +193,60 @@\n %3E 0 \n-%7C%7C\n+%7B%0A            casal++%0A            %0A        %7D else if\n  a %3E\n@@ -287,31 +287,17 @@\n         \n-    %0A        %7D \n+%7D\n %0A    %7D%0A \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-13_09-20-20",
+            "content": "@@ -1,8 +1,11 @@\n+   \n package \n@@ -22,17 +22,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -45,24 +45,25 @@\n    var n int\n+;\n %0A    var cas\n@@ -69,17 +69,16 @@\n sal int%0A\n-%0A\n     fmt.\n@@ -86,17 +86,16 @@\n can(&n)%0A\n-%0A\n     for \n@@ -99,26 +99,21 @@\n or i\n- \n :=\n- \n 0; i\n- %3C \n+%3C\n n; i++\n- \n %7B%0A  \n@@ -126,24 +126,26 @@\n var a, b int\n+; \n %0A        fmt\n@@ -158,16 +158,20 @@\n &a, &b)%0A\n+    \n %0A       \n@@ -179,9 +179,34 @@\n if a\n-*\n+ %3C 0 && b %3E 0 %7C%7C a %3E 0 && \n b %3C \n@@ -241,17 +241,30 @@\n     \n-%7D\n+    %0A        %7D \n %0A    %7D%0A\n-%0A\n     \n@@ -282,9 +282,30 @@\n (casal)%0A\n-%7D\n+        %0A    %7D%0A%0A    %0A%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-13_09-22-06",
+            "content": "@@ -89,54 +89,8 @@\n n)%0A%0A\n-    var anterior int%0A    fmt.Scan(&anterior)%0A%0A\n     \n@@ -102,9 +102,9 @@\n  := \n-1\n+0\n ; i \n@@ -127,20 +127,19 @@\n    var a\n-tual\n+, b\n  int%0A   \n@@ -154,20 +154,20 @@\n .Scan(&a\n-tual\n+, &b\n )%0A%0A     \n@@ -177,21 +177,10 @@\n if a\n-nterior*atual\n+*b\n  %3C 0\n@@ -215,34 +215,8 @@\n    %7D\n-%0A%0A        anterior = atual\n %0A   \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-13_09-23-05",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -56,284 +56,86 @@\n     \n-fmt.Scan(&n)%0A%0A    // Criamos o vetor (slice) para guardar os N n%C3%BAmeros%0A    vetor := make(%5B%5Dint, n)%0A%0A    // Preenchemos o vetor todo de uma vez%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&vetor%5Bi%5D)%0A    %7D%0A%0A    casal := 0%0A    // Comparamos o n%C3%BAmero atual com o pr%C3%B3ximo (i + 1)\n+var casal int%0A%0A    fmt.Scan(&n)%0A%0A    var anterior int%0A    fmt.Scan(&anterior)%0A\n %0A   \n@@ -148,18 +148,16 @@\n  := \n-0\n+1\n ; i %3C n\n--1\n ; i+\n@@ -172,159 +172,77 @@\n     \n-a := vetor%5Bi%5D%0A        b := vetor%5Bi+1%5D%0A%0A        // Se um for positivo e o outro negativo (ou vice-versa)%0A        if (a %3C 0 && b %3E 0) %7C%7C (a %3E 0 && b\n+var atual int%0A        fmt.Scan(&atual)%0A%0A        if anterior*atual\n  %3C 0\n-)\n  %7B%0A \n@@ -269,16 +269,42 @@\n        %7D\n+%0A%0A        anterior = atual\n %0A    %7D%0A%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_09-23-14",
+            "content": "@@ -57,258 +57,507 @@\n     \n-var casal int%0A    var atual, anterior int%0A%0A    fmt.Scan(&n)%0A%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&atual)%0A%0A        if i %3E 0 %7B%0A            if anterior %3C 0 && atual %3E 0 %7B%0A                casal++%0A            %7D%0A        %7D%0A        anterior = atual\n+fmt.Scan(&n)%0A%0A    // Criamos o vetor (slice) para guardar os N n%C3%BAmeros%0A    vetor := make(%5B%5Dint, n)%0A%0A    // Preenchemos o vetor todo de uma vez%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&vetor%5Bi%5D)%0A    %7D%0A%0A    casal := 0%0A    // Comparamos o n%C3%BAmero atual com o pr%C3%B3ximo (i + 1)%0A    for i := 0; i %3C n-1; i++ %7B%0A        a := vetor%5Bi%5D%0A        b := vetor%5Bi+1%5D%0A%0A        // Se um for positivo e o outro negativo (ou vice-versa)%0A        if (a %3C 0 && b %3E 0) %7C%7C (a %3E 0 && b %3C 0) %7B%0A            casal++%0A        %7D\n %0A   \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-13_09-23-48",
+            "content": "@@ -207,40 +207,8 @@\n  if \n-(anterior %3E 0 && atual %3C 0) %7C%7C (\n ante\n@@ -228,17 +228,16 @@\n tual %3E 0\n-)\n  %7B%0A     \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-24-10",
+            "content": "@@ -35,17 +35,20 @@\n ain() %7B%0A\n-%09\n+    \n var n in\n@@ -45,25 +45,28 @@\n   var n int%0A\n-%09\n+    \n var casal in\n@@ -67,17 +67,20 @@\n sal int%0A\n-%09\n+    \n var atua\n@@ -96,17 +96,20 @@\n or int%0A%0A\n-%09\n+    \n fmt.Scan\n@@ -114,17 +114,20 @@\n an(&n)%0A%0A\n-%09\n+    \n for i :=\n@@ -143,18 +143,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -169,18 +169,24 @@\n atual)%0A%0A\n-%09%09\n+        \n if i %3E 0\n@@ -192,14 +192,55 @@\n 0 %7B%0A\n-%09%09%09if \n+            if (anterior %3E 0 && atual %3C 0) %7C%7C (\n ante\n@@ -264,34 +264,68 @@\n  %3E 0\n+)\n  %7B%0A\n-%09%09%09%09casal++%0A%09%09%09%7D%0A%09%09%7D%0A%09%09\n+                casal++%0A            %7D%0A        %7D%0A        \n ante\n@@ -341,13 +341,19 @@\n ual%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n fmt.\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-24-31",
+            "content": "@@ -171,40 +171,8 @@\n %09if \n-(anterior %3E 0 && atual %3C 0) %7C%7C (\n ante\n@@ -192,17 +192,16 @@\n tual %3E 0\n-)\n  %7B%0A%09%09%09%09c\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-24-56",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -39,27 +39,61 @@\n ) %7B%0A\n-%0A    var n\n+%09var n int%0A%09var casal int%0A%09var atual, anterior\n  int%0A\n-    \n+%0A%09\n fmt.\n@@ -106,37 +106,9 @@\n n)%0A%0A\n-    N := make(%5B%5Dint, n)%0A%0A    \n+%09\n for \n@@ -132,16 +132,10 @@\n + %7B%0A\n-        \n+%09%09\n fmt.\n@@ -144,25 +144,141 @@\n an(&\n-N%5Bi%5D)%0A    %7D%0A%0A    \n+atual)%0A%0A%09%09if i %3E 0 %7B%0A%09%09%09if (anterior %3E 0 && atual %3C 0) %7C%7C (anterior %3C 0 && atual %3E 0) %7B%0A%09%09%09%09casal++%0A%09%09%09%7D%0A%09%09%7D%0A%09%09anterior = atual%0A%09%7D%0A%0A%09\n fmt.\n@@ -289,8 +289,12 @@\n tln(\n-N\n+casal\n )%0A%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-25-28",
+            "content": "@@ -156,121 +156,8 @@\n  %7D%0A%0A\n-    casal := 0%0A%0A    for i := 0; i %3C n-1; i++ %7B%0A        if N%5Bi%5D*N%5Bi+1%5D %3C 0 %7B%0A            casal++%0A        %7D%0A    %7D%0A%0A\n     \n@@ -172,12 +172,8 @@\n tln(\n-casal\n+N\n )%0A%7D\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-13_09-25-51",
+            "content": "@@ -160,19 +160,18 @@\n     \n-grupos\n+casal\n  := \n-1\n+0\n %0A%0A  \n@@ -185,16 +185,18 @@\n  := \n-1\n+0\n ; i %3C n\n+-1\n ; i+\n@@ -218,18 +218,19 @@\n N%5Bi%5D\n- != N%5Bi-\n+*N%5Bi+\n 1%5D\n+ %3C 0\n  %7B%0A \n@@ -240,22 +240,21 @@\n         \n-grupos\n+casal\n ++%0A     \n@@ -285,13 +285,12 @@\n tln(\n-grupos\n+casal\n )%0A%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-26-16",
+            "content": "@@ -34,16 +34,17 @@\n ain() %7B%0A\n+%0A\n     var \n@@ -91,16 +91,17 @@\n int, n)%0A\n+%0A\n     for \n@@ -160,18 +160,19 @@\n     \n-casal\n+grupos\n  := \n-0\n+1\n %0A%0A  \n@@ -186,19 +186,21 @@\n  := \n-0\n+1\n ; i %3C n\n--1;\n+; i++\n  %7B%0A \n@@ -217,19 +217,18 @@\n N%5Bi%5D\n-*N%5Bi+\n+ != N%5Bi-\n 1%5D\n- %3C 0\n  %7B%0A \n@@ -242,65 +242,14 @@\n     \n-casal++%0A            i += 2%0A        %7D else %7B%0A            i\n+grupos\n ++%0A \n@@ -284,12 +284,13 @@\n tln(\n-casal\n+grupos\n )%0A%7D\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-03-13_09-26-42",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    N := make([]int, n)\n    for i := 0; i < n; i++ {\n        fmt.Scan(&N[i])\n    }\n\n    casal := 0\n\n    for i := 0; i < n-1; {\n        if N[i]*N[i+1] < 0 {\n            casal++\n            i += 2\n        } else {\n            i++\n        }\n    }\n\n    fmt.Println(casal)\n}",
+            "lines": "25"
+        }
+    ]
+}

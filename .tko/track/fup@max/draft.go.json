@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_08-50-55",
+            "content": "@@ -109,26 +109,24 @@\n t.Printf(%22%25d\n-%5Cn\n %22, &n)%0A    %7D\n@@ -159,10 +159,8 @@\n (%22%25d\n-%5Cn\n %22, &\n@@ -172,11 +172,20 @@\n   %7D%0A    \n+println()\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-31_08-51-26",
+            "content": "@@ -118,16 +118,17 @@\n %22%25d%5Cn%22, \n+&\n n)%0A    %7D\n@@ -162,16 +162,17 @@\n %22%25d%5Cn%22, \n+&\n m)%0A    %7D\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-31_08-52-20",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, m int\n    fmt.Scan(&n, &m)\n    \n    if n > m {\n        fmt.Printf(\"%d\\n\", n)\n    } else {\n        fmt.Printf(\"%d\\n\", m)\n    }\n    \n}\n",
+            "lines": "13"
+        }
+    ]
+}

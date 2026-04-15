@@ -1,0 +1,36 @@
+2026-03-11 13:20:57, MOVE, v:1, k:fup@segundos, mode:DOWN
+2026-03-11 13:21:04, MOVE, v:1, k:fup@segundos, mode:PICK
+2026-03-11 13:31:49, EXEC, v:1, k:fup@segundos, mode:FULL, size:13, fail:COMP
+2026-03-11 13:32:39, EXEC, v:1, k:fup@segundos, mode:FULL, rate:100, size:13
+2026-03-11 13:33:46, MOVE, v:1, k:fup@segundos, mode:BACK
+2026-03-11 13:33:54, MOVE, v:1, k:fup@celsius, mode:DOWN
+2026-03-11 13:33:55, MOVE, v:1, k:fup@celsius, mode:PICK
+2026-03-11 13:33:57, EXEC, v:1, k:fup@celsius, mode:FULL, rate:0, size:5
+2026-03-11 13:38:40, EXEC, v:1, k:fup@celsius, mode:FULL, rate:0, size:9
+2026-03-11 13:38:48, EXEC, v:1, k:fup@celsius, mode:FULL, rate:0, size:9
+2026-03-11 13:38:55, EXEC, v:1, k:fup@celsius, mode:FULL, rate:100, size:9
+2026-03-11 13:39:04, MOVE, v:1, k:fup@celsius, mode:BACK
+2026-03-11 13:40:01, MOVE, v:1, k:fup@pintando, mode:DOWN
+2026-03-11 13:40:03, MOVE, v:1, k:fup@pintando, mode:PICK
+2026-03-11 13:44:36, EXEC, v:1, k:fup@pintando, mode:FULL, size:10, fail:COMP
+2026-03-11 13:45:05, EXEC, v:1, k:fup@pintando, mode:FULL, size:10, fail:COMP
+2026-03-11 13:45:22, EXEC, v:1, k:fup@pintando, mode:FULL, rate:0, size:10
+2026-03-11 13:45:44, EXEC, v:1, k:fup@pintando, mode:FULL, rate:0, size:10
+2026-03-11 13:46:00, EXEC, v:1, k:fup@pintando, mode:FULL, rate:0, size:10
+2026-03-11 13:46:08, EXEC, v:1, k:fup@pintando, mode:FULL, rate:100, size:10
+2026-03-11 13:46:11, MOVE, v:1, k:fup@pintando, mode:BACK
+2026-03-11 13:46:55, MOVE, v:1, k:fup@pintando, mode:PICK
+2026-03-11 13:47:21, EXEC, v:1, k:fup@pintando, mode:FULL, rate:0, size:10
+2026-03-11 13:48:07, EXEC, v:1, k:fup@pintando, mode:FULL, rate:100, size:10
+2026-03-11 13:48:08, MOVE, v:1, k:fup@pintando, mode:BACK
+2026-03-11 13:48:12, MOVE, v:1, k:fup@bala, mode:DOWN
+2026-03-11 13:48:14, MOVE, v:1, k:fup@bala, mode:PICK
+2026-03-11 13:56:00, EXEC, v:1, k:fup@bala, mode:FULL, size:10, fail:COMP
+2026-03-11 13:56:18, EXEC, v:1, k:fup@bala, mode:FULL, rate:0, size:10
+2026-03-11 13:56:27, EXEC, v:1, k:fup@bala, mode:FULL, rate:100, size:10
+2026-03-11 13:56:29, MOVE, v:1, k:fup@bala, mode:BACK
+2026-03-11 14:00:40, MOVE, v:1, k:fup@abs, mode:DOWN
+2026-03-11 14:00:42, MOVE, v:1, k:fup@abs, mode:PICK
+2026-03-11 14:05:01, EXEC, v:1, k:fup@abs, mode:FULL, rate:25, size:9
+2026-03-11 14:08:27, EXEC, v:1, k:fup@abs, mode:FULL, rate:100, size:12
+2026-03-11 14:09:16, MOVE, v:1, k:fup@abs, mode:BACK

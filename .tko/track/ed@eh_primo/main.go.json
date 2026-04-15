@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-05_22-33-01",
+            "content": "@@ -161,20 +161,19 @@\n %09return \n-fals\n+tru\n e%0A%09%7D%0A%09re\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-05_22-33-19",
+            "content": "@@ -154,18 +154,8 @@\n = 0 \n-&& x == 2 \n %7B%0A%09%09\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-05_22-33-45",
+            "content": "@@ -154,36 +154,10 @@\n = 0 \n- %7B%0A%09%09return false%0A%09%7D else if\n+&&\n  x =\n@@ -171,19 +171,20 @@\n %09return \n-tru\n+fals\n e%0A%09%7D%0A%09re\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-05_22-34-09",
+            "content": "@@ -143,48 +143,54 @@\n f x \n-%3C= 1 %7B return false%7D%0A%09%0A%09if x %25 div\n+%25 div == 0  %7B%0A%09%09return false%0A%09%7D else if x\n  == \n-0 \n+2\n  %7B%0A%09\n@@ -197,25 +197,23 @@\n %09return \n-fals\n+tru\n e%0A%09%7D\n- \n %0A%09return\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-05_22-36-32",
+            "content": "@@ -164,26 +164,27 @@\n se%7D%0A\n+%09\n %0A%09if \n-div * div %3E x\n+x %25 div == 0 \n  %7B%0A%09\n@@ -195,16 +195,17 @@\n urn \n-tru\n+fals\n e%0A%09%7D\n-%0A\n+ \n %0A%09re\n@@ -213,24 +213,14 @@\n urn \n-eh_primo(x, 2)%0A%09\n+false;\n %0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-05_22-39-09",
+            "content": "@@ -223,15 +223,9 @@\n (x, \n-div + 1\n+2\n )%0A%09%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-05_22-39-48",
+            "content": "@@ -201,48 +201,8 @@\n e%0A%09%7D\n-%0A%09if x %25 div == 0 %7B%0A%09%09return false%0A%09%09%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-05_22-40-09",
+            "content": "package main\n\nimport \"fmt\"\n\n// x: n\u00famero que est\u00e1 sendo testado\n// div: divisor que est\u00e1 sendo testado\nfunc eh_primo(x int, div int) bool {\n\tif x <= 1 { return false}\n\n\tif div * div > x {\n\t\treturn true\n\t}\n\tif x % div == 0 {\n\t\treturn false\n\t\t\n\t}\n\n\treturn eh_primo(x, div + 1)\n\t\n}\n\nfunc main() {\n\tvar x int\n\tfmt.Scan(&x)\n\tif eh_primo(x, 2) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "30"
+        }
+    ]
+}

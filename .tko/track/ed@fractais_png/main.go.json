@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-08_10-42-09",
+            "content": "@@ -40,19 +40,50 @@\n nd%22%0A\n+%0A\n %09%22\n-tim\n+github.com/golang/freetype/truetyp\n e%22%0A)%0A\n-%0A\n func\n@@ -127,17 +127,18 @@\n  dist %3C \n-5\n+10\n  %7B%0A%09%09ret\n@@ -144,17 +144,16 @@\n turn%0A%09%7D%0A\n-%0A\n %09ang := \n@@ -171,24 +171,22 @@\n  := 0.8%0A\n-%09%0A\n %09pen.\n-S\n+s\n etLineWi\n@@ -199,10 +199,9 @@\n st /\n- 8\n+5\n )%0A%0A%09\n@@ -215,17 +215,16 @@\n k(dist)%0A\n-%0A\n %09pen.Rig\n@@ -265,29 +265,19 @@\n pen.\n-Left(ang)%0A%0A%09pen.Left(\n+Right(-2 * \n ang)\n@@ -286,33 +286,35 @@\n arvore(pen, dist\n-*\n+ * \n fator)%0A%09pen.Righ\n@@ -320,17 +320,16 @@\n ht(ang)%0A\n-%0A\n %09pen.Wal\n@@ -377,42 +377,8 @@\n t %7B%0A\n-%09rand.Seed(time.Now().UnixNano())%0A\n %09ret\n@@ -444,22 +444,73 @@\n Pen(\n-6\n+5\n 00, \n-6\n+5\n 00)   \n-%0A%09\n+// cria um canvas de 500 de largura por 500 de altura\n %0A%09pe\n@@ -553,36 +553,12 @@\n 0, 5\n-50)%0A%09pen.SetColor(0, 0, \n+0\n 0)%0A\n-%0A\n %09arv\n@@ -570,22 +570,18 @@\n en, \n-10\n+8\n 0)%0A%0A\n-%09err := \n+%0A%09%0A%0A%09\n pen.\n@@ -604,77 +604,8 @@\n g%22)%0A\n-%09if err != nil %7B%0A%09%09fmt.Println(%22Error saving PNG:%22, err)%0A%09%09return%0A%09%7D%0A\n %09fmt\n@@ -647,18 +647,10 @@\n ully\n-: tree.png\n+.\n %22)%0A%7D\n+%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-08_10-46-31",
+            "content": "@@ -24,16 +24,35 @@\n %09%22fmt%22%0A%09\n+%22math/rand%22%0A%09%22time%22\n %0A)%0A%0Afunc\n@@ -89,113 +89,22 @@\n ) %7B%0A\n-    // Comece definindo o seu Caso Base aqui%0A%09if dist %3C 5 %7B%0A%09%09pen.SetRGB(0, 205, 255)%0A%09%09pen.FillCircle(3)\n+%09if dist %3C 5 %7B\n %0A%09%09r\n@@ -112,16 +112,17 @@\n turn%0A%09%7D%0A\n+%0A\n %09ang := \n@@ -126,11 +126,11 @@\n := 2\n-7.5\n+5.0\n %0A%09fa\n@@ -142,11 +142,11 @@\n = 0.\n-75%0A\n+8%0A%09\n %0A%09pe\n@@ -171,95 +171,10 @@\n t / \n-10)%0A%09%0A%09if(dist %3E 30) %7B%0A%09%09pen.SetRGB(101, 67, 33)%0A%09%7D else %7B%0A%09%09pen.SetRGB(50, 205, 50)%0A%09%7D\n+8)\n %0A%0A%09p\n@@ -187,16 +187,17 @@\n k(dist)%0A\n+%0A\n %09pen.Rig\n@@ -323,112 +323,129 @@\n st)%0A\n-%09%0A%0A    %0A    // Desenhe o tronco, vire a caneta e mergulhe na recurs%C3%A3o%0A%7D%0A%0Afunc main() %7B%0A%09// Cria o canvas\n+%7D%0A%0Afunc randInt(min, max int) int %7B%0A%09rand.Seed(time.Now().UnixNano())%0A%09return min + rand.Intn(max-min+1)%0A%7D%0A%0Afunc main() %7B\n %0A%09pe\n@@ -475,35 +475,8 @@\n  %0A%09%0A\n-%09// Configura%C3%A7%C3%B5es iniciais%0A\n %09pen\n@@ -522,166 +522,205 @@\n 50)%0A\n-%0A%09// Chama sua fun%C3%A7%C3%A3o%0A%09arvore(pen, 100)%0A%0A%09// Salva o arquivo (sem tentar capturar retorno de erro)%0A%09pen.SavePNG(%22tree.png%22)%0A%09fmt.Println(%22Processo finalizado!\n+%09pen.SetColor(0, 0, 0)%0A%0A%09arvore(pen, 100)%0A%0A%09err := pen.SavePNG(%22tree.png%22)%0A%09if err != nil %7B%0A%09%09fmt.Println(%22Error saving PNG:%22, err)%0A%09%09return%0A%09%7D%0A%09fmt.Println(%22PNG file created successfully: tree.png\n %22)%0A%7D\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-08_11-26-40",
+            "content": "@@ -147,17 +147,19 @@\n 0, 205, \n-0\n+255\n )%0A%09%09pen.\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_11-27-03",
+            "content": "@@ -547,71 +547,8 @@\n %C3%A3o%0A%7D\n-%0Afunc circulo( pen *Pen, dist float64) %7B%0A%09pen.DrawCircle(50)%0A%0A%7D\n %0A%0Afu\n@@ -708,22 +708,22 @@\n %C3%A3o%0A%09\n-circulo\n+arvore\n (pen, \n-5\n+10\n 0)%0A%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-08_11-28-59",
+            "content": "@@ -770,22 +770,8 @@\n %C3%A7%C3%A3o%0A\n-%09for i %3C 5 %7B%0A%09\n %09cir\n@@ -784,18 +784,16 @@\n en, 50)%0A\n-%09%7D\n %0A%09// Sal\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-08_11-34-53",
+            "content": "@@ -777,24 +777,11 @@\n r i \n-:= 5; i %3C 5; i++\n+%3C 5\n  %7B%0A%09\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-08_11-35-17",
+            "content": "@@ -570,110 +570,45 @@\n *Pen\n-) %7B%0A%09pen.SetRGB(0, 120, 105)%0A%0A%09for i := 0; i %3C 5; i++\n+, dist float64)\n  %7B%0A\n-%09\n %09pen.\n-SetPosition(100 + float64(i)*90, 300)%0A%09%7D\n+DrawCircle(50)\n %0A%0A%7D%0A\n@@ -766,16 +766,43 @@\n  fun%C3%A7%C3%A3o%0A\n+%09for i := 5; i %3C 5; i++ %7B%0A%09\n %09circulo\n@@ -805,18 +805,24 @@\n culo(pen\n-)%0A\n+, 50)%0A%09%7D\n %0A%09// Sal\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-04-08_11-37-45",
+            "content": "@@ -670,29 +670,8 @@\n 00)%0A\n-%09%09pen.DrawCircle(40)%0A\n %09%7D%0A%0A\n@@ -967,9 +967,8 @@\n ado!%22)%0A%7D\n-%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-08_11-38-47",
+            "content": "@@ -857,22 +857,19 @@\n %C3%A3o%0A%09\n-arvore(pen, 50\n+circulo(pen\n )%0A%0A%09\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-12-52",
+            "content": "@@ -867,17 +867,16 @@\n (pen, 50\n-0\n )%0A%0A%09// S\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-13-15",
+            "content": "@@ -865,17 +865,17 @@\n re(pen, \n-2\n+5\n 00)%0A%0A%09//\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-13-35",
+            "content": "@@ -865,17 +865,17 @@\n re(pen, \n-1\n+2\n 00)%0A%0A%09//\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-13-44",
+            "content": "@@ -866,17 +866,17 @@\n e(pen, 1\n-5\n+0\n 0)%0A%0A%09// \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-13-59",
+            "content": "@@ -312,17 +312,19 @@\n RGB(50, \n-0\n+205\n , 50)%0A%09%7D\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-14-55",
+            "content": "@@ -142,16 +142,18 @@\n tRGB(0, \n+20\n 5, 0)%0A%09%09\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-08_19-15-04",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\n)\n\nfunc arvore(pen *Pen, dist float64) {\n    // Comece definindo o seu Caso Base aqui\n\tif dist < 5 {\n\t\tpen.SetRGB(0, 5, 0)\n\t\tpen.FillCircle(3)\n\t\treturn\n\t}\n\tang := 27.5\n\tfator := 0.75\n\n\tpen.SetLineWidth(dist / 10)\n\t\n\tif(dist > 30) {\n\t\tpen.SetRGB(101, 67, 33)\n\t} else {\n\t\tpen.SetRGB(50, 0, 50)\n\t}\n\n\tpen.Walk(dist)\n\tpen.Right(ang)\n\tarvore(pen, dist*fator)\n\tpen.Left(ang)\n\n\tpen.Left(ang)\n\tarvore(pen, dist*fator)\n\tpen.Right(ang)\n\n\tpen.Walk(-dist)\n\t\n\n    \n    // Desenhe o tronco, vire a caneta e mergulhe na recurs\u00e3o\n}\nfunc circulo( pen *Pen) {\n\tpen.SetRGB(0, 120, 105)\n\n\tfor i := 0; i < 5; i++ {\n\t\tpen.SetPosition(100 + float64(i)*90, 300)\n\t\tpen.DrawCircle(40)\n\t}\n\n}\n\nfunc main() {\n\t// Cria o canvas\n\tpen := NewPen(600, 600)   \n\t\n\t// Configura\u00e7\u00f5es iniciais\n\tpen.SetHeading(90)\n\tpen.SetPosition(300, 550)\n\n\t// Chama sua fun\u00e7\u00e3o\n\tarvore(pen, 150)\n\n\t// Salva o arquivo (sem tentar capturar retorno de erro)\n\tpen.SavePNG(\"tree.png\")\n\tfmt.Println(\"Processo finalizado!\")\n}\n",
+            "lines": "65"
+        }
+    ]
+}

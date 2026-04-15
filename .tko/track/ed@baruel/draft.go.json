@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_20-59-38",
+            "content": "@@ -84,20 +84,16 @@\n     \n-var \n tem%5B51%5D \n int%0A\n@@ -88,19 +88,22 @@\n tem%5B51%5D \n-int\n+:= %7B0%7D\n %0A%0A    fm\n@@ -224,33 +224,33 @@\n hou := 0%0A    for\n- \n+(\n i := 1; i %3C qtd;\n@@ -245,32 +245,33 @@\n  1; i %3C qtd; i++\n+)\n  %7B%0A        if(v%5B\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-16_21-00-23",
+            "content": "@@ -228,13 +228,9 @@\n  := \n-false\n+0\n %0A   \n@@ -346,12 +346,9 @@\n u = \n-true\n+1\n %0A   \n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-16_21-01-10",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -70,14 +70,14 @@\n ar v\n- \n %5B100%5D\n+ \n int%0A\n@@ -91,13 +91,13 @@\n  tem\n- \n %5B51%5D\n+ \n int%0A\n@@ -120,29 +120,20 @@\n otal\n-)%0A    fmt.Scan(\n+, \n &qtd)%0A\n+    \n %0A   \n@@ -222,33 +222,32 @@\n  achou := false%0A\n-%0A\n     for i := 1; \n@@ -271,17 +271,17 @@\n       if\n- \n+(\n v%5Bi%5D == \n@@ -286,16 +286,17 @@\n = v%5Bi-1%5D\n+)\n  %7B%0A     \n@@ -361,36 +361,37 @@\n       %7D%0A\n+%0A\n     %7D%0A\n-%0A\n     if\n- \n+(\n !achou\n+)\n  %7B%0A     \n@@ -394,32 +394,33 @@\n        fmt.Print\n+f\n (%22N%22)%0A    %7D%0A%0A   \n@@ -407,33 +407,32 @@\n intf(%22N%22)%0A    %7D%0A\n-%0A\n     fmt.Println(\n@@ -428,19 +428,22 @@\n mt.Print\n-ln(\n+f(%22%5Cn%22\n )%0A%0A    a\n@@ -449,22 +449,17 @@\n achou = \n-false%0A\n+0\n %0A    for\n@@ -495,17 +495,17 @@\n       if\n- \n+(\n tem%5Bi%5D =\n@@ -507,16 +507,17 @@\n %5Bi%5D == 0\n+)\n  %7B%0A     \n@@ -556,36 +556,33 @@\n         achou = \n-true\n+1\n %0A        %7D%0A    %7D\n@@ -586,22 +586,22 @@\n   %7D%0A\n-%0A\n     if\n- \n+(\n !achou\n+)\n  %7B%0A \n@@ -616,16 +616,17 @@\n mt.Print\n+f\n (%22N%22)%0A  \n@@ -625,25 +625,24 @@\n (%22N%22)%0A    %7D%0A\n-%0A\n     fmt.Prin\n@@ -646,10 +646,13 @@\n rint\n-ln(\n+f(%22%5Cn%22\n )%0A%7D\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-16_21-01-49",
+            "content": "@@ -551,10 +551,8 @@\n (%22%25d\n-%5Cn\n  %22, \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_21-02-12",
+            "content": "@@ -322,26 +322,24 @@\n t.Printf(%22%25d\n-%5Cn\n  %22, v%5Bi%5D)%0A  \n@@ -634,18 +634,16 @@\n Print(%22N\n-%5Cn\n %22)%0A    %7D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_21-02-29",
+            "content": "@@ -326,16 +326,18 @@\n intf(%22%25d\n+%5Cn\n  %22, v%5Bi%5D\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_21-02-52",
+            "content": "@@ -547,16 +547,19 @@\n intf(%22%25d\n+%5Cn \n %22, i)%0A  \n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_21-03-21",
+            "content": "@@ -304,35 +304,8 @@\n %5D %7B%0A\n-            if achou %7B%0A    \n     \n@@ -325,50 +325,17 @@\n rint\n+f\n (%22\n- %22)%0A            %7D%0A            fmt.Print(\n+%25d %22, \n v%5Bi%5D\n@@ -525,35 +525,8 @@\n 0 %7B%0A\n-            if achou %7B%0A    \n     \n@@ -546,50 +546,16 @@\n rint\n+f\n (%22\n- %22)%0A            %7D%0A            fmt.Print(\n+%25d%22, \n i)%0A \n@@ -603,32 +603,32 @@\n     if !achou %7B%0A\n-\n         fmt.Prin\n@@ -623,32 +623,34 @@\n     fmt.Print(%22N\n+%5Cn\n %22)%0A    %7D%0A%0A    fm\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-03-16_21-03-39",
+            "content": "@@ -1,9 +1,8 @@\n-%0A\n package \n@@ -781,9 +781,8 @@\n ntln()%0A%7D\n-%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-31_09-05-28",
+            "content": "\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    var total, qtd int\n    var v [100]int\n    var tem [51]int\n\n    fmt.Scan(&total)\n    fmt.Scan(&qtd)\n\n    for i := 0; i < qtd; i++ {\n        fmt.Scan(&v[i])\n        tem[v[i]]++\n    }\n\n    achou := false\n\n    for i := 1; i < qtd; i++ {\n        if v[i] == v[i-1] {\n            if achou {\n                fmt.Print(\" \")\n            }\n            fmt.Print(v[i])\n            achou = true\n        }\n    }\n\n    if !achou {\n        fmt.Print(\"N\")\n    }\n\n    fmt.Println()\n\n    achou = false\n\n    for i := 1; i <= total; i++ {\n        if tem[i] == 0 {\n            if achou {\n                fmt.Print(\" \")\n            }\n            fmt.Print(i)\n            achou = true\n        }\n    }\n\n    if !achou {\n        fmt.Print(\"N\")\n    }\n\n    fmt.Println()\n}\n",
+            "lines": "54"
+        }
+    ]
+}

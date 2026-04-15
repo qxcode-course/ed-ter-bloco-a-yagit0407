@@ -1,0 +1,409 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -1,9 +1,8 @@\n-%0A\n package \n@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,116 +37,61 @@\n ) %7B%0A\n-    var total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A%0A    \n+%09%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09\n for \n@@ -98,35 +98,33 @@\n i := 0; i %3C \n-qtd\n+n\n ; i++ %7B%0A\n         fmt.\n@@ -111,24 +111,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan\n@@ -127,65 +127,71 @@\n an(&\n-v\n+fila\n %5Bi%5D)%0A\n-        tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false%0A%0A    \n+%09%7D%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09saiu := make(%5B%5Dint, m)%0A%09\n for \n@@ -199,26 +199,24 @@\n  := \n-1\n+0\n ; i %3C \n-qtd\n+m\n ; i++ %7B%0A\n     \n@@ -215,502 +215,215 @@\n + %7B%0A\n-        if v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    ach\n+%09%09fmt.Scan(&saiu%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fic\n ou \n+:\n = \n-false%0A%0A    \n+true%0A%09%09\n for \n-i\n+j\n  := \n-1; i %3C= total; i\n+0; j %3C m; j\n ++ %7B%0A\n-        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    \n+%09%09%09if fila%5Bi%5D == saiu%5Bj%5D %7B%0A%09%09%09%09ficou = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if ficou %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%0A%09%7D%0A%09\n fmt.\n@@ -432,10 +432,11 @@\n intln()%0A\n+%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -1,8 +1,9 @@\n+%0A\n package \n@@ -7,16 +7,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -48,55 +48,103 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    N := make(%5B%5Dint, n)\n+total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A\n %0A   \n@@ -160,17 +160,19 @@\n  0; i %3C \n-n\n+qtd\n ; i++ %7B%0A\n@@ -189,17 +189,17 @@\n t.Scan(&\n-N\n+v\n %5Bi%5D)%0A   \n@@ -203,25 +203,49 @@\n     \n-%7D%0A%0A    casal := 0\n+    tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false\n %0A%0A  \n@@ -259,19 +259,23 @@\n  := \n-0\n+1\n ; i %3C \n-n-1;\n+qtd; i++\n  %7B%0A \n@@ -288,107 +288,479 @@\n  if \n-N%5Bi%5D*N%5Bi+1%5D %3C 0 %7B%0A            casal++%0A            i += 2%0A        %7D else %7B%0A            i++%0A        %7D\n+v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    achou = false%0A%0A    for i := 1; i %3C= total; i++ %7B%0A        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)\n %0A   \n@@ -783,12 +783,8 @@\n tln(\n-casal\n )%0A%7D\n+%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -19,16 +19,17 @@\n t %22fmt%22%0A\n+%0A\n func mai\n@@ -46,18 +46,9 @@\n var \n-h, p, f, d\n+n\n  int\n@@ -66,103 +66,161 @@\n an(&\n-h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f\n+n)%0A%0A    N := make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&N%5Bi%5D)%0A    %7D%0A%0A    casal := 0%0A%0A    for i := 0; i %3C n-1; %7B%0A        if N%5Bi%5D*N%5Bi+1%5D\n  %3C 0\n@@ -238,14 +238,15 @@\n     \n-f = 15\n+casal++\n %0A   \n@@ -254,58 +254,35 @@\n     \n-%7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)\n+    i += 2%0A        %7D else %7B\n %0A   \n@@ -282,37 +282,35 @@\n e %7B%0A            \n-break\n+i++\n %0A        %7D else \n@@ -307,87 +307,36 @@\n    %7D\n- else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D%0A    %7D\n+%0A    %7D%0A%0A    fmt.Println(casal)\n %0A%7D\n-%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,30 +45,22 @@\n var \n-q int%0A    var d string\n+h, p, f, d int\n %0A   \n@@ -74,229 +74,109 @@\n an(&\n-q, &d)%0A%0A    x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n+h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f %3C 0\n  %7B\n- \n %0A   \n@@ -184,316 +184,179 @@\n     \n-case %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Printf(%22%25d %25d%5Cn%22, x%5Bi%5D, y%5Bi%5D)\n+    f = 15%0A        %7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D\n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -45,16 +45,13 @@\n var \n-a string\n+q int\n %0A   \n@@ -55,17 +55,17 @@\n     var \n-c\n+d\n  string%0A\n@@ -82,58 +82,229 @@\n an(&\n-a\n+q, &d\n )%0A\n+%0A\n     \n-var b int%0A    fmt.Scan(&b)%0A    if(b %3C 12)\n+x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n  %7B\n+ \n %0A   \n@@ -313,185 +313,278 @@\n    c\n- = %22crianca%22%0A    %7D else if b %3C 18 %7B%0A        c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n+ase %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A    \n     \n@@ -600,24 +600,33 @@\n f(%22%25\n-s eh %25s\n+d %25d\n %5Cn%22, \n-a, c)\n+x%5Bi%5D, y%5Bi%5D)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -24,22 +24,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -46,141 +46,58 @@\n var \n-n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A    \n+a string%0A    var c string%0A    fmt.Scan(&a)%0A\n     var\n- a,\n  b i\n@@ -99,28 +99,24 @@\n r b int%0A    \n-    \n fmt.Scan(&a,\n@@ -117,107 +117,70 @@\n an(&\n-a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0\n+b)%0A    if(b %3C 12) %7B%0A        c = %22crianca%22%0A    %7D else if b %3C 18\n  %7B%0A \n@@ -190,300 +190,145 @@\n     \n-        pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A  \n+c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n     \n-  \n fmt.\n@@ -336,24 +336,28 @@\n rint\n-ln(vencedor)%0A    \n+f(%22%25s eh %25s%5Cn%22, a, c)%0A\n %7D%0A\n-%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -10,36 +10,35 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09\n+import \n %22math%22%0A\n-)%0A%0A\n func\n@@ -51,290 +51,601 @@\n ) %7B%0A\n-%09var a, b, c float64%0A%09fmt.Scan(&a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c))%0A\n+    var n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A        var a, b int%0A        fmt.Scan(&a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0 %7B%0A                pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A        fmt.Println(vencedor)%0A    \n %7D%0A\n+%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -10,312 +10,72 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0A%0Afunc imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A        if i == espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)%0A        %7D else %7B%0A            fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc main() %7B%0A    var N, E int%0A    \n+(%0A%09%22fmt%22%0A%09%22math%22%0A)%0A%0Afunc main() %7B%0A%09var a, b, c float64%0A%09\n fmt.\n@@ -84,396 +84,258 @@\n an(&\n-N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada\n+a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c)\n )%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -29,85 +29,188 @@\n unc \n-resolver(n int) %7B%0A\n+imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A   \n     \n+ \n if \n-n\n+i\n  == \n-0 %7B%0A        return\n+espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)\n %0A    \n-%7D%0A\n     \n-resolver (n / 2)%0A%0A\n+%7D else %7B%0A        \n     \n@@ -228,23 +228,54 @@\n %22%25d \n-%25d%5Cn%22, n/2, n%252\n+%22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22\n )%0A%7D%0A\n@@ -297,17 +297,20 @@\n     var \n-n\n+N, E\n  int%0A   \n@@ -324,31 +324,396 @@\n an(&\n-n)%0A%0A    resolver(n)%0A    \n+N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada)\n %0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -23,26 +23,36 @@\n mt%22%0A\n+%0A\n func \n-main(\n+resolver(n int\n ) %7B%0A    \n var \n@@ -51,151 +51,167 @@\n     \n-var a, b int%0A    fmt.Scan(&a, &b)%0A    resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n+if n == 0 %7B%0A        return%0A    %7D%0A    resolver (n / 2)%0A%0A    fmt.Printf(%22%25d %25d%5Cn%22, n/2, n%252)%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A%0A    resolver(n)%0A    \n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,28 +45,16 @@\n var \n-x, y, x2, y2 float64\n+a, b int\n %0A   \n@@ -68,118 +68,124 @@\n an(&\n-x, &y, &x2, &y2\n+a, &b\n )%0A    \n-d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n+resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,33 +59,28 @@\n var \n-a, b int%0A    var c string\n+x, y, x2, y2 float64\n %0A   \n@@ -94,224 +94,118 @@\n an(&\n-a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A        fmt.Println(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n+x, &y, &x2, &y2)%0A    d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,88 +45,189 @@\n var \n-celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A\n+a, b int%0A    var c string%0A    fmt.Scan(&a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A  \n     \n+  \n fmt.\n@@ -235,31 +235,74 @@\n rint\n-f(%22%25.6f%5Cn%22, fahrenheit)%0A\n+ln(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -41,35 +41,124 @@\n     \n-fmt.Println(%22Hello, World!%22)\n+var celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A    fmt.Printf(%22%25.6f%5Cn%22, fahrenheit)%0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -41,144 +41,35 @@\n     \n-var n, m int%0A    fmt.Scan(&n, &m)%0A    %0A    if n %3E m %7B%0A        fmt.Printf(%22%25d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,20 +45,16 @@\n var \n-a, b float64\n+n, m int\n %0A   \n@@ -68,13 +68,13 @@\n an(&\n-a, &b\n+n, &m\n )%0A  \n@@ -84,31 +84,27 @@\n     \n-media := (a+b) / 2%0A\n+if n %3E m %7B%0A  \n     \n+  \n fmt.\n@@ -116,21 +116,69 @@\n f(%22%25\n-.1f%5Cn%22, media)\n+d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,13 +45,20 @@\n var \n-n int\n+a, b float64\n %0A   \n@@ -68,17 +68,21 @@\n t.Scan(&\n-n\n+a, &b\n )%0A    %0A \n@@ -88,95 +88,57 @@\n     \n-if n %25 7 == 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A    %7D\n+media := (a+b) / 2%0A    fmt.Printf(%22%25.1f%5Cn%22, media)\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -64,16 +64,20 @@\n can(&n)%0A\n+    \n %0A    if \n@@ -82,22 +82,16 @@\n f n \n-== 3 %7C%7C n\n+%25 7\n  == \n-5\n+0\n  %7B%0A \n@@ -116,17 +116,16 @@\n (%22SIM%22)%0A\n-%0A\n     %7D el\n@@ -127,17 +127,16 @@\n  %7D else \n- \n %7B%0A      \n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,120 +45,108 @@\n var \n-a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n+n int%0A    fmt.Scan(&n)%0A%0A    if n == 3 %7C%7C n == 5 %7B%0A        fmt.Println(%22SIM%22)%0A%0A    %7D else  %7B%0A \n     \n+   \n fmt.\n@@ -154,24 +154,22 @@\n rint\n-f(%22%25.2f%5Cn%22, area)\n+ln(%22NAO%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,96 +59,120 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    if n %3E= 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A   \n+a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n     \n- \n fmt.\n@@ -180,23 +180,24 @@\n rint\n-ln(%22NAO%22)%0A%0A    %7D\n+f(%22%25.2f%5Cn%22, area)\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,12 +45,9 @@\n var \n-a, b\n+n\n  int\n@@ -65,19 +65,36 @@\n an(&\n-a, &b)%0A\n+n)%0A%0A    if n %3E= 0 %7B%0A   \n     \n+ \n fmt.\n@@ -105,27 +105,60 @@\n tln(\n-a / b,  a %25 b)\n+%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A\n %0A    \n-%0A\n+%7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -41,24 +41,20 @@\n     var \n-segundos\n+a, b\n  int%0A   \n@@ -68,183 +68,50 @@\n an(&\n-segundos)%0A%0A    horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos)\n+a, &b)%0A    fmt.Println(a / b,  a %25 b)%0A    %0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -45,62 +45,20 @@\n var \n-a, b, c int%0A    var d, e, f float64%0A    var g float64%0A\n+segundos int\n %0A   \n@@ -72,194 +72,183 @@\n an(&\n-a, &b, &c\n+segundos\n )%0A\n+%0A\n     \n-fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n+horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos\n )%0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -43,18 +43,20 @@\n   var a,\n+ \n b,\n+ \n c int%0A  \n@@ -61,50 +61,247 @@\n     \n-fmt.Scan(&a, &b, &c)%0A    fmt.Println(a+b+c\n+var d, e, f float64%0A    var g float64%0A%0A    fmt.Scan(&a, &b, &c)%0A    fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n )%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -1,1146 +1,203 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09\n+@@ -19,16 +19,17 @@%0A t %2522fmt%2522%250A%0A+%250A%0A func mai%0A@@ -34,16 +34,59 @@%0A ain() %257B%250A%0A+    var a,b,c int%250A    \n fmt.S\n-s\n can\n-f(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D%0A%7D\n+(&a, &b, &c)%250A%0A     fmt.%0A@@ -97,16 +97,13 @@%0A tln(%0A-%2522qxcode%2522%0A+a+b+c%0A )%250A%257D%250A\n %0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -10,66 +10,1137 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n+(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09fmt.Sscanf(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-08_10-46-41",
+            "content": "@@ -37,406 +37,39 @@\n ) %7B%0A\n-%09%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09saiu := make(%5B%5Dint, m)%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09fmt.Scan(&saiu%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09ficou := true%0A%09%09for j := 0; j %3C m; j++ %7B%0A%09%09%09if fila%5Bi%5D == saiu%5Bj%5D %7B%0A%09%09%09%09ficou = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if ficou %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println()%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -1,9 +1,8 @@\n-%0A\n package \n@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,116 +37,61 @@\n ) %7B%0A\n-    var total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A%0A    \n+%09%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09\n for \n@@ -98,35 +98,33 @@\n i := 0; i %3C \n-qtd\n+n\n ; i++ %7B%0A\n         fmt.\n@@ -111,24 +111,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan\n@@ -127,65 +127,71 @@\n an(&\n-v\n+fila\n %5Bi%5D)%0A\n-        tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false%0A%0A    \n+%09%7D%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09saiu := make(%5B%5Dint, m)%0A%09\n for \n@@ -199,26 +199,24 @@\n  := \n-1\n+0\n ; i %3C \n-qtd\n+m\n ; i++ %7B%0A\n     \n@@ -215,502 +215,215 @@\n + %7B%0A\n-        if v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    ach\n+%09%09fmt.Scan(&saiu%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fic\n ou \n+:\n = \n-false%0A%0A    \n+true%0A%09%09\n for \n-i\n+j\n  := \n-1; i %3C= total; i\n+0; j %3C m; j\n ++ %7B%0A\n-        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    \n+%09%09%09if fila%5Bi%5D == saiu%5Bj%5D %7B%0A%09%09%09%09ficou = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if ficou %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%0A%09%7D%0A%09\n fmt.\n@@ -432,10 +432,11 @@\n intln()%0A\n+%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -1,8 +1,9 @@\n+%0A\n package \n@@ -7,16 +7,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -48,55 +48,103 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    N := make(%5B%5Dint, n)\n+total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A\n %0A   \n@@ -160,17 +160,19 @@\n  0; i %3C \n-n\n+qtd\n ; i++ %7B%0A\n@@ -189,17 +189,17 @@\n t.Scan(&\n-N\n+v\n %5Bi%5D)%0A   \n@@ -203,25 +203,49 @@\n     \n-%7D%0A%0A    casal := 0\n+    tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false\n %0A%0A  \n@@ -259,19 +259,23 @@\n  := \n-0\n+1\n ; i %3C \n-n-1;\n+qtd; i++\n  %7B%0A \n@@ -288,107 +288,479 @@\n  if \n-N%5Bi%5D*N%5Bi+1%5D %3C 0 %7B%0A            casal++%0A            i += 2%0A        %7D else %7B%0A            i++%0A        %7D\n+v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    achou = false%0A%0A    for i := 1; i %3C= total; i++ %7B%0A        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)\n %0A   \n@@ -783,12 +783,8 @@\n tln(\n-casal\n )%0A%7D\n+%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -19,16 +19,17 @@\n t %22fmt%22%0A\n+%0A\n func mai\n@@ -46,18 +46,9 @@\n var \n-h, p, f, d\n+n\n  int\n@@ -66,103 +66,161 @@\n an(&\n-h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f\n+n)%0A%0A    N := make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&N%5Bi%5D)%0A    %7D%0A%0A    casal := 0%0A%0A    for i := 0; i %3C n-1; %7B%0A        if N%5Bi%5D*N%5Bi+1%5D\n  %3C 0\n@@ -238,14 +238,15 @@\n     \n-f = 15\n+casal++\n %0A   \n@@ -254,58 +254,35 @@\n     \n-%7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)\n+    i += 2%0A        %7D else %7B\n %0A   \n@@ -282,37 +282,35 @@\n e %7B%0A            \n-break\n+i++\n %0A        %7D else \n@@ -307,87 +307,36 @@\n    %7D\n- else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D%0A    %7D\n+%0A    %7D%0A%0A    fmt.Println(casal)\n %0A%7D\n-%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,30 +45,22 @@\n var \n-q int%0A    var d string\n+h, p, f, d int\n %0A   \n@@ -74,229 +74,109 @@\n an(&\n-q, &d)%0A%0A    x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n+h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f %3C 0\n  %7B\n- \n %0A   \n@@ -184,316 +184,179 @@\n     \n-case %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Printf(%22%25d %25d%5Cn%22, x%5Bi%5D, y%5Bi%5D)\n+    f = 15%0A        %7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D\n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -45,16 +45,13 @@\n var \n-a string\n+q int\n %0A   \n@@ -55,17 +55,17 @@\n     var \n-c\n+d\n  string%0A\n@@ -82,58 +82,229 @@\n an(&\n-a\n+q, &d\n )%0A\n+%0A\n     \n-var b int%0A    fmt.Scan(&b)%0A    if(b %3C 12)\n+x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n  %7B\n+ \n %0A   \n@@ -313,185 +313,278 @@\n    c\n- = %22crianca%22%0A    %7D else if b %3C 18 %7B%0A        c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n+ase %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A    \n     \n@@ -600,24 +600,33 @@\n f(%22%25\n-s eh %25s\n+d %25d\n %5Cn%22, \n-a, c)\n+x%5Bi%5D, y%5Bi%5D)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -24,22 +24,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -46,141 +46,58 @@\n var \n-n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A    \n+a string%0A    var c string%0A    fmt.Scan(&a)%0A\n     var\n- a,\n  b i\n@@ -99,28 +99,24 @@\n r b int%0A    \n-    \n fmt.Scan(&a,\n@@ -117,107 +117,70 @@\n an(&\n-a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0\n+b)%0A    if(b %3C 12) %7B%0A        c = %22crianca%22%0A    %7D else if b %3C 18\n  %7B%0A \n@@ -190,300 +190,145 @@\n     \n-        pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A  \n+c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n     \n-  \n fmt.\n@@ -336,24 +336,28 @@\n rint\n-ln(vencedor)%0A    \n+f(%22%25s eh %25s%5Cn%22, a, c)%0A\n %7D%0A\n-%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -10,36 +10,35 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09\n+import \n %22math%22%0A\n-)%0A%0A\n func\n@@ -51,290 +51,601 @@\n ) %7B%0A\n-%09var a, b, c float64%0A%09fmt.Scan(&a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c))%0A\n+    var n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A        var a, b int%0A        fmt.Scan(&a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0 %7B%0A                pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A        fmt.Println(vencedor)%0A    \n %7D%0A\n+%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -10,312 +10,72 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0A%0Afunc imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A        if i == espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)%0A        %7D else %7B%0A            fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc main() %7B%0A    var N, E int%0A    \n+(%0A%09%22fmt%22%0A%09%22math%22%0A)%0A%0Afunc main() %7B%0A%09var a, b, c float64%0A%09\n fmt.\n@@ -84,396 +84,258 @@\n an(&\n-N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada\n+a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c)\n )%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -29,85 +29,188 @@\n unc \n-resolver(n int) %7B%0A\n+imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A   \n     \n+ \n if \n-n\n+i\n  == \n-0 %7B%0A        return\n+espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)\n %0A    \n-%7D%0A\n     \n-resolver (n / 2)%0A%0A\n+%7D else %7B%0A        \n     \n@@ -228,23 +228,54 @@\n %22%25d \n-%25d%5Cn%22, n/2, n%252\n+%22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22\n )%0A%7D%0A\n@@ -297,17 +297,20 @@\n     var \n-n\n+N, E\n  int%0A   \n@@ -324,31 +324,396 @@\n an(&\n-n)%0A%0A    resolver(n)%0A    \n+N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada)\n %0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -23,26 +23,36 @@\n mt%22%0A\n+%0A\n func \n-main(\n+resolver(n int\n ) %7B%0A    \n var \n@@ -51,151 +51,167 @@\n     \n-var a, b int%0A    fmt.Scan(&a, &b)%0A    resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n+if n == 0 %7B%0A        return%0A    %7D%0A    resolver (n / 2)%0A%0A    fmt.Printf(%22%25d %25d%5Cn%22, n/2, n%252)%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A%0A    resolver(n)%0A    \n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,28 +45,16 @@\n var \n-x, y, x2, y2 float64\n+a, b int\n %0A   \n@@ -68,118 +68,124 @@\n an(&\n-x, &y, &x2, &y2\n+a, &b\n )%0A    \n-d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n+resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,33 +59,28 @@\n var \n-a, b int%0A    var c string\n+x, y, x2, y2 float64\n %0A   \n@@ -94,224 +94,118 @@\n an(&\n-a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A        fmt.Println(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n+x, &y, &x2, &y2)%0A    d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,88 +45,189 @@\n var \n-celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A\n+a, b int%0A    var c string%0A    fmt.Scan(&a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A  \n     \n+  \n fmt.\n@@ -235,31 +235,74 @@\n rint\n-f(%22%25.6f%5Cn%22, fahrenheit)%0A\n+ln(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -41,35 +41,124 @@\n     \n-fmt.Println(%22Hello, World!%22)\n+var celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A    fmt.Printf(%22%25.6f%5Cn%22, fahrenheit)%0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -41,144 +41,35 @@\n     \n-var n, m int%0A    fmt.Scan(&n, &m)%0A    %0A    if n %3E m %7B%0A        fmt.Printf(%22%25d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,20 +45,16 @@\n var \n-a, b float64\n+n, m int\n %0A   \n@@ -68,13 +68,13 @@\n an(&\n-a, &b\n+n, &m\n )%0A  \n@@ -84,31 +84,27 @@\n     \n-media := (a+b) / 2%0A\n+if n %3E m %7B%0A  \n     \n+  \n fmt.\n@@ -116,21 +116,69 @@\n f(%22%25\n-.1f%5Cn%22, media)\n+d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,13 +45,20 @@\n var \n-n int\n+a, b float64\n %0A   \n@@ -68,17 +68,21 @@\n t.Scan(&\n-n\n+a, &b\n )%0A    %0A \n@@ -88,95 +88,57 @@\n     \n-if n %25 7 == 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A    %7D\n+media := (a+b) / 2%0A    fmt.Printf(%22%25.1f%5Cn%22, media)\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -64,16 +64,20 @@\n can(&n)%0A\n+    \n %0A    if \n@@ -82,22 +82,16 @@\n f n \n-== 3 %7C%7C n\n+%25 7\n  == \n-5\n+0\n  %7B%0A \n@@ -116,17 +116,16 @@\n (%22SIM%22)%0A\n-%0A\n     %7D el\n@@ -127,17 +127,16 @@\n  %7D else \n- \n %7B%0A      \n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,120 +45,108 @@\n var \n-a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n+n int%0A    fmt.Scan(&n)%0A%0A    if n == 3 %7C%7C n == 5 %7B%0A        fmt.Println(%22SIM%22)%0A%0A    %7D else  %7B%0A \n     \n+   \n fmt.\n@@ -154,24 +154,22 @@\n rint\n-f(%22%25.2f%5Cn%22, area)\n+ln(%22NAO%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,96 +59,120 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    if n %3E= 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A   \n+a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n     \n- \n fmt.\n@@ -180,23 +180,24 @@\n rint\n-ln(%22NAO%22)%0A%0A    %7D\n+f(%22%25.2f%5Cn%22, area)\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,12 +45,9 @@\n var \n-a, b\n+n\n  int\n@@ -65,19 +65,36 @@\n an(&\n-a, &b)%0A\n+n)%0A%0A    if n %3E= 0 %7B%0A   \n     \n+ \n fmt.\n@@ -105,27 +105,60 @@\n tln(\n-a / b,  a %25 b)\n+%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A\n %0A    \n-%0A\n+%7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -41,24 +41,20 @@\n     var \n-segundos\n+a, b\n  int%0A   \n@@ -68,183 +68,50 @@\n an(&\n-segundos)%0A%0A    horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos)\n+a, &b)%0A    fmt.Println(a / b,  a %25 b)%0A    %0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -45,62 +45,20 @@\n var \n-a, b, c int%0A    var d, e, f float64%0A    var g float64%0A\n+segundos int\n %0A   \n@@ -72,194 +72,183 @@\n an(&\n-a, &b, &c\n+segundos\n )%0A\n+%0A\n     \n-fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n+horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos\n )%0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -43,18 +43,20 @@\n   var a,\n+ \n b,\n+ \n c int%0A  \n@@ -61,50 +61,247 @@\n     \n-fmt.Scan(&a, &b, &c)%0A    fmt.Println(a+b+c\n+var d, e, f float64%0A    var g float64%0A%0A    fmt.Scan(&a, &b, &c)%0A    fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n )%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -1,1146 +1,203 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09\n+@@ -19,16 +19,17 @@%0A t %2522fmt%2522%250A%0A+%250A%0A func mai%0A@@ -34,16 +34,59 @@%0A ain() %257B%250A%0A+    var a,b,c int%250A    \n fmt.S\n-s\n can\n-f(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D%0A%7D\n+(&a, &b, &c)%250A%0A     fmt.%0A@@ -97,16 +97,13 @@%0A tln(%0A-%2522qxcode%2522%0A+a+b+c%0A )%250A%257D%250A\n %0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -10,66 +10,1137 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n+(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09fmt.Sscanf(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-08_10-47-06",
+            "content": "@@ -37,406 +37,39 @@\n ) %7B%0A\n-%09%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&fila%5Bi%5D)%0A%09%7D%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09saiu := make(%5B%5Dint, m)%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09fmt.Scan(&saiu%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09ficou := true%0A%09%09for j := 0; j %3C m; j++ %7B%0A%09%09%09if fila%5Bi%5D == saiu%5Bj%5D %7B%0A%09%09%09%09ficou = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if ficou %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println()%0A\n+    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -1,9 +1,8 @@\n-%0A\n package \n@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,116 +37,61 @@\n ) %7B%0A\n-    var total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A%0A    \n+%09%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09fila := make(%5B%5Dint, n)%0A%09\n for \n@@ -98,35 +98,33 @@\n i := 0; i %3C \n-qtd\n+n\n ; i++ %7B%0A\n         fmt.\n@@ -111,24 +111,18 @@\n ; i++ %7B%0A\n-        \n+%09%09\n fmt.Scan\n@@ -127,65 +127,71 @@\n an(&\n-v\n+fila\n %5Bi%5D)%0A\n-        tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false%0A%0A    \n+%09%7D%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09saiu := make(%5B%5Dint, m)%0A%09\n for \n@@ -199,26 +199,24 @@\n  := \n-1\n+0\n ; i %3C \n-qtd\n+m\n ; i++ %7B%0A\n     \n@@ -215,502 +215,215 @@\n + %7B%0A\n-        if v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    ach\n+%09%09fmt.Scan(&saiu%5Bi%5D)%0A%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fic\n ou \n+:\n = \n-false%0A%0A    \n+true%0A%09%09\n for \n-i\n+j\n  := \n-1; i %3C= total; i\n+0; j %3C m; j\n ++ %7B%0A\n-        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    \n+%09%09%09if fila%5Bi%5D == saiu%5Bj%5D %7B%0A%09%09%09%09ficou = false%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if ficou %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%0A%09%7D%0A%09\n fmt.\n@@ -432,10 +432,11 @@\n intln()%0A\n+%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -1,8 +1,9 @@\n+%0A\n package \n@@ -7,16 +7,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -48,55 +48,103 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    N := make(%5B%5Dint, n)\n+total, qtd int%0A    var v %5B100%5Dint%0A    var tem %5B51%5Dint%0A%0A    fmt.Scan(&total)%0A    fmt.Scan(&qtd)%0A\n %0A   \n@@ -160,17 +160,19 @@\n  0; i %3C \n-n\n+qtd\n ; i++ %7B%0A\n@@ -189,17 +189,17 @@\n t.Scan(&\n-N\n+v\n %5Bi%5D)%0A   \n@@ -203,25 +203,49 @@\n     \n-%7D%0A%0A    casal := 0\n+    tem%5Bv%5Bi%5D%5D++%0A    %7D%0A%0A    achou := false\n %0A%0A  \n@@ -259,19 +259,23 @@\n  := \n-0\n+1\n ; i %3C \n-n-1;\n+qtd; i++\n  %7B%0A \n@@ -288,107 +288,479 @@\n  if \n-N%5Bi%5D*N%5Bi+1%5D %3C 0 %7B%0A            casal++%0A            i += 2%0A        %7D else %7B%0A            i++%0A        %7D\n+v%5Bi%5D == v%5Bi-1%5D %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(v%5Bi%5D)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A%0A    fmt.Println()%0A%0A    achou = false%0A%0A    for i := 1; i %3C= total; i++ %7B%0A        if tem%5Bi%5D == 0 %7B%0A            if achou %7B%0A                fmt.Print(%22 %22)%0A            %7D%0A            fmt.Print(i)%0A            achou = true%0A        %7D%0A    %7D%0A%0A    if !achou %7B%0A        fmt.Print(%22N%22)\n %0A   \n@@ -783,12 +783,8 @@\n tln(\n-casal\n )%0A%7D\n+%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -19,16 +19,17 @@\n t %22fmt%22%0A\n+%0A\n func mai\n@@ -46,18 +46,9 @@\n var \n-h, p, f, d\n+n\n  int\n@@ -66,103 +66,161 @@\n an(&\n-h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f\n+n)%0A%0A    N := make(%5B%5Dint, n)%0A    for i := 0; i %3C n; i++ %7B%0A        fmt.Scan(&N%5Bi%5D)%0A    %7D%0A%0A    casal := 0%0A%0A    for i := 0; i %3C n-1; %7B%0A        if N%5Bi%5D*N%5Bi+1%5D\n  %3C 0\n@@ -238,14 +238,15 @@\n     \n-f = 15\n+casal++\n %0A   \n@@ -254,58 +254,35 @@\n     \n-%7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)\n+    i += 2%0A        %7D else %7B\n %0A   \n@@ -282,37 +282,35 @@\n e %7B%0A            \n-break\n+i++\n %0A        %7D else \n@@ -307,87 +307,36 @@\n    %7D\n- else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D%0A    %7D\n+%0A    %7D%0A%0A    fmt.Println(casal)\n %0A%7D\n-%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,30 +45,22 @@\n var \n-q int%0A    var d string\n+h, p, f, d int\n %0A   \n@@ -74,229 +74,109 @@\n an(&\n-q, &d)%0A%0A    x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n+h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f %3C 0\n  %7B\n- \n %0A   \n@@ -184,316 +184,179 @@\n     \n-case %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Printf(%22%25d %25d%5Cn%22, x%5Bi%5D, y%5Bi%5D)\n+    f = 15%0A        %7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D else if f == p %7B%0A            fmt.Println(%22N%22)%0A            break%0A        %7D\n %0A   \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -45,16 +45,13 @@\n var \n-a string\n+q int\n %0A   \n@@ -55,17 +55,17 @@\n     var \n-c\n+d\n  string%0A\n@@ -82,58 +82,229 @@\n an(&\n-a\n+q, &d\n )%0A\n+%0A\n     \n-var b int%0A    fmt.Scan(&b)%0A    if(b %3C 12)\n+x:= make(%5B%5Dint, q)%0A    y:= make(%5B%5Dint, q)%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&x%5Bi%5D, &y%5Bi%5D)%0A    %7D%0A    olX := make(%5B%5Dint, q)%0A    olY := make(%5B%5Dint, q)%0A    copy(olX, x)%0A    copy(olY, y)%0A    switch d\n  %7B\n+ \n %0A   \n@@ -313,185 +313,278 @@\n    c\n- = %22crianca%22%0A    %7D else if b %3C 18 %7B%0A        c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n+ase %22L%22:%0A            x%5B0%5D --%0A        case %22R%22:%0A            x%5B0%5D ++%0A            case %22U%22:%0A            y%5B0%5D --%0A        case %22D%22:%0A            y%5B0%5D ++%0A    %7D%0A    for i := 1 ; i %3C q; i++ %7B%0A        x%5Bi%5D = olX%5Bi-1%5D%0A        y%5Bi%5D = olY%5Bi-1%5D%0A    %7D%0A    for i := 0; i %3C q; i++ %7B%0A    \n     \n@@ -600,24 +600,33 @@\n f(%22%25\n-s eh %25s\n+d %25d\n %5Cn%22, \n-a, c)\n+x%5Bi%5D, y%5Bi%5D)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import %22\n@@ -24,22 +24,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -46,141 +46,58 @@\n var \n-n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A    \n+a string%0A    var c string%0A    fmt.Scan(&a)%0A\n     var\n- a,\n  b i\n@@ -99,28 +99,24 @@\n r b int%0A    \n-    \n fmt.Scan(&a,\n@@ -117,107 +117,70 @@\n an(&\n-a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0\n+b)%0A    if(b %3C 12) %7B%0A        c = %22crianca%22%0A    %7D else if b %3C 18\n  %7B%0A \n@@ -190,300 +190,145 @@\n     \n-        pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A  \n+c = %22jovem%22%0A    %7D else if b %3C 65 %7B%0A        c = %22adulto%22%0A    %7D else if b %3C 1000 %7B%0A    c = %22idoso%22%0A    %7D else  %7B%0A    c = %22mumia%22%0A    %7D%0A\n     \n-  \n fmt.\n@@ -336,24 +336,28 @@\n rint\n-ln(vencedor)%0A    \n+f(%22%25s eh %25s%5Cn%22, a, c)%0A\n %7D%0A\n-%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -10,36 +10,35 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09\n+import \n %22math%22%0A\n-)%0A%0A\n func\n@@ -51,290 +51,601 @@\n ) %7B%0A\n-%09var a, b, c float64%0A%09fmt.Scan(&a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c))%0A\n+    var n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := -1%0A    melhorpontuacao := math.MaxInt64%0A    %0A    for i := 0; i %3C= n; i++ %7B%0A        var a, b int%0A        fmt.Scan(&a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0 %7B%0A                pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D %0A        %7D%0A    %7D%0A    if vencedor == -1 %7B%0A        fmt.Println(%22sem ganhador%22)%0A    %7D else %7B%0A        fmt.Println(vencedor)%0A    \n %7D%0A\n+%7D\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -10,312 +10,72 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0A%0Afunc imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A        if i == espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)%0A        %7D else %7B%0A            fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc main() %7B%0A    var N, E int%0A    \n+(%0A%09%22fmt%22%0A%09%22math%22%0A)%0A%0Afunc main() %7B%0A%09var a, b, c float64%0A%09\n fmt.\n@@ -84,396 +84,258 @@\n an(&\n-N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada\n+a, &b, &c)%0A%0A%09perimetro := func(a, b, c float64) float64 %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%0A%09area := func(s, a, b, c float64) float64 %7B%0A%09%09return math.Sqrt(s * (s - a) * (s - b) * (s - c))%0A%09%7D%0A%0A%09p := perimetro(a, b, c)%0A%09fmt.Printf(%22%25.2f%5Cn%22, area(p, a, b, c)\n )%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -29,85 +29,188 @@\n unc \n-resolver(n int) %7B%0A\n+imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.Print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A   \n     \n+ \n if \n-n\n+i\n  == \n-0 %7B%0A        return\n+espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)\n %0A    \n-%7D%0A\n     \n-resolver (n / 2)%0A%0A\n+%7D else %7B%0A        \n     \n@@ -228,23 +228,54 @@\n %22%25d \n-%25d%5Cn%22, n/2, n%252\n+%22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22\n )%0A%7D%0A\n@@ -297,17 +297,20 @@\n     var \n-n\n+N, E\n  int%0A   \n@@ -324,31 +324,396 @@\n an(&\n-n)%0A%0A    resolver(n)%0A    \n+N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet = append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada)\n %0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -23,26 +23,36 @@\n mt%22%0A\n+%0A\n func \n-main(\n+resolver(n int\n ) %7B%0A    \n var \n@@ -51,151 +51,167 @@\n     \n-var a, b int%0A    fmt.Scan(&a, &b)%0A    resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n+if n == 0 %7B%0A        return%0A    %7D%0A    resolver (n / 2)%0A%0A    fmt.Printf(%22%25d %25d%5Cn%22, n/2, n%252)%0A%7D%0A%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A%0A    resolver(n)%0A    \n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,28 +45,16 @@\n var \n-x, y, x2, y2 float64\n+a, b int\n %0A   \n@@ -68,118 +68,124 @@\n an(&\n-x, &y, &x2, &y2\n+a, &b\n )%0A    \n-d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n+resultado := a - b%0A%0A    if resultado %3C 0 %7B%0A        resultado = -resultado%0A    %7D%0A    fmt.Println(resultado)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,33 +59,28 @@\n var \n-a, b int%0A    var c string\n+x, y, x2, y2 float64\n %0A   \n@@ -94,224 +94,118 @@\n an(&\n-a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A        fmt.Println(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n+x, &y, &x2, &y2)%0A    d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))%0A    fmt.Printf(%22%25.2f%5Cn%22, d)%0A\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,88 +45,189 @@\n var \n-celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A\n+a, b int%0A    var c string%0A    fmt.Scan(&a, &b, &c)%0A    if c == %22+%22 %7B%0A        fmt.Println(a + b)%0A    %7D else if c == %22-%22 %7B%0A        fmt.Println(a - b)%0A    %7D else if c == %22*%22 %7B%0A  \n     \n+  \n fmt.\n@@ -235,31 +235,74 @@\n rint\n-f(%22%25.6f%5Cn%22, fahrenheit)%0A\n+ln(a * b)%0A    %7D else if c == %22/%22 %7B%0A        fmt.Println(a / b)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -41,35 +41,124 @@\n     \n-fmt.Println(%22Hello, World!%22)\n+var celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A    fmt.Printf(%22%25.6f%5Cn%22, fahrenheit)%0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -41,144 +41,35 @@\n     \n-var n, m int%0A    fmt.Scan(&n, &m)%0A    %0A    if n %3E m %7B%0A        fmt.Printf(%22%25d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,20 +45,16 @@\n var \n-a, b float64\n+n, m int\n %0A   \n@@ -68,13 +68,13 @@\n an(&\n-a, &b\n+n, &m\n )%0A  \n@@ -84,31 +84,27 @@\n     \n-media := (a+b) / 2%0A\n+if n %3E m %7B%0A  \n     \n+  \n fmt.\n@@ -116,21 +116,69 @@\n f(%22%25\n-.1f%5Cn%22, media)\n+d%5Cn%22, n)%0A    %7D else %7B%0A        fmt.Printf(%22%25d%5Cn%22, m)%0A    %7D%0A    \n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,13 +45,20 @@\n var \n-n int\n+a, b float64\n %0A   \n@@ -68,17 +68,21 @@\n t.Scan(&\n-n\n+a, &b\n )%0A    %0A \n@@ -88,95 +88,57 @@\n     \n-if n %25 7 == 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A    %7D\n+media := (a+b) / 2%0A    fmt.Printf(%22%25.1f%5Cn%22, media)\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -64,16 +64,20 @@\n can(&n)%0A\n+    \n %0A    if \n@@ -82,22 +82,16 @@\n f n \n-== 3 %7C%7C n\n+%25 7\n  == \n-5\n+0\n  %7B%0A \n@@ -116,17 +116,16 @@\n (%22SIM%22)%0A\n-%0A\n     %7D el\n@@ -127,17 +127,16 @@\n  %7D else \n- \n %7B%0A      \n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -45,120 +45,108 @@\n var \n-a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n+n int%0A    fmt.Scan(&n)%0A%0A    if n == 3 %7C%7C n == 5 %7B%0A        fmt.Println(%22SIM%22)%0A%0A    %7D else  %7B%0A \n     \n+   \n fmt.\n@@ -154,24 +154,22 @@\n rint\n-f(%22%25.2f%5Cn%22, area)\n+ln(%22NAO%22)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -19,16 +19,30 @@\n t %22fmt%22%0A\n+import %22math%22%0A\n func mai\n@@ -59,96 +59,120 @@\n var \n-n int%0A    fmt.Scan(&n)%0A%0A    if n %3E= 0 %7B%0A        fmt.Println(%22SIM%22)%0A    %7D else %7B%0A   \n+a, b, c float64%0A    fmt.Scan(&a, &b, &c)%0A    p:= (a+b+c) / 2%0A    area := math.Sqrt(p*(p-a) * (p-b) * (p-c))%0A\n     \n- \n fmt.\n@@ -180,23 +180,24 @@\n rint\n-ln(%22NAO%22)%0A%0A    %7D\n+f(%22%25.2f%5Cn%22, area)\n %0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,12 +45,9 @@\n var \n-a, b\n+n\n  int\n@@ -65,19 +65,36 @@\n an(&\n-a, &b)%0A\n+n)%0A%0A    if n %3E= 0 %7B%0A   \n     \n+ \n fmt.\n@@ -105,27 +105,60 @@\n tln(\n-a / b,  a %25 b)\n+%22SIM%22)%0A    %7D else %7B%0A        fmt.Println(%22NAO%22)%0A\n %0A    \n-%0A\n+%7D\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -41,24 +41,20 @@\n     var \n-segundos\n+a, b\n  int%0A   \n@@ -68,183 +68,50 @@\n an(&\n-segundos)%0A%0A    horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos)\n+a, &b)%0A    fmt.Println(a / b,  a %25 b)%0A    %0A\n %0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -45,62 +45,20 @@\n var \n-a, b, c int%0A    var d, e, f float64%0A    var g float64%0A\n+segundos int\n %0A   \n@@ -72,194 +72,183 @@\n an(&\n-a, &b, &c\n+segundos\n )%0A\n+%0A\n     \n-fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n+horas := segundos / 3600%0A    resto := segundos %25 3600%0A    minutos := resto / 60%0A    segundos = resto %25 60%0A%0A    fmt.Printf(%22%25d:%25d:%25d%5Cn%22, horas, minutos, segundos\n )%0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -43,18 +43,20 @@\n   var a,\n+ \n b,\n+ \n c int%0A  \n@@ -61,50 +61,247 @@\n     \n-fmt.Scan(&a, &b, &c)%0A    fmt.Println(a+b+c\n+var d, e, f float64%0A    var g float64%0A%0A    fmt.Scan(&a, &b, &c)%0A    fmt.Scan(&d, &e, &f)%0A    fmt.Scan(&g)%0A%0A    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)%0A    troco := g - quantidade%0A%0A    fmt.Printf(%22%25.2f%5Cn%22, troco\n )%0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -1,1146 +1,203 @@\n-package main%0A%0Aimport (%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09\n+@@ -19,16 +19,17 @@%0A t %2522fmt%2522%250A%0A+%250A%0A func mai%0A@@ -34,16 +34,59 @@%0A ain() %257B%250A%0A+    var a,b,c int%250A    \n fmt.S\n-s\n can\n-f(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D%0A%7D\n+(&a, &b, &c)%250A%0A     fmt.%0A@@ -97,16 +97,13 @@%0A tln(%0A-%2522qxcode%2522%0A+a+b+c%0A )%250A%257D%250A\n %0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "@@ -10,66 +10,1137 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n+(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A)%0A%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09%0A%09n1 := len(grid)%0A%09nc := len(grid%5B0%5D)%0A%09// se estiver fora da matriz, retorne%0A%09if c %3C 0 %7C%7C c %3E= nc %7C%7C l %3C 0 %7C%7C l %3E= n1 %7B%0A%09%09return%0A%09%7D%0A%09if grid%5Bl%5D%5Bc%5D != '#' %7B%0A%09%09return%0A%09%7D%0A%09grid%5Bl%5D%5Bc%5D = 'o'%0A%09fmt.Println(-------------------)%0A%09var trash rune%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09burnTrees(grid, l-1, c)%0A%09burnTrees(grid, l+1, c)%0A%09burnTrees(grid, l, c-1)%0A%09burnTrees(grid, l, c+1)%0A%09grid%5Bl%5D%5Bc%5D = 'x'%0A%09showGrid(grid)%0A%09fmt.Scanf(%22%25c%22, &trash)%0A%09// se o elemento atual n%C3%A3o for uma arvore, retorne%0A%09// queime a arvore colocando o caractere 'o' na posi%C3%A7%C3%A3o atual%0A%09// chame a recurs%C3%A3o para todos os 4 vizinhos%0A%7D%0A%0Afunc main() %7B%0A%09scanner := bufio.NewScanner(os.Stdin)%0A%09scanner.Scan()%0A%09line := scanner.Text()%0A%09var nl, nc, lfire, cfire int%0A%09fmt.Sscanf(line, %22%25d %25d %25d %25d%22, &nl, &nc, &lfire, &cfire)%0A%0A%09grid := make(%5B%5D%5B%5Drune, 0, nl)%0A%09for range nl %7B%0A%09%09scanner.Scan()%0A%09%09line := %5B%5Drune(scanner.Text())%0A%09%09grid = append(grid, line)%0A%09%7D%0A%09burnTrees(grid, lfire, cfire)%0A%09showGrid(grid)%0A%7D%0A%0Afunc showGrid(grid %5B%5D%5B%5Drune) %7B%0A%09for _, line := range grid %7B%0A%09%09fmt.Println(string(line))%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-04-08_10-51-03",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "lines": "5"
+        }
+    ]
+}

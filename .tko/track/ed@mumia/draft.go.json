@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_09-52-22",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -41,319 +41,28 @@\n     \n-var a string%0A    var c string%0A    fmt.Scan(&a)%0A    var b int%0A    fmt.Scan(&b)%0A    if(b %3C 12) %7B%0A        c = crianca%0A    %7D else if (b %3C 18) %7B%0A        c = jovem  %0A    %7D else if (b %3C 65) %7B %0A        c = adulto%0A    %7D else if (b %3C 1000) %7B%0A    c = idoso%0A    %7D else  %7B%0A    c = mumia%0A    %7D%0A    fmt.Printf(%22%25s eh %25s%22, a, c\n+fmt.Println(%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-12_09-52-51",
+            "content": "@@ -149,17 +149,15 @@\n c = \n-%22\n crianca\n-%22\n %0A   \n@@ -171,14 +171,16 @@\n  if \n+(\n b %3C 18\n+)\n  %7B%0A \n@@ -194,15 +194,15 @@\n c = \n-%22\n jovem\n-%22\n+  \n %0A   \n@@ -216,16 +216,19 @@\n  if \n+(\n b %3C 65\n+)\n  %7B\n+ \n %0A   \n@@ -240,16 +240,14 @@\n c = \n-%22\n adulto\n-%22\n %0A   \n@@ -261,16 +261,17 @@\n  if \n+(\n b %3C 1000\n  %7B%0A \n@@ -266,16 +266,17 @@\n b %3C 1000\n+)\n  %7B%0A    c\n@@ -282,15 +282,13 @@\n c = \n-%22\n idoso\n-%22\n %0A   \n@@ -310,15 +310,13 @@\n c = \n-%22\n mumia\n-%22\n %0A   \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-12_09-58-15",
+            "content": "@@ -347,10 +347,8 @@\n h %25s\n-%5Cn\n %22, a\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-12_09-58-23",
+            "content": "package main\n\nimport \"fmt\"\nfunc main() {\n    var a string\n    var c string\n    fmt.Scan(&a)\n    var b int\n    fmt.Scan(&b)\n    if(b < 12) {\n        c = \"crianca\"\n    } else if b < 18 {\n        c = \"jovem\"\n    } else if b < 65 {\n        c = \"adulto\"\n    } else if b < 1000 {\n    c = \"idoso\"\n    } else  {\n    c = \"mumia\"\n    }\n    fmt.Printf(\"%s eh %s\\n\", a, c)\n}\n",
+            "lines": "22"
+        }
+    ]
+}

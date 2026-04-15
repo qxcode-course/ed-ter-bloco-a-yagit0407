@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-04_14-25-59",
+            "content": "@@ -104,45 +104,8 @@\n / 2)\n-%0A%0A    fmt.Printf(%22%25d %25d%5Cn%22, n/2, n%252)\n %0A%7D%0A%0A\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-04-04_14-27-00",
+            "content": "@@ -182,16 +182,22 @@\n mt.Scan(\n+%22%25d%22, \n &n)%0A%0A   \n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-04-04_14-27-49",
+            "content": "package main\nimport \"fmt\"\n\nfunc resolver(n int) {\n    if n == 0 {\n        return\n    }\n    resolver (n / 2)\n\n    fmt.Printf(\"%d %d\\n\", n/2, n%2)\n}\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    resolver(n)\n    \n}\n",
+            "lines": "19"
+        }
+    ]
+}

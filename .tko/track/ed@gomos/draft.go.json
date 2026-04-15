@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-18_10-08-47",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var q int\n    var d string\n    fmt.Scan(&q, &d)\n\n    x:= make([]int, q)\n    y:= make([]int, q)\n    for i := 0; i < q; i++ {\n        fmt.Scan(&x[i], &y[i])\n    }\n    olX := make([]int, q)\n    olY := make([]int, q)\n    copy(olX, x)\n    copy(olY, y)\n    switch d { \n        case \"L\":\n            x[0] --\n        case \"R\":\n            x[0] ++\n            case \"U\":\n            y[0] --\n        case \"D\":\n            y[0] ++\n    }\n    for i := 1 ; i < q; i++ {\n        x[i] = olX[i-1]\n        y[i] = olY[i-1]\n    }\n    for i := 0; i < q; i++ {\n        fmt.Printf(\"%d %d\\n\", x[i], y[i])\n    }\n}\n",
+            "lines": "34"
+        }
+    ]
+}

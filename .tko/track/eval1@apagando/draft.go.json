@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-38-59",
+            "content": "@@ -64,223 +64,29 @@\n  %7B%0A%09\n-for i := 0; i %3C len(fila); i++ %7B%0A%09%09apagou := false%0A%0A%09%09for j := 0; j %3C len(sair); j++ %7B%0A%09%09%09if fila%5Bi%5D == sair%5Bj%5D %7B%0A%09%09%09%09apagou = true%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09if apagou == false %7B%0A%09%09%09fmt.Print(fila%5Bi%5D, %22 %22)%0A%09%09%7D%0A%09%7D%0A%09fmt.Println()%0A%7D\n+removidos := make(%5B%5D)\n %0A%0Afu\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-14_11-08-30",
+            "content": "@@ -245,16 +245,21 @@\n (fila%5Bi%5D\n+, %22 %22\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-13-04",
+            "content": "@@ -249,13 +249,8 @@\n a%5Bi%5D\n-, %22 %22\n )%0A%09%09\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-04-14_11-13-24",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc apagar(fila []int, sair []int) {\n\tfor i := 0; i < len(fila); i++ {\n\t\tapagou := false\n\n\t\tfor j := 0; j < len(sair); j++ {\n\t\t\tif fila[i] == sair[j] {\n\t\t\t\tapagou = true\n\t\t\t}\n\t\t}\n\n\t\tif apagou == false {\n\t\t\tfmt.Print(fila[i], \" \")\n\t\t}\n\t}\n\tfmt.Println()\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfila := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar m int\n\tfmt.Scan(&m)\n\n\tsair := make([]int, m)\n\tfor i := 0; i < m; i++ {\n\t\tfmt.Scan(&sair[i])\n\t}\n\n\tapagar(fila, sair)\n}\n",
+            "lines": "40"
+        }
+    ]
+}

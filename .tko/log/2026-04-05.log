@@ -1,0 +1,17 @@
+2026-04-05 22:26:05, MOVE, v:1, k:ed@mdc, mode:PICK
+2026-04-05 22:26:22, EXEC, v:1, k:ed@mdc, mode:FULL, rate:0, size:15
+2026-04-05 22:29:16, EXEC, v:1, k:ed@mdc, mode:FULL, rate:100, size:19
+2026-04-05 22:29:25, MOVE, v:1, k:ed@mdc, mode:BACK
+2026-04-05 22:31:36, MOVE, v:1, k:ed@eh_primo, mode:PICK
+2026-04-05 22:33:01, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:22, size:22
+2026-04-05 22:33:19, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:44, size:22
+2026-04-05 22:33:45, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:44, size:22
+2026-04-05 22:34:09, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:44, size:24
+2026-04-05 22:36:32, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:44, size:24
+2026-04-05 22:39:09, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:33, size:26
+2026-04-05 22:39:16, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:33
+2026-04-05 22:39:48, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:66, size:26
+2026-04-05 22:40:09, EXEC, v:1, k:ed@eh_primo, mode:FULL, rate:100, size:30
+2026-04-05 22:40:13, MOVE, v:1, k:ed@eh_primo, mode:BACK
+2026-04-05 22:40:19, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-04-05 22:40:35, MOVE, v:1, k:ed@labirinto, mode:BACK

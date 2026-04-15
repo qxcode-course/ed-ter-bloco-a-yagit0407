@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-24_10-22-58",
+            "content": "@@ -23,697 +23,53 @@\n mt%22%0A\n-%0A\n fu\n+n\n c \n-imprimir(vet%5B%5D int, espada int) %7B%0A    fmt.print(%22%5B %22)%0A    for i := 0 ; i %3C len(vet); i++ %7B%0A        if i == espada %7B%0A            fmt.Printf(%22%25d%3E %22, vet%5Bi%5D)%0A        %7D else %7B%0A            fmt.Printf(%22%25d %22, vet%5Bi%5D)%0A        %7D%0A    %7D%0A    fmt.Println(%22%5D%22)%0A%7D%0A%0Afunc main() %7B%0A    var N, E int%0A    fmt.Scan(&N, &E)%0A    vet := make(%5B%5Dint, N)%0A    for i := 0; i %3C N; i++ %7B%0A        vet%5Bi%5D = i + 1%0A    %7D%0A    espada := E - 1%0A%0A    for len(vet) %3E 1 %7B%0A        imprimir(vet, espada)%0A        morto := (espada + 1) %25 len(vet)%0A        vet := append(vet%5B:morto%5D, vet%5Bmorto+1:%5D...)%0A        if morto %3C espada %7B%0A            espada--%0A        %7D%0A        espada = (espada + 1) %25 len(vet)%0A    %7D%0A    imprimir(vet, espada\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-24_10-59-54",
+            "content": "@@ -22,17 +22,16 @@\n fmt%22%0A%0Afu\n-n\n c imprim\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-24_11-00-07",
+            "content": "@@ -63,25 +63,25 @@\n ) %7B%0A    fmt.\n-P\n+p\n rint(%22%5B %22)%0A \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-24_11-00-21",
+            "content": "@@ -538,16 +538,17 @@\n     vet \n+:\n = append\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-24_11-01-25",
+            "content": "package main\nimport \"fmt\"\n\nfunc imprimir(vet[] int, espada int) {\n    fmt.Print(\"[ \")\n    for i := 0 ; i < len(vet); i++ {\n        if i == espada {\n            fmt.Printf(\"%d> \", vet[i])\n        } else {\n            fmt.Printf(\"%d \", vet[i])\n        }\n    }\n    fmt.Println(\"]\")\n}\n\nfunc main() {\n    var N, E int\n    fmt.Scan(&N, &E)\n    vet := make([]int, N)\n    for i := 0; i < N; i++ {\n        vet[i] = i + 1\n    }\n    espada := E - 1\n\n    for len(vet) > 1 {\n        imprimir(vet, espada)\n        morto := (espada + 1) % len(vet)\n        vet = append(vet[:morto], vet[morto+1:]...)\n        if morto < espada {\n            espada--\n        }\n        espada = (espada + 1) % len(vet)\n    }\n    imprimir(vet, espada)\n}\n",
+            "lines": "35"
+        }
+    ]
+}

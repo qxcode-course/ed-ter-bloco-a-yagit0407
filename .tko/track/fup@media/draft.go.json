@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_14-12-28",
+            "content": "@@ -91,15 +91,13 @@\n tln(\n-(\n a + b\n-)\n  / 2\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-10_14-12-43",
+            "content": "@@ -102,10 +102,8 @@\n  / 2\n-.0\n )%0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-10_14-12-52",
+            "content": "@@ -79,66 +79,33 @@\n     \n-var resultado := a / b%0A%0A    fmt.Println((%25.2f%5Cn, resultado\n+fmt.Println((a + b) / 2.0\n )%0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-10_14-14-49",
+            "content": "@@ -75,16 +75,19 @@\n &b)%0A    \n+var\n  resulta\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-10_14-15-08",
+            "content": "@@ -109,17 +109,18 @@\n mt.Print\n-f\n+ln\n ((%25.2f%5Cn\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-10_14-15-16",
+            "content": "@@ -50,15 +50,11 @@\n , b \n-float64\n+int\n %0A   \n@@ -79,31 +79,28 @@\n     \n-%0A    media := (a+b) / 2\n+ resultado := a / b%0A\n %0A   \n@@ -115,23 +115,26 @@\n ntf(\n-%22\n+(\n %25.2f%5Cn\n-%22\n , \n-media\n+resultado\n )%0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-10_14-19-05",
+            "content": "@@ -125,9 +125,9 @@\n (%22%25.\n-1\n+2\n f%5Cn%22\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-10_14-19-13",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a, b float64\n    fmt.Scan(&a, &b)\n    \n    media := (a+b) / 2\n    fmt.Printf(\"%.1f\\n\", media)\n}\n",
+            "lines": "9"
+        }
+    ]
+}

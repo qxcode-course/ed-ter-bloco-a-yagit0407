@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_13-33-57",
+            "content": "@@ -41,122 +41,28 @@\n     \n-var celsius float64%0A    fmt.Scan(&celsius)%0A    fahrenheit := 1.8 * celsius + 32%0A    fmt.Printf(%22%25.5f%22, fahrenheit)%0A\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-11_13-38-40",
+            "content": "@@ -135,17 +135,17 @@\n intf(%22%25.\n-6\n+5\n f%22, fahr\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-11_13-38-48",
+            "content": "@@ -141,10 +141,8 @@\n %25.6f\n-%5Cn\n %22, f\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-11_13-38-55",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var celsius float64\n    fmt.Scan(&celsius)\n    fahrenheit := 1.8 * celsius + 32\n    fmt.Printf(\"%.6f\\n\", fahrenheit)\n\n}\n",
+            "lines": "9"
+        }
+    ]
+}

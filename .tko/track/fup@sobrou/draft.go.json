@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_14-25-41",
+            "content": "@@ -208,12 +208,8 @@\n o :=\n- g -\n  qua\n@@ -215,16 +215,20 @@\n antidade\n+ - g\n %0A%0A    fm\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-10_14-26-02",
+            "content": "@@ -186,33 +186,17 @@\n  := \n-(a *d) + (b * e)+ (c * f)\n+d + e + f\n %0A   \n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-10_14-27-35",
+            "content": "@@ -187,56 +187,27 @@\n := (\n-float64(a)\n+a\n  *\n- \n d) + (\n-float64(b)\n+b\n  * e)\n- \n + (\n-float64(c)\n+c\n  * f\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-10_14-28-21",
+            "content": "@@ -290,10 +290,8 @@\n %25.2f\n-%5Cn\n %22, t\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-10_14-29-26",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a, b, c int\n    var d, e, f float64\n    var g float64\n\n    fmt.Scan(&a, &b, &c)\n    fmt.Scan(&d, &e, &f)\n    fmt.Scan(&g)\n\n    quantidade := (float64(a) * d) + (float64(b) * e) + (float64(c) * f)\n    troco := g - quantidade\n\n    fmt.Printf(\"%.2f\\n\", troco)\n}\n",
+            "lines": "16"
+        }
+    ]
+}

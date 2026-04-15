@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_14-05-01",
+            "content": "@@ -46,16 +46,17 @@\n ar a, b \n+u\n int%0A    \n@@ -80,34 +80,11 @@\n     \n-resultado := a - b%0A%0A    if\n+var\n  res\n@@ -94,18 +94,13 @@\n ado \n-%3C 0 %7B%0A    \n+uint%0A\n     \n@@ -115,24 +115,13 @@\n o = \n--resultado%0A    %7D\n+a - b\n %0A   \n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-03-11_14-08-27",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a, b int\n    fmt.Scan(&a, &b)\n    resultado := a - b\n\n    if resultado < 0 {\n        resultado = -resultado\n    }\n    fmt.Println(resultado)\n}\n",
+            "lines": "12"
+        }
+    ]
+}

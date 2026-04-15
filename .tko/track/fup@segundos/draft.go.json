@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_13-31-49",
+            "content": "@@ -176,16 +176,17 @@\n egundos \n+:\n = resto \n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-11_13-32-39",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var segundos int\n    fmt.Scan(&segundos)\n\n    horas := segundos / 3600\n    resto := segundos % 3600\n    minutos := resto / 60\n    segundos = resto % 60\n\n    fmt.Printf(\"%d:%d:%d\\n\", horas, minutos, segundos)\n}\n",
+            "lines": "13"
+        }
+    ]
+}

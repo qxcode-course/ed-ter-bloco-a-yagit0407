@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_10-00-59",
+            "content": "@@ -41,327 +41,28 @@\n     \n-var h, p, f, d int%0A    fmt.Scan(&h, &p, &f, &d)%0A    for %7B%0A        f+=d%0A        if f %3E 15 %7B%0A            f = 0%0A        %7D else if f %3C 0 %7B%0A            f = 15%0A        %7D%0A        if f == h %7B%0A            fmt.Println(%22S%22)%0A            break%0A        %7D else if f == p %7B%0A            fmt.Println(%22F%22)%0A            break%0A        %7D%0A    %7D\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-12_10-06-26",
+            "content": "@@ -324,9 +324,9 @@\n ln(%22\n-N\n+F\n %22)%0A \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-12_10-06-32",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var h, p, f, d int\n    fmt.Scan(&h, &p, &f, &d)\n    for {\n        f+=d\n        if f > 15 {\n            f = 0\n        } else if f < 0 {\n            f = 15\n        }\n        if f == h {\n            fmt.Println(\"S\")\n            break\n        } else if f == p {\n            fmt.Println(\"N\")\n            break\n        }\n    }\n}\n",
+            "lines": "21"
+        }
+    ]
+}

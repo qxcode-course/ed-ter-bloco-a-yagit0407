@@ -1,0 +1,13 @@
+2026-04-07 00:06:11, EXEC, v:1, k:ed@labirinto, mode:FULL, size:68, fail:COMP
+2026-04-07 00:06:26, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100, size:66
+2026-04-07 00:06:28, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-04-07 00:06:36, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-07 00:07:18, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-07 00:12:12, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-07 00:12:14, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:100, size:59
+2026-04-07 10:29:21, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-07 10:39:34, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-07 10:41:11, EXEC, v:1, k:fractais_png@go, mode:FREE
+2026-04-07 11:01:25, EXEC, v:1, k:fractais_png@go, mode:FREE, size:136
+2026-04-07 11:14:10, EXEC, v:1, k:fractais_png@go, mode:FREE, size:151
+2026-04-07 23:36:16, MOVE, v:1, k:ed@especiais, mode:DOWN

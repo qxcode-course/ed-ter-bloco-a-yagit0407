@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_08-29-36",
+            "content": "@@ -10,36 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-%09%22math%22%0A)%0A%0A\n func\n@@ -37,323 +37,32 @@\n ) %7B%0A\n-%09perimetro := func(a, b, c int) int %7B%0A%09%09return (a + b + c) / 2%0A%09%7D%0A%09area := func(perimetro, a, b, c int) float64 %7B%0A%09%09s := float64(perimetro)%0A%09%09return math.Sqrt(s * (s - float64(a)) * (s - float64(b)) * (s - float64(c)))%0A%09%7D%0A%09var a, b, c int%0A%09fmt.Scan(&a, &b, &c)%0A%09p := perimetro(a, b, c)%0A%09fmt.Println(area(p, a, b, c)\n+    fmt.Println(%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-12_08-32-34",
+            "content": "@@ -348,18 +348,11 @@\n rint\n-f(%22%25.2f%22, \n+ln(\n area\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-12_08-34-12",
+            "content": "@@ -355,10 +355,8 @@\n %25.2f\n-%5Cn\n %22, a\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-12_08-34-28",
+            "content": "@@ -76,31 +76,27 @@\n , b, c int) \n-float64\n+int\n  %7B%0A%09%09return \n@@ -99,28 +99,23 @@\n urn \n-float64(a+b+\n+(a + b + \n c) / 2\n-.0\n %0A%09%7D%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-12_08-35-48",
+            "content": "@@ -52,48 +52,8 @@\n ) %7B%0A\n-%09var a, b, c int%0A%09fmt.Scan(&a, &b, &c)%0A%0A\n %09per\n@@ -123,17 +123,16 @@\n  2.0%0A%09%7D%0A\n-%0A\n %09area :=\n@@ -141,17 +141,17 @@\n unc(\n-s float64\n+perimetro\n , a,\n@@ -163,32 +163,58 @@\n  int) float64 %7B%0A\n+%09%09s := float64(perimetro)%0A\n %09%09return math.Sq\n@@ -279,16 +279,54 @@\n c)))%0A%09%7D%0A\n+%09var a, b, c int%0A%09fmt.Scan(&a, &b, &c)\n %0A%09p := p\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-03-12_08-36-15",
+            "content": "@@ -61,23 +61,19 @@\n a, b, c \n-float64\n+int\n %0A%09fmt.Sc\n@@ -107,39 +107,35 @@\n := func(a, b, c \n-float64\n+int\n ) float64 %7B%0A%09%09re\n@@ -143,23 +143,28 @@\n urn \n-(a + b + \n+float64(a+b+\n c) / 2\n+.0\n %0A%09%7D%0A\n@@ -179,16 +179,24 @@\n = func(s\n+ float64\n , a, b, \n@@ -197,23 +197,19 @@\n a, b, c \n-float64\n+int\n ) float6\n@@ -244,29 +244,56 @@\n s - \n-a) * (s - b) * (s - c\n+float64(a)) * (s - float64(b)) * (s - float64(c)\n ))%0A%09\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-12_08-36-50",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar a, b, c float64\n\tfmt.Scan(&a, &b, &c)\n\n\tperimetro := func(a, b, c float64) float64 {\n\t\treturn (a + b + c) / 2\n\t}\n\n\tarea := func(s, a, b, c float64) float64 {\n\t\treturn math.Sqrt(s * (s - a) * (s - b) * (s - c))\n\t}\n\n\tp := perimetro(a, b, c)\n\tfmt.Printf(\"%.2f\\n\", area(p, a, b, c))\n}\n",
+            "lines": "22"
+        }
+    ]
+}

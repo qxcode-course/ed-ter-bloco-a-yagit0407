@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_00-06-11",
+            "content": "@@ -661,16 +661,64 @@\n alse%0A%7D%0A%0A\n+%09_, _, _ = grid, startPos, endPos%0A%09return false%0A\n func mai\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-04-07_00-06-26",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\ntype Pos struct {\n    l, c int\n}\nfunc search(grid [][]rune, atual Pos, endPos Pos) bool {\n\tif atual.l < 0 || atual.l >= len(grid) || atual.c < 0 || atual.c >= len(grid[0]) || grid[atual.l][atual.c] != ' ' {\n        return false\n    }\n\tif atual == endPos {\n        grid[atual.l][atual.c] = '.'\n        return true\n    }\n\tgrid[atual.l][atual.c] = '.'\n\tdirecoes := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n    for _, d := range direcoes {\n        proximo := Pos{atual.l + d.l, atual.c + d.c}\n        if search(grid, proximo, endPos) {\n            return true\n        }\n    }\n\tgrid[atual.l][atual.c] = ' '\n    return false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(grid, startPos, endPos)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "66"
+        }
+    ]
+}

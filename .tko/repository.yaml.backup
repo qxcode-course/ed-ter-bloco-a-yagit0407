@@ -1,0 +1,52 @@
+version: '0.2'
+sources:
+- name: sandbox
+  target: sandbox
+  type: local
+  writeable: true
+  quests: null
+  tasks: null
+- name: ed
+  target: https://github.com/qxcodeed/arcade.git
+  type: git
+  writeable: false
+  cache_timestamp: '2026-03-16 20:51:45'
+  quests: null
+  tasks: null
+- name: fup
+  target: https://github.com/qxcodefup/arcade.git
+  type: git
+  writeable: false
+  cache_timestamp: '2026-03-16 20:51:45'
+  quests: null
+  tasks: null
+expanded:
+- ed@main-quest
+- ed@revisão
+- fup@campanha-principal
+- ed@análise
+tasks:
+  ed@pintando: '{self:1, rate:100, study:12, friend:n}'
+  ed@mumia: '{self:1, rate:100, study:14, friend:n}'
+  ed@fuga: '{self:1, rate:100, study:7, friend:Nao, concept:1}'
+  ed@pedra: '{self:1, rate:100, study:15, concept:1}'
+  ed@casais: '{self:1, rate:100, study:24, friend:n, problem:1, code:1}'
+  ed@baruel: '{rate:100}'
+  fup@tres: '{self:1, rate:100, study:8, friend:nao}'
+  fup@resto: '{self:1, rate:100, friend:nao}'
+  fup@media: '{self:1, rate:100, friend:nao}'
+  fup@sobrou: '{self:1, rate:100, friend:n}'
+  fup@segundos: '{self:1, rate:100, friend:n}'
+  fup@celsius: '{self:1, rate:100, friend:n}'
+  fup@pintando: '{self:1, rate:100, friend:n}'
+  fup@bala: '{self:1, rate:100, friend:n}'
+  fup@abs: '{rate:100}'
+flags:
+  painel: 0
+  quests: 0
+  tracks: 0
+  tasks: 0
+  task_graph_mode: 0
+  show_time: 0
+lang: go
+selected: ed@gomos

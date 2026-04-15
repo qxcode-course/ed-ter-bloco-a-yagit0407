@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_13-56-00",
+            "content": "@@ -166,16 +166,17 @@\n ((y2 - y\n+1\n ), 2))%0A \n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-56-18",
+            "content": "@@ -197,10 +197,8 @@\n %25.2f\n-%5Cn\n %22, d\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-03-11_13-56-27",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n    var x, y, x2, y2 float64\n    fmt.Scan(&x, &y, &x2, &y2)\n    d := math.Sqrt(math.Pow((x2 - x), 2) + math.Pow((y2 - y), 2))\n    fmt.Printf(\"%.2f\\n\", d)\n\n}\n",
+            "lines": "10"
+        }
+    ]
+}

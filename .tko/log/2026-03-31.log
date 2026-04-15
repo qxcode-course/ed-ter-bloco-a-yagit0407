@@ -1,0 +1,48 @@
+2026-03-31 08:46:47, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-03-31 08:46:52, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-03-31 08:48:19, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-03-31 08:48:52, MOVE, v:1, k:fup@max, mode:DOWN
+2026-03-31 08:48:53, MOVE, v:1, k:fup@max, mode:PICK
+2026-03-31 08:50:55, EXEC, v:1, k:fup@max, mode:FULL, rate:0, size:13
+2026-03-31 08:51:26, EXEC, v:1, k:fup@max, mode:FULL, rate:0, size:13
+2026-03-31 08:51:27, EXEC, v:1, k:fup@max, mode:FULL, rate:0
+2026-03-31 08:52:20, EXEC, v:1, k:fup@max, mode:FULL, rate:100, size:13
+2026-03-31 08:52:25, MOVE, v:1, k:fup@max, mode:BACK
+2026-03-31 08:52:30, MOVE, v:1, k:fup@ou, mode:DOWN
+2026-03-31 08:52:30, MOVE, v:1, k:fup@ou, mode:PICK
+2026-03-31 08:53:56, EXEC, v:1, k:fup@ou, mode:FULL, rate:20, size:13
+2026-03-31 08:54:41, EXEC, v:1, k:fup@ou, mode:FULL, rate:100, size:13
+2026-03-31 08:54:46, MOVE, v:1, k:fup@ou, mode:BACK
+2026-03-31 08:55:06, MOVE, v:1, k:fup@positivo, mode:DOWN
+2026-03-31 08:55:06, MOVE, v:1, k:fup@positivo, mode:PICK
+2026-03-31 08:55:20, MOVE, v:1, k:fup@positivo, mode:BACK
+2026-03-31 08:55:25, MOVE, v:1, k:fup@positivo, mode:PICK
+2026-03-31 08:55:31, EXEC, v:1, k:fup@positivo, mode:FULL, rate:0, size:5
+2026-03-31 08:55:44, MOVE, v:1, k:fup@positivo, mode:BACK
+2026-03-31 08:55:52, MOVE, v:1, k:fup@positivo, mode:PICK
+2026-03-31 08:56:33, EXEC, v:1, k:fup@positivo, mode:FULL, rate:100, size:13
+2026-03-31 08:56:34, MOVE, v:1, k:fup@positivo, mode:BACK
+2026-03-31 08:56:41, MOVE, v:1, k:fup@multiplo, mode:DOWN
+2026-03-31 08:56:42, MOVE, v:1, k:fup@multiplo, mode:PICK
+2026-03-31 08:57:18, EXEC, v:1, k:fup@multiplo, mode:FULL, rate:42, size:12
+2026-03-31 08:59:14, EXEC, v:1, k:fup@multiplo, mode:FULL, rate:100, size:12
+2026-03-31 08:59:15, MOVE, v:1, k:fup@multiplo, mode:BACK
+2026-03-31 09:02:50, SELF, v:1, k:ed@princesa, self:1, rate:100, study:25, concept:1
+2026-03-31 09:03:33, SELF, v:1, k:ed@apagando, self:1, concept:1
+2026-03-31 09:03:49, SELF, v:1, k:ed@apagando, self:1, concept:1
+2026-03-31 09:03:57, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 09:04:04, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-31 09:04:06, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-31 09:05:10, SELF, v:1, k:ed@manipulacao, self:1, rate:100, problem:1
+2026-03-31 09:05:19, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-31 09:05:28, EXEC, v:1, k:ed@baruel, mode:FULL, rate:100, size:54
+2026-03-31 09:05:29, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-31 09:05:42, SELF, v:1, k:ed@baruel, self:1, rate:100, concept:1
+2026-03-31 09:05:56, SELF, v:1, k:ed@casais, self:1, rate:100, study:24, friend:n, concept:1
+2026-03-31 09:06:29, MOVE, v:1, k:fup@calc, mode:DOWN
+2026-03-31 09:06:30, MOVE, v:1, k:fup@calc, mode:PICK
+2026-03-31 09:08:17, EXEC, v:1, k:fup@calc, mode:FULL, rate:100, size:16
+2026-03-31 09:08:19, MOVE, v:1, k:fup@calc, mode:BACK
+2026-03-31 09:10:31, MOVE, v:1, k:fup@guarda, mode:DOWN
+2026-03-31 09:10:33, MOVE, v:1, k:fup@guarda, mode:PICK
+2026-03-31 09:11:08, MOVE, v:1, k:fup@guarda, mode:BACK

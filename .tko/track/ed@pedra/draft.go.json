@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-12_14-39-45",
+            "content": "@@ -23,22 +23,8 @@\n mt%22%0A\n-import %22math%22%0A\n func\n@@ -37,493 +37,8 @@\n ) %7B%0A\n-    var n int%0A    fmt.Scan(&n)%0A    %0A    vencedor := 0%0A    melhorpontuacao := math.MinInt64%0A    %0A    for i := 1; i %3C= n; i++ %7B%0A        var a, b int%0A        fmt.Scan(&a, &b)%0A%0A        if a %3E= 10 && b %3E= 10 %7B%0A            pontuacao := a - b%0A            if pontuacao %3C 0 %7B%0A                pontuacao = -pontuacao%0A            %7D%0A            if vencedor == 0 %7C%7C pontuacao %3C melhorpontuacao %7B%0A                melhorpontuacao = pontuacao%0A                vencedor = i%0A            %7D%0A        %7D%0A    %7D%0A\n     \n@@ -53,15 +53,16 @@\n tln(\n-vencedor\n+%22qxcode%22\n )%0A%7D\n+%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-12_14-50-39",
+            "content": "@@ -134,10 +134,10 @@\n th.M\n-ax\n+in\n Int6\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-12_14-51-01",
+            "content": "@@ -156,17 +156,17 @@\n or i := \n-0\n+1\n ; i %3C= n\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-12_14-51-21",
+            "content": "@@ -506,72 +506,8 @@\n = i%0A\n-            %7D else %7B%0A                fmt.Printf(%22sem ganhador%22)%0A\n     \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-12_14-52-13",
+            "content": "@@ -103,10 +103,9 @@\n  := \n-=1\n+0\n %0A   \n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-12_14-52-58",
+            "content": "@@ -99,17 +99,17 @@\n edor := \n--\n+=\n 1%0A    me\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-12_14-53-05",
+            "content": "@@ -99,16 +99,17 @@\n edor := \n+-\n 1%0A    me\n@@ -521,57 +521,31 @@\n   %7D \n-%0A        %7D\n+else %7B\n %0A    \n-%7D%0A\n     \n-if vencedor == -1 %7B%0A\n+  \n       \n-  \n fmt.\n@@ -549,18 +549,17 @@\n mt.Print\n-ln\n+f\n (%22sem ga\n@@ -567,37 +567,50 @@\n hador%22)%0A    \n-%7D else %7B\n+        %7D%0A        %7D\n %0A    \n+%7D%0A\n     fmt.Prin\n@@ -623,15 +623,9 @@\n ncedor)%0A\n-    %7D%0A\n %7D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-12_14-55-07",
+            "content": "@@ -99,17 +99,16 @@\n edor := \n--\n 1%0A    me\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-12_14-55-21",
+            "content": "package main\nimport \"fmt\"\nimport \"math\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    \n    vencedor := -1\n    melhorpontuacao := math.MaxInt64\n    \n    for i := 0; i <= n; i++ {\n        var a, b int\n        fmt.Scan(&a, &b)\n\n        if a >= 10 && b >= 10 {\n            pontuacao := a - b\n            if pontuacao < 0 {\n                pontuacao = -pontuacao\n            }\n            if vencedor == 0 || pontuacao < melhorpontuacao {\n                melhorpontuacao = pontuacao\n                vencedor = i\n            } \n        }\n    }\n    if vencedor == -1 {\n        fmt.Println(\"sem ganhador\")\n    } else {\n        fmt.Println(vencedor)\n    }\n}",
+            "lines": "31"
+        }
+    ]
+}
