@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	
+	"math"
 )
 
 func arvore(pen *Pen, dist float64) {
@@ -48,6 +48,22 @@ func circulo( pen *Pen) {
 
 }
 
+func circulosFractal(pen *Pen, x, y, r float64, nivel int) {
+	if nivel == 0 || r < 2 {
+		return
+	}
+
+	pen.SetPosition(x, y)
+	pen.DrawCircle(r)
+
+	for i := 0; i < 6; i++ {
+		ang := 2 * math.Pi * float64(i) / 6.0
+		nx := x + math.Cos(ang)*r
+		ny := y + math.Sin(ang)*r
+		circulosFractal(pen, nx, ny, r/3.0, nivel-1)
+	}
+}
+
 func main() {
 	// Cria o canvas
 	pen := NewPen(600, 600)   
@@ -57,7 +73,7 @@ func main() {
 	pen.SetPosition(300, 550)
 
 	// Chama sua função
-	arvore(pen, 150)
+	circulosFractal(pen, 150, 150, 150, 2)
 
 	// Salva o arquivo (sem tentar capturar retorno de erro)
 	pen.SavePNG("tree.png")

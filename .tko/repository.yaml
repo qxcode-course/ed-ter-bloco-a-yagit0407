@@ -29,12 +29,12 @@ sources:
   quests: null
   tasks: null
 expanded:
-- eval1@eval1
+- ed@vector
 flags:
   inbox: inbox
-  panel: graph
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@casais
+selected: ed@vetbuild
