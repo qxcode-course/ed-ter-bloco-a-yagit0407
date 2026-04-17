@@ -1,0 +1,30 @@
+2026-04-17 11:57:18, MOVE, v:1, k:ed@setbuild, mode:DOWN
+2026-04-17 11:57:21, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-04-17 11:57:18, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 11:57:18, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:02:05, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:05:51, EXEC, v:1, k:ed@setbuild, mode:FULL, size:58, fail:COMP
+2026-04-17 12:05:46, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:11:53, EXEC, v:1, k:ed@setbuild, mode:FULL, size:78, fail:COMP
+2026-04-17 12:12:03, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:12:11, EXEC, v:1, k:ed@setbuild, mode:FULL, size:79, fail:COMP
+2026-04-17 12:12:54, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:0, size:80
+2026-04-17 12:13:39, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:0, size:80
+2026-04-17 12:17:06, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:17:22, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:0, size:93
+2026-04-17 12:21:07, EXEC, v:1, k:ed@setbuild, mode:FULL, size:104, fail:COMP
+2026-04-17 12:21:28, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:26:24, EXEC, v:1, k:ed@setbuild, mode:FULL, size:118, fail:COMP
+2026-04-17 12:26:19, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:28:14, EXEC, v:1, k:ed@setbuild, mode:FULL, size:119, fail:COMP
+2026-04-17 12:29:08, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:33, size:119
+2026-04-17 12:29:07, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:45:45, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:33, size:128
+2026-04-17 12:45:53, EXEC, v:1, k:ed@setbuild, mode:FULL, size:128, fail:COMP
+2026-04-17 12:46:14, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:33, size:129
+2026-04-17 12:46:13, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:47:57, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:129
+2026-04-17 12:51:45, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:66, size:145
+2026-04-17 12:52:06, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-17 12:52:53, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100, size:148
+2026-04-17 12:52:58, MOVE, v:1, k:ed@setbuild, mode:BACK
