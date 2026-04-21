@@ -29,12 +29,15 @@ sources:
   quests: null
   tasks: null
 expanded:
+- ed@rec
 - ed@vector
+- ed@sandbox
 flags:
   inbox: inbox
   panel: graph
   show_panel: 'true'
-  task_graph_mode: executions
+  task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@setbuild
+selected: ed@multiset
+selected_index: 17

@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-21_16-59-08",
+            "content": "@@ -124,154 +124,44 @@\n  %7B%0A%09\n-left := 0%0A%09right := len(slice) - 1%0A%09%0A%09for left %3C= right %7B%0A%09%09mid := (left + right) / 2%0A%09%09%0A%09%09if slice%5Bmid%5D == value %7B%0A%09%09%09return true, mid %0A%09%09%7D%0A%09%09%0A%09%7D\n+_, _ = slice, value%0A%09return false, 0\n %0A%7D%0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-21_17-03-11",
+            "content": "@@ -267,106 +267,11 @@\n %7D%0A%09%09\n-if value %3C slice%5Bmid%5D %7B%0A%09%09%09right = mid - 1%0A%09%09%7D else %7B%0A%09%09%09left = mid + 1%0A%09%09%7D%0A%09%7D%0A%09return false, left\n+%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-21_17-04-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tleft := 0\n\tright := len(slice) - 1\n\t\n\tfor left <= right {\n\t\tmid := (left + right) / 2\n\t\t\n\t\tif slice[mid] == value {\n\t\t\treturn true, mid \n\t\t}\n\t\tif value < slice[mid] {\n\t\t\tright = mid - 1\n\t\t} else {\n\t\t\tleft = mid + 1\n\t\t}\n\t}\n\treturn false, left\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "47"
+        }
+    ]
+}
