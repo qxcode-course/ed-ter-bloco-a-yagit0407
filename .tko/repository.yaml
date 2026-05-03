@@ -29,15 +29,13 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@vector
-- ed@rec
-- ed@sandbox
+- ed@list
 flags:
   inbox: inbox
-  panel: graph
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 14
+selected: ed@lista_d2
+selected_index: 7
