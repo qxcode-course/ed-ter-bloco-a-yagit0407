@@ -28,14 +28,13 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded:
-- ed@list
+expanded: []
 flags:
   inbox: inbox
-  panel: skills
-  show_panel: 'false'
+  panel: graph
+  show_panel: 'true'
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@lista_d2
-selected_index: 7
+selected: ed@vector
+selected_index: 4
