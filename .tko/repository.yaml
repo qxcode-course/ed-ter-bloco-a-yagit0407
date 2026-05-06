@@ -28,7 +28,28 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded: []
+expanded:
+- fup@dict
+- ed@basic
+- fup@string
+- fup@if2
+- fup@list
+- fup@rec
+- fup@if_extra
+- ed@sandbox
+- fup@if1
+- eval1@eval1
+- fup@for1
+- fup@mat
+- ed@dfs
+- fup@struct
+- fup@for2
+- fup@games
+- fup@for_extra
+- ed@bfs
+- fup@base
+- ed@linear
+- ed@tree
 flags:
   inbox: inbox
   panel: graph
@@ -36,5 +57,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@vector
-selected_index: 4
+selected: ed@list
+selected_index: 5
