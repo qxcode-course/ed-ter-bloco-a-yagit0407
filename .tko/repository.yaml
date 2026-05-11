@@ -29,24 +29,24 @@ sources:
   quests: null
   tasks: null
 expanded:
-- fup@if2
-- ed@list
-- fup@list
-- ed@basic
-- fup@mat
-- fup@string
-- ed@dfs
-- ed@linear
-- fup@for1
 - ed@bfs
-- fup@for2
-- fup@for_extra
-- fup@if_extra
-- fup@struct
 - fup@base
+- fup@struct
+- fup@for2
 - fup@dict
 - fup@rec
+- ed@linear
+- fup@mat
+- ed@list
 - ed@tree
+- ed@basic
+- ed@dfs
+- fup@if2
+- fup@for1
+- fup@for_extra
+- fup@if_extra
+- fup@list
+- fup@string
 flags:
   inbox: inbox
   panel: graph
@@ -54,5 +54,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@lista_d4
-selected_index: 8
+selected: ed@prin_list1
+selected_index: 9
