@@ -2,8 +2,48 @@
     "patches": [
         {
             "label": "2026-05-05_10-29-41",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -17,1119 +17,59 @@\n ort \n-(%0A    %22fmt%22%0A    %22bufio%22%0A    %22os%22%0A)%0Atype Node struct %7B%0A    value rune%0A    prev *Node%0A    next *Node%0A%7D%0A%0Atype Editor struct %7B%0A    head *Node%0A    tail *Node%0A    cursor *Node%0A%7D%0A%0Afunc NewEditor() *Editor %7B%0A    head := &Node%7B%7D%0A    tail := &Node%7B%7D%0A%0A    head.next = tail%0A    head.prev = head%0A    return &Editor%7B%0A        head : head,%0A        tail : tail ,%0A        cursor : tail ,%0A    %7D%0A%7D%0A%0Afunc (e *Editor) Insert (ch rune) %7B%0A    node := &Node(value: ch)%0A%0A    prev := e.cursor.prev%0A    %0A    prev.next = node%0A    node.prev = prev%0A%0A    node.next = e.cursor%0A    e.cursor.prev = node%0A%0A%7D%0Afunc (e *Editor) Left() %7B%0A%09if e.cursor.prev != e.head %7B%0A%09%09e.cursor = e.cursor.prev%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) Right() %7B%0A%09if e.cursor != e.tail %7B%0A%09%09e.cursor = e.cursor.next%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A    scanner := bufio.NewScanner(os.Stdin)%0A%0A%09scanner.Scan()%0A%09text := scanner.Text()%0A%0A%09ed := NewEditor()%0A%0A%09for _, ch := range text %7B%0A%0A%09%09switch ch %7B%0A%0A%09%09case '%3C':%0A%09%09%09ed.Left()%0A%0A%09%09case '%3E':%0A%09%09%09ed.Right()%0A%0A%09%09case 'B':%0A%09%09%09ed.Backspace()%0A%0A%09%09case 'D':%0A%09%09%09ed.Delete()%0A%0A%09%09case 'R':%0A%09%09%09ed.Insert('%5Cn')%0A%0A%09%09default:%0A%09%09%09ed.Insert(ch)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(ed.String()\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-05-11_10-25-32",
+            "content": "@@ -445,17 +445,17 @@\n := &Node\n-%7B\n+(\n value: c\n@@ -455,17 +455,17 @@\n alue: ch\n-%7D\n+)\n %0A%0A    pr\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-05-11_10-25-59",
+            "content": "@@ -992,11 +992,8 @@\n %0A%09%09%09\n-// \n ed.B\n@@ -1023,10 +1023,8 @@\n %0A%09%09%09\n-//\n ed.D\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-05-11_10-26-15",
+            "content": "@@ -213,17 +213,20 @@\n ditor %7B%0A\n-%09\n+    \n head := \n@@ -233,17 +233,20 @@\n &Node%7B%7D%0A\n-%09\n+    \n tail := \n@@ -254,17 +254,20 @@\n Node%7B%7D%0A%0A\n-%09\n+    \n head.nex\n@@ -275,21 +275,24 @@\n  = tail%0A\n-%09tail\n+    head\n .prev = \n@@ -296,18 +296,20 @@\n  = head%0A\n-%0A%09\n+    \n return &\n@@ -320,57 +320,79 @@\n or%7B%0A\n-%09%09\n+        \n head\n-: \n  \n+:\n  head,%0A\n-%09%09\n+        \n tail\n-: \n  \n+:\n  tail\n+ \n ,%0A\n-%09%09\n+        \n cursor\n+ \n : tail\n+ \n ,%0A\n-%09\n+    \n %7D%0A%7D%0A\n@@ -763,292 +763,8 @@\n %0A%7D%0A%0A\n-func (e *Editor) String() string %7B%0A    out := %22%22%0A%0A    for node := e.head.next; node != e.tail; node = node.next %7B%0A        if node == e.cursor %7B%0A            out += %22%7C%22%0A        %7D%0A        out += string(node.value)%0A    %7D if e.cursor == e.tail %7B%0A        out += %22%7C%22%0A    %7D%0A    return out%0A%7D%0A%0A\n func\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-05-11_10-29-41",
+            "content": "@@ -940,21 +940,16 @@\n )%0A    %7D \n-%0A    \n if e.cur\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-11_10-30-52",
+            "content": "@@ -727,214 +727,8 @@\n %0A%7D%0A%0A\n-func (e *Editor) Delete() %7B%0A    if e.cursor == e.tail %7B%0A        return%0A    %7D%0A    target := e.cursor%0A%0A    target.prev.next = target.next%0A    target.next.prev = target.prev%0A    %0A    e.cursor = target.next%0A%7D%0A%0A\n func\n@@ -1275,16 +1275,18 @@\n 'D':%0A%09%09%09\n+//\n ed.Delet\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-05-11_10-33-35",
+            "content": "@@ -933,193 +933,8 @@\n %0A%7D%0A%0A\n-func (e *Editor) Backspace() %7B%0A    if e.cursor.prev == e.head %7B%0A        return%0A    %7D%0A    %0A    target := e.cursor.prev%0A    target.prev.next = e.cursor%0A    e.cursor.prev = target.prev%0A%7D%0A%0A\n func\n",
+            "lines": "117"
+        },
+        {
+            "label": "2026-05-11_10-36-08",
+            "content": "@@ -1632,16 +1632,19 @@\n 'B':%0A%09%09%09\n+// \n ed.Backs\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-05-11_10-36-15",
+            "content": "package main\nimport (\n    \"fmt\"\n    \"bufio\"\n    \"os\"\n)\ntype Node struct {\n    value rune\n    prev *Node\n    next *Node\n}\n\ntype Editor struct {\n    head *Node\n    tail *Node\n    cursor *Node\n}\n\nfunc NewEditor() *Editor {\n\thead := &Node{}\n\ttail := &Node{}\n\n\thead.next = tail\n\ttail.prev = head\n\n\treturn &Editor{\n\t\thead:   head,\n\t\ttail:   tail,\n\t\tcursor: tail,\n\t}\n}\n\nfunc (e *Editor) Insert (ch rune) {\n    node := &Node{value: ch}\n\n    prev := e.cursor.prev\n    \n    prev.next = node\n    node.prev = prev\n\n    node.next = e.cursor\n    e.cursor.prev = node\n\n}\nfunc (e *Editor) Left() {\n\tif e.cursor.prev != e.head {\n\t\te.cursor = e.cursor.prev\n\t}\n}\n\nfunc (e *Editor) Right() {\n\tif e.cursor != e.tail {\n\t\te.cursor = e.cursor.next\n\t}\n}\n\nfunc (e *Editor) Delete() {\n    if e.cursor == e.tail {\n        return\n    }\n    target := e.cursor\n\n    target.prev.next = target.next\n    target.next.prev = target.prev\n    \n    e.cursor = target.next\n}\n\nfunc (e *Editor) Backspace() {\n    if e.cursor.prev == e.head {\n        return\n    }\n    \n    target := e.cursor.prev\n    target.prev.next = e.cursor\n    e.cursor.prev = target.prev\n}\n\nfunc (e *Editor) String() string {\n    out := \"\"\n\n    for node := e.head.next; node != e.tail; node = node.next {\n        if node == e.cursor {\n            out += \"|\"\n        }\n        out += string(node.value)\n    } \n    if e.cursor == e.tail {\n        out += \"|\"\n    }\n    return out\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\ttext := scanner.Text()\n\n\ted := NewEditor()\n\n\tfor _, ch := range text {\n\n\t\tswitch ch {\n\n\t\tcase '<':\n\t\t\ted.Left()\n\n\t\tcase '>':\n\t\t\ted.Right()\n\n\t\tcase 'B':\n\t\t\ted.Backspace()\n\n\t\tcase 'D':\n\t\t\ted.Delete()\n\n\t\tcase 'R':\n\t\t\ted.Insert('\\n')\n\n\t\tdefault:\n\t\t\ted.Insert(ch)\n\t\t}\n\t}\n\n\tfmt.Println(ed.String())\n}\n",
+            "lines": "127"
         }
     ]
 }
