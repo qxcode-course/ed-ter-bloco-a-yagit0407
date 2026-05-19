@@ -6,47 +6,37 @@ sources:
   type: local
   writeable: true
   quests: null
-  tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 - name: fup
   target: https://github.com/qxcodefup/arcade.git
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 - name: eval1
   target: https://github.com/senapk/eval_26_ed_1
   index: README.md
   type: git
   writeable: false
   quests: null
-  tasks: null
 expanded:
-- fup@base
 - fup@string
-- fup@rec
-- ed@tree
-- ed@bfs
-- ed@dfs
-- fup@if_extra
-- fup@dict
-- fup@mat
-- ed@list
-- fup@if2
-- ed@basic
-- fup@for2
-- fup@struct
-- fup@for_extra
-- ed@linear
-- fup@list
 - fup@for1
+- fup@list
+- ed@dfs
+- fup@if2
+- fup@for2
+- fup@if_extra
+- fup@mat
+- fup@for_extra
+- fup@rec
+- fup@dict
+- fup@struct
 flags:
   inbox: inbox
   panel: graph
@@ -54,5 +44,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@lista_d1
-selected_index: 6
+selected: ed@backtrack
+selected_index: 3

@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-19_09-44-09",
+            "content": "@@ -663,30 +663,6 @@\n    %0A\n-%09fmt.Println(string(s))%0A\n %7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-19_09-44-19",
+            "content": "@@ -108,16 +108,17 @@\n  for i :\n+ \n = pos - \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-19_09-44-49",
+            "content": "@@ -148,18 +148,16 @@\n      if \n-i \n %3C 1 %7C%7C i\n@@ -160,17 +160,16 @@\n %7C%7C i %3E= \n-n\n  %7C%7C i ==\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-19_09-45-12",
+            "content": "@@ -239,23 +239,23 @@\n ' &&\n- \n  int\n+ \n (s%5Bi%5D-\n+ \n '0'\n-)\n  == \n@@ -259,16 +259,17 @@\n == valor\n+)\n  %7B%0A     \n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-19_09-46-01",
+            "content": "@@ -686,10 +686,8 @@\n g(s))%0A%7D%0A\n-%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-05-19_09-46-10",
+            "content": "@@ -152,17 +152,17 @@\n  if i %3C \n-0\n+1\n  %7C%7C i %3E=\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-05-19_09-46-19",
+            "content": "@@ -661,19 +661,16 @@\n %7D%0A    %0A%09\n-%0A%7D%0A\n fmt.Prin\n@@ -686,8 +686,10 @@\n g(s))%0A%7D%0A\n+%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-05-19_09-47-13",
+            "content": "@@ -337,18 +337,20 @@\n ain() %7B%0A\n-%0A%09\n+    \n var entr\n@@ -359,18 +359,22 @@\n a string\n-%0A%09\n+ %0A    \n var L in\n@@ -376,17 +376,20 @@\n  L int%0A%0A\n-%09\n+    \n fmt.Scan\n@@ -399,17 +399,20 @@\n ntrada)%0A\n-%09\n+    \n fmt.Scan\n@@ -417,17 +417,20 @@\n an(&L)%0A%0A\n-%09\n+    \n s := %5B%5Dr\n@@ -443,17 +443,20 @@\n trada)%0A%0A\n-%09\n+    \n for i :=\n@@ -477,19 +477,24 @@\n ; i++ %7B%0A\n-%0A%09%09\n+        \n if s%5Bi%5D \n@@ -502,20 +502,28 @@\n = '.' %7B%0A\n-%0A%09%09%09\n+            \n for d :=\n@@ -540,21 +540,32 @@\n ; d++ %7B%0A\n-%0A%09%09%09%09\n+                \n if podeC\n@@ -585,21 +585,36 @@\n d, L) %7B%0A\n-%09%09%09%09%09\n+                    \n s%5Bi%5D = r\n@@ -641,28 +641,35 @@\n eak%0A\n-%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n+        %7D%0A    %7D%0A%7D%0A    %0A%09%0A%7D%0A\n fmt.\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-19_09-47-42",
+            "content": "@@ -327,417 +327,8 @@\n %0A%7D%0A%0A\n-func resolver(s %5B%5Drune, L int, pos int) bool %7B%0A    if pos == len(s) %7B%0A        return true%0A    %7D%0A    if s%5Bpos%5D != '.' %7B%0A        return resolver(s, L, pos + 1)%0A    %7D%0A    for d := 0; d %3C= L; d++ %7B%0A%0A        if valido(s, pos, d, L) %7B%0A            s%5Bpos%5D = rune(d + '0')%0A%0A            if resolver(s, L, pos + 1) %7B%0A                return true%0A            %7D%0A            s%5Bpos%5D = '.'%0A        %7D%0A    %7D%0A    return false%0A%7D%0A%0A\n func\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-19_09-51-54",
+            "content": "@@ -841,35 +841,180 @@\n a)%0A%0A\n-    resolve\n+%09for i := 0; i %3C len(s); i++ %7B%0A%0A%09%09if s%5Bi%5D == '.' %7B%0A%0A%09%09%09for d := 0; d %3C= L; d++ %7B%0A%0A%09%09%09%09if podeColoca\n r(s, \n-L, 0)%0A%0A    \n+i, d, L) %7B%0A%09%09%09%09%09s%5Bi%5D = rune(d + '0')%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n fmt.\n@@ -1031,14 +1031,11 @@\n ring(s))\n-%0A%0A%09\n %0A%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-19_09-52-54",
+            "content": "@@ -25,22 +25,27 @@\n %22%0A%0Afunc \n-valido\n+podeColocar\n (s %5B%5Drun\n@@ -81,18 +81,20 @@\n  bool %7B%0A\n-%0A%09\n+    \n n := len\n@@ -97,18 +97,20 @@\n  len(s)%0A\n-%0A%09\n+    \n for i :=\n@@ -137,19 +137,24 @@\n ; i++ %7B%0A\n-%0A%09%09\n+        \n if i %3C 0\n@@ -182,27 +182,48 @@\n s %7B%0A\n-%09%09%09continue%0A%09%09%7D%0A%0A%09%09\n+            continue%0A        %7D%0A%0A        \n if s\n@@ -235,16 +235,17 @@\n = '.' &&\n+ \n  int(s%5Bi\n@@ -266,11 +266,20 @@\n r %7B%0A\n-%09%09%09\n+            \n retu\n@@ -291,17 +291,29 @@\n lse%0A\n-%09%09%7D%0A%09%7D%0A%0A%09\n+        %7D%0A%0A    %7D%0A    \n retu\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-19_09-53-39",
+            "content": "package main\nimport \"fmt\"\n\nfunc valido(s []rune, pos int, valor int, L int) bool {\n\n\tn := len(s)\n\n\tfor i := pos - L; i <= pos+L; i++ {\n\n\t\tif i < 0 || i >= n || i == pos {\n\t\t\tcontinue\n\t\t}\n\n\t\tif s[i] != '.' && int(s[i]-'0') == valor {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}\n\nfunc resolver(s []rune, L int, pos int) bool {\n    if pos == len(s) {\n        return true\n    }\n    if s[pos] != '.' {\n        return resolver(s, L, pos + 1)\n    }\n    for d := 0; d <= L; d++ {\n\n        if valido(s, pos, d, L) {\n            s[pos] = rune(d + '0')\n\n            if resolver(s, L, pos + 1) {\n                return true\n            }\n            s[pos] = '.'\n        }\n    }\n    return false\n}\n\nfunc main() {\n\n\tvar entrada string\n\tvar L int\n\n\tfmt.Scan(&entrada)\n\tfmt.Scan(&L)\n\n\ts := []rune(entrada)\n\n    resolver(s, L, 0)\n\n    fmt.Println(string(s))\n\n\t\n}\n",
+            "lines": "58"
+        }
+    ]
+}
