@@ -53,3 +53,11 @@
 2026-05-19 10:06:06, SELF, v:1, k:ed@lista_d1, self:1, rate:100
 2026-05-19 10:06:14, SELF, v:1, k:ed@prin_list1, self:1
 2026-05-19 10:06:20, SELF, v:1, k:ed@editorint, self:1
+2026-05-19 10:08:20, SELF, v:1, k:ed@queimada, self:1, rate:100
+2026-05-19 10:08:25, SELF, v:1, k:ed@vetequals, self:1, rate:100
+2026-05-19 10:08:59, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-19 10:09:00, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25
+2026-05-19 23:34:07, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-19 23:35:15, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:109
+2026-05-19 23:35:20, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-05-19 23:35:40, SELF, v:1, k:ed@subset_sum, self:1

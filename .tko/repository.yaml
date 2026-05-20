@@ -25,24 +25,24 @@ sources:
   writeable: false
   quests: null
 expanded:
-- fup@string
-- fup@for1
-- fup@list
-- ed@dfs
-- fup@if2
-- fup@for2
-- fup@if_extra
 - fup@mat
-- fup@for_extra
-- fup@rec
-- fup@dict
 - fup@struct
+- fup@list
+- fup@for1
+- fup@dict
+- fup@for2
+- ed@dfs
+- fup@string
+- fup@if_extra
+- fup@rec
+- fup@if2
+- fup@for_extra
 flags:
   inbox: inbox
   panel: graph
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@backtrack
-selected_index: 3
+selected: ed@list
+selected_index: 5
