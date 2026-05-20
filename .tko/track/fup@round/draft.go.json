@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_16-24-58",
+            "content": "@@ -1,12 +1,8 @@\n-    \n package \n@@ -6,20 +6,16 @@\n ge main%0A\n-    \n import %22\n@@ -22,20 +22,16 @@\n fmt%22%0A%0A%0A%0A\n-    \n func mai\n@@ -36,28 +36,24 @@\n ain() %7B%0A    \n- \n-   \n var operacao\n@@ -57,19 +57,13 @@\n cao \n-string%0A    \n+rune%0A\n     \n@@ -82,20 +82,16 @@\n loat64%0A%0A\n-    \n     _, e\n@@ -121,28 +121,24 @@\n o, &numero)%0A\n-    \n     if err !\n@@ -145,28 +145,18 @@\n = nil %7B%0A\n-            \n+%09%09\n fmt.Scan\n@@ -176,35 +176,24 @@\n numero)%0A\n-        \n+%09\n %7D%0A%0A    \n-  \n-  \n inteiro \n@@ -204,28 +204,24 @@\n nt(numero)%0A%0A\n-    \n     switch o\n@@ -242,17 +242,9 @@\n     \n-  \n-  %0A    \n+%0A\n     \n@@ -252,18 +252,14 @@\n ase \n-%22f%22 :%0A    \n+'f' :%0A\n     \n@@ -292,27 +292,19 @@\n     \n-   \n- \n case \n-%22c%22 :%0A    \n+'c' :%0A\n     \n@@ -342,36 +342,32 @@\n ) %7B%0A            \n-    \n fmt.Println(inte\n@@ -383,20 +383,16 @@\n         \n-   \n- \n %7D else %7B\n@@ -392,20 +392,16 @@\n  else %7B%0A\n-    \n         \n@@ -437,31 +437,23 @@\n     \n-    \n %7D%0A%0A    \n-  \n-  \n case \n-%22r%22\n+'r'\n : %0A \n@@ -459,20 +459,16 @@\n         \n-    \n resultad\n@@ -490,20 +490,16 @@\n  + 0.5)%0A\n-    \n         \n@@ -529,16 +529,8 @@\n     \n-    %7D%0A    \n+%7D%0A\n %7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-20_16-26-25",
+            "content": "    package main\n    import \"fmt\"\n\n\n\n    func main() {\n        var operacao string\n        var numero float64\n\n        _, err := fmt.Scan(&operacao, &numero)\n        if err != nil {\n            fmt.Scan(&operacao, &numero)\n        }\n\n        inteiro := int(numero)\n\n        switch operacao {\n            \n        case \"f\" :\n            fmt.Println(inteiro)\n\n        case \"c\" :\n            if numero > float64(inteiro) {\n                fmt.Println(inteiro + 1)\n            } else {\n                fmt.Println(inteiro)\n            }\n\n        case \"r\": \n            resultado := int(numero + 0.5)\n            fmt.Println(resultado)\n        }\n    }\n",
+            "lines": "33"
+        }
+    ]
+}

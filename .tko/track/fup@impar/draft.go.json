@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_15-37-25",
+            "content": "@@ -143,70 +143,8 @@\n (0)%0A\n-    %7D else if p == 0 && d1 %25 d2 != 0 %7B%0A        fmt.Println(1)%0A\n     \n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-05-20_15-38-32",
+            "content": "@@ -210,105 +210,7 @@\n    %7D\n- else if p == 1 && d1 %25 d2 == 0%7B%0A        fmt.Println(0)%0A    %7D else %7B%0A        fmt.Println(1)%0A    %7D%0A\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-20_15-39-42",
+            "content": "@@ -251,33 +251,33 @@\n     fmt.Println(\n-1\n+0\n )%0A    %7D else %7B%0A \n@@ -291,24 +291,24 @@\n fmt.Println(\n-0\n+1\n )%0A    %7D%0A%0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-39-55",
+            "content": "@@ -277,34 +277,8 @@\n lse \n-if p == 1 && d1 %25 d2 != 0 \n %7B%0A  \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-40-52",
+            "content": "@@ -317,24 +317,24 @@\n fmt.Println(\n-1\n+0\n )%0A    %7D%0A%0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-40-57",
+            "content": "@@ -251,33 +251,33 @@\n     fmt.Println(\n-0\n+1\n )%0A    %7D else if \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-41-03",
+            "content": "@@ -226,22 +226,22 @@\n = 1 && d\n-2\n+1\n  %25 d\n-1\n+2\n  == 0%7B%0A \n@@ -291,14 +291,14 @@\n && d\n-2\n+1\n  %25 d\n-1\n+2\n  != \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-42-04",
+            "content": "@@ -222,30 +222,30 @@\n  p == 1 && d\n-1\n+2\n  %25 d\n-2\n+1\n  == 0%7B%0A     \n@@ -283,30 +283,30 @@\n  p == 1 && d\n-1\n+2\n  %25 d\n-2\n+1\n  != 0 %7B%0A    \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-42-21",
+            "content": "@@ -97,36 +97,30 @@\n f p == 0 && \n-(\n d1\n- + d2)\n  %25 \n+d\n 2 == 0 %7B%0A   \n@@ -163,28 +163,22 @@\n == 0 && \n-(\n d1\n- + d2)\n  %25 \n+d\n 2 != 0 %7B\n@@ -229,21 +229,15 @@\n  && \n-(\n d1 \n-+\n+%25\n  d2\n-) %25 2\n  == \n@@ -290,17 +290,15 @@\n  && \n-(\n d1 %25 d2\n-)\n  != \n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-44-15",
+            "content": "@@ -304,25 +304,25 @@\n == 1 && (d1 \n-+\n+%25\n  d2) != 0 %7B%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-44-26",
+            "content": "@@ -92,66 +92,42 @@\n     \n-soma := d1 + d2%0A%0A    if soma%252 == 0 %7B%0A        if p\n+if p == 0 && (d1 + d2) %25 2\n  == 0 %7B%0A\n     \n@@ -114,36 +114,32 @@\n  d2) %25 2 == 0 %7B%0A\n-    \n         fmt.Prin\n@@ -141,28 +141,24 @@\n .Println(0)%0A\n-    \n     %7D else %7B\n@@ -152,38 +152,66 @@\n %0A    %7D else \n-%7B%0A      \n+if p == 0 && (d1 + d2) %25 2 != 0 %7B%0A\n       \n+  \n fmt.Println(\n@@ -221,51 +221,48 @@\n     \n-    %7D%0A    %7D else %7B%0A        if p\n+%7D else if p == 1 && (d1 + d2) %25 2\n  == 0\n- \n %7B%0A\n-    \n     \n@@ -281,32 +281,52 @@\n tln(\n-1\n+0\n )%0A    \n-  \n-  \n %7D else \n-%7B%0A    \n+if p == 1 && (d1 + d2) != 0 %7B%0A\n     \n@@ -345,26 +345,16 @@\n tln(\n-0\n+1\n )%0A    \n-    %7D%0A    \n %7D\n+%0A\n %0A%7D%0A\n-%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-20_15-49-15",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var p, d1, d2 int\n\n    fmt.Scan(&p, &d1, &d2)\n\n    soma := d1 + d2\n\n    if soma%2 == 0 {\n        if p == 0 {\n            fmt.Println(0)\n        } else {\n            fmt.Println(1)\n        }\n    } else {\n        if p == 0 {\n            fmt.Println(1)\n        } else {\n            fmt.Println(0)\n        }\n    }\n}\n\n",
+            "lines": "24"
+        }
+    ]
+}

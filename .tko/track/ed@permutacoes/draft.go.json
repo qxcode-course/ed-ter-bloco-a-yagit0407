@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_11-33-48",
+            "content": "@@ -422,80 +422,8 @@\n ult)\n-%0A%0A        current = current%5B:len(current) - 1%5D%0A%0A        used %5Bi%5D = false\n %0A   \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-05-20_13-01-48",
+            "content": "@@ -522,176 +522,8 @@\n     \n-str := %22abc%22%0A    chars := %5B%5Dbyte(str)%0A%0A    used := make(%5B%5Dbool, len(chars))%0A%0A    var result %5B%5Dstring%0A%0A    backtrack(chars, used, %5B%5Dbyte %7B%7D, &result)%0A%0A    fmt.Printf(%22%22)\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-05-20_15-05-55",
+            "content": "@@ -688,54 +688,10 @@\n tf(%22\n-Total de permuta%C3%A7%C3%B5es: %25d%5Cn%22, len(result))%0A    \n+%22)\n %0A%0A%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-05-20_15-06-52",
+            "content": "@@ -734,63 +734,8 @@\n     \n-for _, p := range result %7B%0A        fmt.Println(p)%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-20_15-07-17",
+            "content": "@@ -522,98 +522,20 @@\n     \n-%0A    var str string%0A%0A    _, err : fmt.Scan(&str)%0A    if err != nil %7B%0A        return%0A    %7D%0A\n+str := %22abc%22\n %0A   \n@@ -594,16 +594,17 @@\n chars))%0A\n+%0A\n     var \n@@ -653,16 +653,17 @@\n , %5B%5Dbyte\n+ \n %7B%7D, &res\n@@ -664,24 +664,82 @@\n , &result)%0A%0A\n+    fmt.Printf(%22Total de permuta%C3%A7%C3%B5es: %25d%5Cn%22, len(result))%0A\n     for _, p\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-20_15-11-48",
+            "content": "@@ -551,17 +551,16 @@\n _, err :\n-=\n  fmt.Sca\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-05-20_15-12-46",
+            "content": "@@ -640,90 +640,8 @@\n r)%0A%0A\n-    sort.Slice(chars, func(i, j int) bool %7B%0A%09%09return chars%5Bi%5D %3C chars%5Bj%5D%0A%09%7D)%0A    %0A\n     \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-05-20_15-13-55",
+            "content": "@@ -17,41 +17,13 @@\n ort \n-(%0A        %22fmt%22%0A        %22sort%22%0A)%0A\n+%22fmt%22\n %0A%0Afu\n@@ -713,16 +713,20 @@\n %5Bj%5D%0A%09%7D)%0A\n+    \n %0A    use\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-20_15-14-28",
+            "content": "package main\nimport (\n        \"fmt\"\n        \"sort\"\n)\n\n\nfunc backtrack(chars []byte, used [] bool, current [] byte, result *[]string) {\n    if len(current) == len(chars) {\n        *result = append(*result, string(current))\n        return\n    }\n\n    for i := 0; i < len(chars); i++ {\n\n        if used[i] {\n            continue\n        }\n\n        used[i] = true\n\n        current = append (current, chars[i])\n\n        backtrack(chars, used, current, result)\n\n        current = current[:len(current) - 1]\n\n        used [i] = false\n    }\n}\n\nfunc main() {\n    \n    var str string\n\n    _, err := fmt.Scan(&str)\n    if err != nil {\n        return\n    }\n\n    chars := []byte(str)\n\n    sort.Slice(chars, func(i, j int) bool {\n\t\treturn chars[i] < chars[j]\n\t})\n\n    used := make([]bool, len(chars))\n    var result []string\n\n    backtrack(chars, used, []byte{}, &result)\n\n    for _, p := range result {\n        fmt.Println(p)\n    }\n\n}\n",
+            "lines": "56"
+        }
+    ]
+}
