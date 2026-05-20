@@ -1,0 +1,41 @@
+2026-05-20 08:26:43, SELF, v:1, k:ed@manipulacao, self:1, rate:100
+2026-05-20 08:27:06, SELF, v:1, k:ed@setbuild, self:1, rate:100
+2026-05-20 08:27:18, SELF, v:1, k:ed@prin_list1, self:1
+2026-05-20 08:27:24, SELF, v:1, k:ed@editorint, self:1
+2026-05-20 08:27:46, SELF, v:1, k:ed@subset_sum, self:1
+2026-05-20 08:29:14, SELF, v:1, k:ed@magicsearch, self:1, rate:100
+2026-05-20 08:29:21, SELF, v:1, k:ed@iterador, self:1
+2026-05-20 08:29:26, MOVE, v:1, k:ed@iterador, mode:DOWN
+2026-05-20 08:29:27, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-05-20 08:30:35, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33, size:82
+2026-05-20 08:31:55, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33, size:84
+2026-05-20 08:31:56, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33
+2026-05-20 08:29:26, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-20 08:29:26, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-20 08:29:26, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-20 08:33:00, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-20 08:38:16, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-05-20 08:39:02, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:123
+2026-05-20 08:39:34, EXEC, v:1, k:ed@iterador, mode:FULL, rate:66, size:136
+2026-05-20 08:39:42, EXEC, v:1, k:ed@iterador, mode:FULL, rate:100, size:136
+2026-05-20 08:39:43, MOVE, v:1, k:ed@iterador, mode:BACK
+2026-05-20 08:40:03, SELF, v:1, k:ed@subset_sum, self:1
+2026-05-20 08:40:09, MOVE, v:1, k:ed@subset_sum, mode:DOWN
+2026-05-20 08:40:09, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-05-20 08:40:10, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:0, size:5
+2026-05-20 08:39:41, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-20 08:40:45, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 08:40:09, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 08:43:05, MOVE, v:1, k:ed@subset_sum, mode:EDIT
+2026-05-20 08:45:46, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:100, size:36
+2026-05-20 08:45:49, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-05-20 08:45:54, SELF, v:1, k:ed@subset_sum, self:1, rate:100
+2026-05-20 08:46:22, SELF, v:1, k:ed@fractais_png, self:1
+2026-05-20 08:46:34, SELF, v:1, k:ed@+recursao, self:1
+2026-05-20 08:47:07, SELF, v:1, k:fup@abs, self:1, rate:100
+2026-05-20 08:47:11, SELF, v:1, k:fup@max, self:1, rate:100
+2026-05-20 08:47:13, SELF, v:1, k:fup@ou, self:1, rate:100
+2026-05-20 08:47:16, SELF, v:1, k:fup@positivo, self:1, rate:100
+2026-05-20 08:47:18, SELF, v:1, k:fup@multiplo, self:1, rate:100
+2026-05-20 08:47:20, SELF, v:1, k:fup@calc, self:1, rate:100
+2026-05-20 08:47:23, SELF, v:1, k:fup@guarda, self:1
