@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-21_22-22-17",
+            "content": "@@ -17,861 +17,14 @@\n ort \n-(%0A%09\n %22fmt%22%0A\n-%09%22math%22%0A)%0A%0Afunc eValido(matriz %5B%5D%5B%5Drune, lin, col int, num rune) bool %7B%0A    dim := len(matriz)%0A%0A    for i := 0; i %3C dim; i++ %7B%0A        if matriz%5Blin%5D%5Bi%5D == num %7C%7C matriz%5Bi%5D%5Bcol%5D == num %7B%0A            return false%0A        %7D%0A    %7D%0A%0A    regiaoSize := int(math.Sqrt(float64(dim)))%0A    startLin := (lin / regiaoSize) * regiaoSize%0A    startCol := (col / regiaoSize) * regiaoSize%0A%0A    for i := 0; i %3C regiaoSize; i++ %7B%0A        for j := 0; j %3C regiaoSize; j++ %7B%0A            if matriz%5BstartLin + i%5D%5BstartCol + j%5D == num %7B%0A                return false%0A            %7D%0A        %7D%0A    %7D%0A    return true%0A%7D%0A%0Afunc resolver(matriz %5B%5D%5B%5Drune, index int) bool %7B%0A    dim := len(matriz)%0A%0A    if index == dim*dim %7B%0A        return true%0A    %7D%0A%0A    l := index / dim%0A    c := index %25 dim%0A%0A    if matriz%5Bl%5D%5Bc%5D != '.' %7B%0A        return resolver(matriz, index + 1)%0A    %7D%0A    %0A%7D%0A\n func\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-21_22-36-58",
+            "content": "@@ -863,283 +863,12 @@\n   %7D%0A\n-%0A\n     \n-for num := '1'; num %3C '1' + rune (dim); num++ %7B%0A        if eValido(matriz, l, c, num) %7B%0A            matriz%5Bl%5D%5Bc%5D = num%0A%0A            if resolver(matriz, index + 1) %7B%0A                return true%0A            %7D%0A            matriz%5Bl%5D%5Bc%5D = '.'%0A        %7D%0A    %7D%0A    return false\n %0A%7D%0Af\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-21_22-39-26",
+            "content": "@@ -1159,89 +1159,35 @@\n     \n-var n int%0A%0A    if _, err := fmt.Scan(&n); err != nil %7B%0A        return%0A    %7D%0A%0A    %0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-21_22-40-22",
+            "content": "@@ -1240,155 +1240,8 @@\n     \n-matriz := make(%5B%5D%5B%5Drune, n)%0A%0A    for i := 0; i %3C n; i++ %7B%0A        var linha string%0A        fmt.Scan(&linha)%0A        matriz%5Bi%5D = %5B%5Drune(linha)%0A    %7D\n %0A%0A%7D%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-21_22-41-49",
+            "content": "@@ -1388,127 +1388,7 @@\n   %7D%0A\n-    if resolver(matriz, 0) %7B%0A        for i := 0; i %3C n; i++ %7B%0A            fmt.Println(string(matriz%5Bi%5D))%0A        %7D%0A    %7D\n %0A%7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-21_22-42-40",
+            "content": "package main\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc eValido(matriz [][]rune, lin, col int, num rune) bool {\n    dim := len(matriz)\n\n    for i := 0; i < dim; i++ {\n        if matriz[lin][i] == num || matriz[i][col] == num {\n            return false\n        }\n    }\n\n    regiaoSize := int(math.Sqrt(float64(dim)))\n    startLin := (lin / regiaoSize) * regiaoSize\n    startCol := (col / regiaoSize) * regiaoSize\n\n    for i := 0; i < regiaoSize; i++ {\n        for j := 0; j < regiaoSize; j++ {\n            if matriz[startLin + i][startCol + j] == num {\n                return false\n            }\n        }\n    }\n    return true\n}\n\nfunc resolver(matriz [][]rune, index int) bool {\n    dim := len(matriz)\n\n    if index == dim*dim {\n        return true\n    }\n\n    l := index / dim\n    c := index % dim\n\n    if matriz[l][c] != '.' {\n        return resolver(matriz, index + 1)\n    }\n\n    for num := '1'; num < '1' + rune (dim); num++ {\n        if eValido(matriz, l, c, num) {\n            matriz[l][c] = num\n\n            if resolver(matriz, index + 1) {\n                return true\n            }\n            matriz[l][c] = '.'\n        }\n    }\n    return false\n}\nfunc main() {\n    var n int\n\n    if _, err := fmt.Scan(&n); err != nil {\n        return\n    }\n\n    matriz := make([][]rune, n)\n\n    for i := 0; i < n; i++ {\n        var linha string\n        fmt.Scan(&linha)\n        matriz[i] = []rune(linha)\n    }\n    if resolver(matriz, 0) {\n        for i := 0; i < n; i++ {\n            fmt.Println(string(matriz[i]))\n        }\n    }\n}\n",
+            "lines": "75"
+        }
+    ]
+}

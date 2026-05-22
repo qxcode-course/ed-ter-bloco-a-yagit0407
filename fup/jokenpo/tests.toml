@@ -1,0 +1,71 @@
+[[tests]]
+input = '''
+R
+P
+'''
+output = '''
+jog2
+'''
+
+[[tests]]
+input = '''
+P
+P
+'''
+output = '''
+empate
+'''
+
+[[tests]]
+input = '''
+S
+P
+'''
+output = '''
+jog1
+'''
+
+[[tests]]
+input = '''
+S
+S
+'''
+output = '''
+empate
+'''
+
+[[tests]]
+input = '''
+R
+S
+'''
+output = '''
+jog1
+'''
+
+[[tests]]
+input = '''
+S
+R
+'''
+output = '''
+jog2
+'''
+
+[[tests]]
+input = '''
+R
+R
+'''
+output = '''
+empate
+'''
+
+[[tests]]
+input = '''
+P
+R
+'''
+output = '''
+jog1
+'''

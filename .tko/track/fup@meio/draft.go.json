@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-21_23-12-10",
+            "content": "@@ -91,20 +91,19 @@\n  if \n-(\n a \n-%3E\n+%3C\n  b && a \n %3C c)\n@@ -102,32 +102,11 @@\n & a \n-%3C c) %7C%7C (a %3E c && a %3C b)\n+%3E c\n  %7B%0A \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-21_23-13-37",
+            "content": "@@ -167,20 +167,19 @@\n  if \n-(\n b \n-%3E\n+%3C\n  a && b \n %3C c)\n@@ -178,32 +178,11 @@\n & b \n-%3C c) %7C%7C (b %3E c && b %3C a)\n+%3E c\n  %7B%0A \n@@ -214,16 +214,33 @@\n  %7D else \n+if c %3C a && c %3E b\n  %7B%0A     \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-21_23-14-25",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a, b ,c int\n\n    fmt.Scan(&a, &b, &c)\n\n    if (a > b && a < c) || (a > c && a < b) {\n        fmt.Println(a)\n    } else if (b > a && b < c) || (b > c && b < a) {\n        fmt.Println(b)\n    } else  {\n        fmt.Println(c)\n    }\n}\n",
+            "lines": "15"
+        }
+    ]
+}

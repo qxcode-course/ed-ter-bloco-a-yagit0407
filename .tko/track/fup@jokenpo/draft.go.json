@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-21_23-19-28",
+            "content": "@@ -190,60 +190,8 @@\n 2%22)%0A\n-    %7D else if a == b%7B%0A        fmt.Println(%22empate%22)%0A\n     \n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-21_23-19-59",
+            "content": "@@ -129,17 +129,17 @@\n & b == %22\n-S\n+T\n %22 %7C%7C a =\n@@ -141,17 +141,17 @@\n %7C a == %22\n-S\n+T\n %22 && b =\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-21_23-20-24",
+            "content": "@@ -132,16 +132,39 @@\n  == %22S%22 \n+%7C%7C a == %22S%22 && b == %22P%22\n  %7B%0A     \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-21_23-21-32",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var a, b\n@@ -53,18 +53,25 @@\n  string%0A\n-%0A%09\n+    %0A    \n fmt.Scan\n@@ -80,17 +80,20 @@\n a, &b)%0A%0A\n-%09\n+    \n if a == \n@@ -136,36 +136,19 @@\n %22S%22 \n-%7C%7C a == %22S%22 && b == %22R%22 %7B%0A%09%09\n+ %7B%0A        \n fmt.\n@@ -163,17 +163,20 @@\n %22jog2%22)%0A\n-%09\n+    \n %7D else i\n@@ -183,21 +183,26 @@\n f a == b\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -215,17 +215,20 @@\n mpate%22)%0A\n-%09\n+    \n %7D else %7B\n@@ -232,10 +232,16 @@\n e %7B%0A\n-%09%09\n+        \n fmt.\n@@ -260,9 +260,12 @@\n 1%22)%0A\n-%09\n+    \n %7D%0A%7D%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-21_23-21-53",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar a, b string\n\n\tfmt.Scan(&a, &b)\n\n\tif a == \"R\" && b == \"P\" || a == \"P\" && b == \"S\" || a == \"S\" && b == \"R\" {\n\t\tfmt.Println(\"jog2\")\n\t} else if a == b {\n\t\tfmt.Println(\"empate\")\n\t} else {\n\t\tfmt.Println(\"jog1\")\n\t}\n}\n",
+            "lines": "17"
+        }
+    ]
+}

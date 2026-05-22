@@ -1,0 +1,80 @@
+[[tests]]
+input = '''
+mario
+4
+'''
+output = '''
+mario eh crianca
+'''
+
+[[tests]]
+input = '''
+jose
+65
+'''
+output = '''
+jose eh idoso
+'''
+
+[[tests]]
+input = '''
+mario
+1
+'''
+output = '''
+mario eh crianca
+'''
+
+[[tests]]
+input = '''
+mariana
+12
+'''
+output = '''
+mariana eh jovem
+'''
+
+[[tests]]
+input = '''
+maria
+17
+'''
+output = '''
+maria eh jovem
+'''
+
+[[tests]]
+input = '''
+marina
+18
+'''
+output = '''
+marina eh adulto
+'''
+
+[[tests]]
+input = '''
+marion
+64
+'''
+output = '''
+marion eh adulto
+'''
+
+[[tests]]
+input = '''
+marilene
+65
+'''
+output = '''
+marilene eh idoso
+'''
+
+[[tests]]
+input = '''
+maridracula
+10000
+'''
+output = '''
+maridracula eh mumia
+'''

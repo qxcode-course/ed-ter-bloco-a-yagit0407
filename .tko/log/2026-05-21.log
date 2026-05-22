@@ -1,3 +1,71 @@
 2026-05-21 21:36:07, MOVE, v:1, k:ed@pintura, mode:PICK
 2026-05-21 22:11:59, EXEC, v:1, k:ed@pintura, mode:FULL, rate:100
 2026-05-21 22:12:02, MOVE, v:1, k:ed@pintura, mode:BACK
+2026-05-21 22:19:54, MOVE, v:1, k:ed@sudoku, mode:DOWN
+2026-05-21 22:19:56, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-05-21 22:19:54, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:19:54, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:22:17, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:5
+2026-05-21 22:24:58, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:30:06, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:34:10, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:36:58, EXEC, v:1, k:ed@sudoku, mode:FULL, size:47, fail:COMP
+2026-05-21 22:36:59, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-05-21 22:39:24, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-05-21 22:39:26, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:58
+2026-05-21 22:39:26, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-05-21 22:39:29, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-05-21 22:40:06, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:40:22, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:65
+2026-05-21 22:41:49, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:0, size:71
+2026-05-21 22:42:40, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:100, size:75
+2026-05-21 22:42:48, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-05-21 22:43:18, MOVE, v:1, k:ed@sudoku, mode:PICK
+2026-05-21 22:42:36, MOVE, v:1, k:ed@sudoku, mode:EDIT
+2026-05-21 22:50:23, EXEC, v:1, k:ed@sudoku, mode:FULL, rate:100
+2026-05-21 22:50:23, MOVE, v:1, k:ed@sudoku, mode:BACK
+2026-05-21 22:50:33, SELF, v:1, k:ed@sudoku, self:1, rate:100
+2026-05-21 22:52:11, MOVE, v:1, k:fup@mumia, mode:DOWN
+2026-05-21 22:52:13, MOVE, v:1, k:fup@mumia, mode:PICK
+2026-05-21 22:52:11, MOVE, v:1, k:fup@mumia, mode:EDIT
+2026-05-21 22:52:11, MOVE, v:1, k:fup@mumia, mode:EDIT
+2026-05-21 22:55:07, MOVE, v:1, k:fup@mumia, mode:EDIT
+2026-05-21 22:55:35, EXEC, v:1, k:fup@mumia, mode:FULL, rate:0, size:20
+2026-05-21 22:57:07, EXEC, v:1, k:fup@mumia, mode:FULL, rate:0, size:20
+2026-05-21 22:57:29, EXEC, v:1, k:fup@mumia, mode:FULL, rate:0, size:20
+2026-05-21 22:57:51, EXEC, v:1, k:fup@mumia, mode:FULL, rate:0, size:20
+2026-05-21 22:58:34, EXEC, v:1, k:fup@mumia, mode:FULL, rate:22, size:20
+2026-05-21 22:58:43, EXEC, v:1, k:fup@mumia, mode:FULL, rate:44, size:20
+2026-05-21 22:58:52, EXEC, v:1, k:fup@mumia, mode:FULL, rate:77, size:20
+2026-05-21 22:59:02, EXEC, v:1, k:fup@mumia, mode:FULL, rate:100, size:20
+2026-05-21 22:59:08, MOVE, v:1, k:fup@mumia, mode:BACK
+2026-05-21 22:59:14, SELF, v:1, k:fup@mumia, self:1, rate:100
+2026-05-21 22:59:45, MOVE, v:1, k:fup@meio, mode:DOWN
+2026-05-21 22:59:46, MOVE, v:1, k:fup@meio, mode:PICK
+2026-05-21 22:59:00, MOVE, v:1, k:fup@mumia, mode:EDIT
+2026-05-21 22:59:45, MOVE, v:1, k:fup@meio, mode:EDIT
+2026-05-21 22:59:45, MOVE, v:1, k:fup@meio, mode:EDIT
+2026-05-21 22:59:45, MOVE, v:1, k:fup@meio, mode:EDIT
+2026-05-21 22:59:52, MOVE, v:1, k:fup@mumia, mode:EDIT
+2026-05-21 23:12:10, EXEC, v:1, k:fup@meio, mode:FULL, rate:40, size:15
+2026-05-21 23:12:21, EXEC, v:1, k:fup@meio, mode:FULL, rate:40
+2026-05-21 23:12:24, EXEC, v:1, k:fup@meio, mode:FULL, rate:40
+2026-05-21 23:13:37, EXEC, v:1, k:fup@meio, mode:FULL, rate:70, size:15
+2026-05-21 23:14:25, EXEC, v:1, k:fup@meio, mode:FULL, rate:100, size:15
+2026-05-21 23:14:29, MOVE, v:1, k:fup@meio, mode:BACK
+2026-05-21 23:14:33, SELF, v:1, k:fup@meio, self:1, rate:100
+2026-05-21 23:15:00, MOVE, v:1, k:fup@jokenpo, mode:DOWN
+2026-05-21 23:15:01, MOVE, v:1, k:fup@jokenpo, mode:PICK
+2026-05-21 23:14:24, MOVE, v:1, k:fup@meio, mode:EDIT
+2026-05-21 23:15:00, MOVE, v:1, k:fup@jokenpo, mode:EDIT
+2026-05-21 23:15:00, MOVE, v:1, k:fup@jokenpo, mode:EDIT
+2026-05-21 23:15:00, MOVE, v:1, k:fup@jokenpo, mode:EDIT
+2026-05-21 23:19:28, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:50, size:13
+2026-05-21 23:19:59, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:50, size:15
+2026-05-21 23:19:58, MOVE, v:1, k:fup@jokenpo, mode:EDIT
+2026-05-21 23:20:24, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:75, size:15
+2026-05-21 23:21:02, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:75
+2026-05-21 23:21:32, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:87, size:15
+2026-05-21 23:21:53, EXEC, v:1, k:fup@jokenpo, mode:FULL, rate:100, size:17
+2026-05-21 23:21:54, MOVE, v:1, k:fup@jokenpo, mode:BACK
+2026-05-21 23:22:05, SELF, v:1, k:fup@jokenpo, self:1, rate:100
