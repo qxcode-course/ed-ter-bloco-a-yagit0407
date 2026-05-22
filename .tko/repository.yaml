@@ -25,21 +25,23 @@ sources:
   writeable: false
   quests: null
 expanded:
-- fup@for_extra
-- ed@backtrack
-- fup@rec
 - fup@dict
-- fup@list
-- fup@struct
 - fup@string
+- fup@struct
+- ed@backtrack
+- fup@list
+- fup@rec
 - fup@mat
 - fup@if1
+- ed@list
+- ed@map_set
+- fup@for_extra
 flags:
   inbox: inbox
-  panel: graph
-  show_panel: 'false'
+  panel: skills
+  show_panel: 'true'
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@map_set
-selected_index: 1
+selected: ed@prin_list1
+selected_index: 3

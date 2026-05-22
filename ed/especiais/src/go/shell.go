@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -14,53 +15,163 @@ type Pair struct {
 }
 
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	counts := make(map[int]int)
+	for _, val := range vet {
+		absVal := val
+		if val < 0 {
+			absVal = -val
+		}
+		counts[absVal]++
+	} 
+	var keys []int
+	for k := range counts {
+		keys = append(keys, k)
+	}
+	sort.Ints(keys)
+
+	var pairs []Pair
+	
+	for _, k := range keys {
+		pairs = append(pairs, Pair{One: k, Two: counts[k]})
+	}
+	return pairs
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len(vet) == 0 {
+		return nil
+	}
+	var res []Pair
+	currentVal := vet[0]
+	count := 1
+
+	for i := 1 ; i < len(vet); i++ {
+		if vet[i] == currentVal {
+			count++
+		} else {
+			res = append(res, Pair {One: currentVal, Two: count})
+			currentVal = vet[i]
+			count = 1
+		}
+		
+	}
+	res = append(res, Pair{One: currentVal, Two: count})
+	return res
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	for i, val := range vet {
+		if val > 0 {
+			hasWomanNeighbor := false
+			if i > 0 && vet[i - 1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			} 
+			if hasWomanNeighbor {
+				res[i] = 1
+			} else {
+				res[i] = 0
+			} 
+		} else {
+			res[i] = 0
+		}
+	}
+	return res
+}
+	func alone(vet []int) []int {
+	res := make([]int, len(vet))
+	for i, val := range vet {
+		if val > 0 {
+			hasWomanNeighbor := false
+			if i > 0 && vet[i-1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if !hasWomanNeighbor {
+				res[i] = 1
+			} else {
+				res[i] = 0
+			}
+		} else {
+			res[i] = 0
+		}
+	}
+	return res
 }
 
-func alone(vet []int) []int {
-	_ = vet
-	return nil
-}
+
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+	count := 0
+	available := make(map[int]int)
+
+	for _, val := range vet {
+		
+		partner := -val
+
+		if available[partner] > 0 {
+			count++
+			available[partner]-- 
+		} else {
+			
+			available[val]++
+		}
+	}
+	return count
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
-	_ = vet
-	_ = seq
-	_ = pos
-	return false
+	if pos+len(seq) > len(vet) {
+		return false
+	}
+	for i := 0; i < len(seq); i++ {
+		if vet[pos+i] != seq[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func subseq(vet []int, seq []int) int {
-	_ = vet
-	_ = seq
+	if len(seq) == 0 {
+		return 0
+	}
+	for i := 0; i <= len(vet)-len(seq); i++ {
+		if hasSubseq(vet, seq, i) {
+			return i
+		}
+	}
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	_ = posList
-	return nil
+	toRemove := make(map[int]bool)
+	for _, pos := range posList {
+		toRemove[pos] = true
+	}
+
+	var res []int
+	for i, val := range vet {
+		if !toRemove[i] {
+			res = append(res, val)
+		}
+	}
+	return res
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	_ = value
-	return nil
+	var res []int
+	for _, val := range vet {
+		if val != value {
+			res = append(res, val)
+		}
+	}
+	return res
 }
 
 func main() {

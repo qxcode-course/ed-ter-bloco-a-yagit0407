@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-22_14-54-12",
+            "content": "@@ -45,30 +45,8 @@\n mt%22%0A\n-%09%22strings%22%0A%09%22strconv%22%0A\n )%0A%0A/\n@@ -153,388 +153,17 @@\n  %7B%0A%09\n-var sb strings.Builder%0A%09sb.WriteString(%22%5B%22)%0A%09curr := l.Front()%0A%0A%09for curr != nil %7B%0A%09%09val := curr.Value.(int)%0A%09%09if curr == sword %7B%0A%09%09%09if val %3E 0 %7B%0A%09%09%09%09sb.WriteString(%22 %22 + strconv.Itoa(val) + %22%3E%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09sb.WriteString(%22 %22 + strconv.Itoa(val))%0A%09%09%09%7D%0A%09%09%7D else %7B%0A%09%09%09sb.WriteString(%22 %22 + strconv.Itoa(val))%0A%09%09%7D%0A%09%09curr = curr.Next()%0A%09%7D%0A%09sb.WriteString(%22 %5D%22)%0A%09return sb.String()\n+return %22%22\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-22_14-57-42",
+            "content": "@@ -656,69 +656,18 @@\n  %7B%0A%09\n-if it.Next() == nil %7B%0A%09%09return l.Front()%0A%09%7D%0A%09return it.Next()\n+return nil\n %0A%7D%0A%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-22_14-58-55",
+            "content": "@@ -816,66 +816,22 @@\n  %7B%0A%09\n-if it.Prev() == nil %7B%0A%09%09return l.Back()%0A%09%7D%0A%09return it.Prev\n+return l.Front\n ()%0A%7D\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-22_14-59-36",
+            "content": "@@ -50,27 +50,76 @@\n %22str\n-conv\n+ings\n %22%0A%09%22str\n-ings%22%0A)%0A\n+conv%22%0A)%0A%0A// mostra a lista com o elemento sword destacado\n %0Afun\n@@ -400,17 +400,16 @@\n tring(%22 \n-%3C\n %22 + strc\n@@ -551,24 +551,62 @@\n String()%0A%7D%0A%0A\n+// move para frente na lista circular%0A\n func Next(l \n@@ -713,24 +713,60 @@\n t.Next()%0A%7D%0A%0A\n+// move para tras na lista circular%0A\n func Prev(l \n@@ -1065,33 +1065,24 @@\n for \n-i := 0; i %3C chosen-1; i++\n+range chosen - 1\n  %7B%0A%09\n@@ -1117,30 +1117,21 @@\n for \n-i := 0; i %3C qtd-1; i++\n+range qtd - 1\n  %7B%0A%09\n@@ -1192,28 +1192,25 @@\n  0 %7B%0A%09%09%09\n-to\n+l.\n Remove\n- := \n+(\n Next(l, \n@@ -1207,32 +1207,33 @@\n e(Next(l, sword)\n+)\n %0A%09%09%09sword = Next\n@@ -1240,38 +1240,13 @@\n (l, \n-toRemove)%0A%09%09%09l.Remove(toRemove\n+sword\n )%0A%09%09\n@@ -1261,20 +1261,17 @@\n %0A%09%09%09\n-to\n+l.\n Remove\n- := \n+(\n Prev\n@@ -1280,16 +1280,17 @@\n , sword)\n+)\n %0A%09%09%09swor\n@@ -1305,38 +1305,13 @@\n (l, \n-toRemove)%0A%09%09%09l.Remove(toRemove\n+sword\n )%0A%09%09\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-22_15-00-58",
+            "content": "package main\n\nimport (\n\t\"container/list\"\n\t\"fmt\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc ToStr(l *list.List, sword *list.Element) string {\n\tvar sb strings.Builder\n\tsb.WriteString(\"[\")\n\tcurr := l.Front()\n\n\tfor curr != nil {\n\t\tval := curr.Value.(int)\n\t\tif curr == sword {\n\t\t\tif val > 0 {\n\t\t\t\tsb.WriteString(\" \" + strconv.Itoa(val) + \">\")\n\t\t\t} else {\n\t\t\t\tsb.WriteString(\" <\" + strconv.Itoa(val))\n\t\t\t}\n\t\t} else {\n\t\t\tsb.WriteString(\" \" + strconv.Itoa(val))\n\t\t}\n\t\tcurr = curr.Next()\n\t}\n\tsb.WriteString(\" ]\")\n\treturn sb.String()\n}\n\nfunc Next(l *list.List, it *list.Element) *list.Element {\n\tif it.Next() == nil {\n\t\treturn l.Front()\n\t}\n\treturn it.Next()\n}\n\nfunc Prev(l *list.List, it *list.Element) *list.Element {\n\tif it.Prev() == nil {\n\t\treturn l.Back()\n\t}\n\treturn it.Prev()\n}\n\nfunc main() {\n\tvar qtd, chosen, fase int\n\tfmt.Scan(&qtd, &chosen, &fase)\n\tl := list.New()\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i * fase)\n\t\tfase = -fase\n\t}\n\tsword := l.Front()\n\tfor i := 0; i < chosen-1; i++ {\n\t\tsword = Next(l, sword)\n\t}\n\tfor i := 0; i < qtd-1; i++ {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tif sword.Value.(int) > 0 {\n\t\t\ttoRemove := Next(l, sword)\n\t\t\tsword = Next(l, toRemove)\n\t\t\tl.Remove(toRemove)\n\t\t} else {\n\t\t\ttoRemove := Prev(l, sword)\n\t\t\tsword = Prev(l, toRemove)\n\t\t\tl.Remove(toRemove)\n\t\t}\n\t}\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "71"
+        }
+    ]
+}
