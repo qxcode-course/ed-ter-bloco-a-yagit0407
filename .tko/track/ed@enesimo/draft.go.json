@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_13-02-35",
+            "content": "@@ -542,62 +542,35 @@\n     \n-var n int%0A%0A    fmt.Scan(&n)%0A    fmt.Println(ehPrimo(n)\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-05-23_13-03-34",
+            "content": "@@ -582,26 +582,25 @@\n Println(\n-nt\n+e\n hPrimo(n\n , 2))%0A%7D%0A\n@@ -595,11 +595,8 @@\n mo(n\n-, 2\n ))%0A%7D\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-23_13-04-52",
+            "content": "package main\nimport (\n    \"fmt\"\n    \n)\n\nfunc temDivisor(n, i int) bool {\n\tif i*i > n {\n\t\treturn false\n\t}\n\tif n%i == 0 {\n\t\treturn true\n\t}\n\treturn temDivisor(n, i+2)\n}\n\nfunc ehPrimo(n int) bool {\n    if n < 2 {\n        return false\n    } \n    if n == 2 {\n        return true\n    }\n     if n%2 == 0 {\n        return false\n    }\n    return !temDivisor(n, 3)\n}\n\nfunc nthPrimo(n, candidato int) int {\n    if ehPrimo(candidato) {\n        n--\n    }\n    if n == 0 {\n        return candidato\n    }\n    return nthPrimo(n, candidato+1)\n}\n\nfunc main() {\n    var n int\n\n    fmt.Scan(&n)\n    fmt.Println(nthPrimo(n, 2))\n}\n",
+            "lines": "45"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_13-20-04",
+            "content": "@@ -531,421 +531,53 @@\n )%0A%7D%0A\n-%0A\n func \n-printSlice(vet %5B%5Dint) %7B%0A    fmt.Print(%22%5B%22)%0A    for i, x := range vet %7B%0A        if i %3E 0 %7B%0A            fmt.Print(%22, %22)%0A        %7D%0A        fmt.Print(x)%0A    %7D%0A    fmt.Println(%22%5D%22)%0A%0A%7D%0Afunc main() %7B%0A    var n int%0A    if _, err := fmt.Scan(&n); err == nil %7B%0A        if n %3C= 0 %7B%0A            fmt.Println(%22%5B%5D%22)%0A            return %0A        %7D%0A        primos := gerarPrimos(n, 2, %5B%5Dint%7B%7D)%0A        printSlice(primos)%0A    %7D\n+main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-23_13-23-59",
+            "content": "package main\nimport \"fmt\"\n\nfunc temDivisor(n, i int) bool {\n\tif i*i > n {\n\t\treturn false\n\t}\n\tif n%i == 0 {\n\t\treturn true\n\t}\n\treturn temDivisor(n, i+2)\n}\n\nfunc ehPrimo(n int) bool {\n\tif n < 2 {\n\t\treturn false\n\t}\n\tif n == 2 {\n\t\treturn true\n\t}\n\tif n%2 == 0 {\n\t\treturn false\n\t}\n\treturn !temDivisor(n, 3)\n}\n\nfunc gerarPrimos(n, candidato int, vetor []int) []int {\n    if len(vetor) == n {\n        return vetor\n    }\n    if ehPrimo(candidato) {\n        vetor = append(vetor, candidato)\n    }\n    return gerarPrimos(n, candidato+1, vetor)\n}\n\nfunc printSlice(vet []int) {\n    fmt.Print(\"[\")\n    for i, x := range vet {\n        if i > 0 {\n            fmt.Print(\", \")\n        }\n        fmt.Print(x)\n    }\n    fmt.Println(\"]\")\n\n}\nfunc main() {\n    var n int\n    if _, err := fmt.Scan(&n); err == nil {\n        if n <= 0 {\n            fmt.Println(\"[]\")\n            return \n        }\n        primos := gerarPrimos(n, 2, []int{})\n        printSlice(primos)\n    }\n}\n",
+            "lines": "58"
+        }
+    ]
+}
