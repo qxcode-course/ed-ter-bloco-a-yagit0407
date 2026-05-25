@@ -1,0 +1,96 @@
+2026-05-25 02:00:58, MOVE, v:1, k:ed@binomiais, mode:PICK
+2026-05-25 02:04:55, MOVE, v:1, k:ed@binomiais, mode:EDIT
+2026-05-25 02:06:37, EXEC, v:1, k:ed@binomiais, mode:FULL, rate:100, size:24
+2026-05-25 02:06:39, MOVE, v:1, k:ed@binomiais, mode:BACK
+2026-05-25 02:06:42, SELF, v:1, k:ed@binomiais, self:1, rate:100
+2026-05-25 02:06:59, MOVE, v:1, k:ed@diagonal, mode:DOWN
+2026-05-25 02:06:59, MOVE, v:1, k:ed@diagonal, mode:PICK
+2026-05-25 02:06:36, MOVE, v:1, k:ed@binomiais, mode:EDIT
+2026-05-25 02:06:59, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 02:06:59, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 02:06:59, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 02:14:43, EXEC, v:1, k:ed@diagonal, mode:FULL, size:20, fail:COMP
+2026-05-25 02:14:50, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 02:14:59, EXEC, v:1, k:ed@diagonal, mode:FULL, size:21, fail:COMP
+2026-05-25 02:15:00, EXEC, v:1, k:ed@diagonal, mode:FULL, rate:100, size:21
+2026-05-25 02:15:03, MOVE, v:1, k:ed@diagonal, mode:BACK
+2026-05-25 02:15:07, SELF, v:1, k:ed@diagonal, self:1, rate:100
+2026-05-25 02:16:23, MOVE, v:1, k:ed@sufixos, mode:DOWN
+2026-05-25 02:16:23, MOVE, v:1, k:ed@sufixos, mode:PICK
+2026-05-25 02:14:59, MOVE, v:1, k:ed@diagonal, mode:EDIT
+2026-05-25 02:16:23, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 02:16:23, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 02:19:53, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 02:23:41, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0, size:15
+2026-05-25 02:23:45, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0
+2026-05-25 02:23:46, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:0
+2026-05-25 02:24:17, EXEC, v:1, k:ed@sufixos, mode:FULL, size:28, fail:COMP
+2026-05-25 02:24:18, EXEC, v:1, k:ed@sufixos, mode:FULL, fail:COMP
+2026-05-25 02:24:42, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100, size:20
+2026-05-25 02:24:40, MOVE, v:1, k:ed@sufixos, mode:EDIT
+2026-05-25 11:29:29, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100
+2026-05-25 11:29:29, MOVE, v:1, k:ed@sufixos, mode:BACK
+2026-05-25 11:29:39, SELF, v:1, k:ed@sufixos, self:1, rate:100
+2026-05-25 11:29:47, MOVE, v:1, k:ed@sufixos, mode:PICK
+2026-05-25 11:29:48, EXEC, v:1, k:ed@sufixos, mode:FULL, rate:100
+2026-05-25 11:29:49, MOVE, v:1, k:ed@sufixos, mode:BACK
+2026-05-25 18:07:10, MOVE, v:1, k:ed@controlz, mode:DOWN
+2026-05-25 18:07:11, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:07:10, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:07:10, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:07:10, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:13:41, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:18:07, EXEC, v:1, k:ed@controlz, mode:FULL, size:54, fail:COMP
+2026-05-25 18:18:40, EXEC, v:1, k:ed@controlz, mode:FULL, size:54, fail:COMP
+2026-05-25 18:18:40, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:18:58, EXEC, v:1, k:ed@controlz, mode:FULL, size:60, fail:COMP
+2026-05-25 18:19:25, EXEC, v:1, k:ed@controlz, mode:FULL, fail:COMP
+2026-05-25 18:20:10, EXEC, v:1, k:ed@controlz, mode:FULL, rate:6, size:38
+2026-05-25 18:20:28, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:20:46, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:21:55, EXEC, v:1, k:ed@controlz, mode:FULL, rate:6, size:45
+2026-05-25 18:22:33, EXEC, v:1, k:ed@controlz, mode:FULL, rate:6, size:45
+2026-05-25 18:23:05, EXEC, v:1, k:ed@controlz, mode:FULL, rate:6
+2026-05-25 18:23:06, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:23:12, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:22:32, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:26:24, EXEC, v:1, k:ed@controlz, mode:FULL, rate:6, size:49
+2026-05-25 18:26:43, EXEC, v:1, k:ed@controlz, mode:FULL, rate:40, size:55
+2026-05-25 18:27:14, EXEC, v:1, k:ed@controlz, mode:FULL, rate:40, size:57
+2026-05-25 18:27:14, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:27:19, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:27:20, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:27:38, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:28:41, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:28:42, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:28:43, EXEC, v:1, k:ed@controlz, mode:FULL, rate:40, size:62
+2026-05-25 18:28:29, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:28:45, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:28:55, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:29:03, EXEC, v:1, k:ed@controlz, mode:FULL, rate:40
+2026-05-25 18:30:11, EXEC, v:1, k:ed@controlz, mode:FULL, size:67, fail:COMP
+2026-05-25 18:30:44, EXEC, v:1, k:ed@controlz, mode:FULL, fail:COMP
+2026-05-25 18:31:01, EXEC, v:1, k:ed@controlz, mode:FULL, rate:46, size:58
+2026-05-25 18:33:37, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:34:40, EXEC, v:1, k:ed@controlz, mode:FULL, size:72, fail:COMP
+2026-05-25 18:34:40, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:34:54, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:37:30, EXEC, v:1, k:ed@controlz, mode:FULL, size:82, fail:COMP
+2026-05-25 18:38:02, EXEC, v:1, k:ed@controlz, mode:FULL, fail:COMP
+2026-05-25 18:38:03, EXEC, v:1, k:ed@controlz, mode:FULL, fail:COMP
+2026-05-25 18:38:35, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:44:51, EXEC, v:1, k:ed@controlz, mode:FULL, rate:80, size:108
+2026-05-25 18:44:56, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:45:57, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:45:58, EXEC, v:1, k:ed@controlz, mode:FULL, rate:80
+2026-05-25 18:48:04, EXEC, v:1, k:ed@controlz, mode:FULL, size:115, fail:COMP
+2026-05-25 18:48:05, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:48:29, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:48:43, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:50:26, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:50:28, MOVE, v:1, k:ed@controlz, mode:PICK
+2026-05-25 18:53:23, EXEC, v:1, k:ed@controlz, mode:FULL, size:133, fail:COMP
+2026-05-25 18:53:32, MOVE, v:1, k:ed@controlz, mode:EDIT
+2026-05-25 18:54:04, EXEC, v:1, k:ed@controlz, mode:FULL, rate:100, size:134
+2026-05-25 18:54:05, MOVE, v:1, k:ed@controlz, mode:BACK
+2026-05-25 18:54:15, SELF, v:1, k:ed@controlz, self:1, rate:100

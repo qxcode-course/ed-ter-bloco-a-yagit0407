@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_02-23-41",
+            "content": "@@ -1,569 +1,4 @@\n-Para resolver esse problema invertendo a ordem da impress%C3%A3o (do menor sufixo para o maior), o segredo est%C3%A1 em empilhar as chamadas recursivas antes de realizar a a%C3%A7%C3%A3o de imprimir.%0A%0AO exemplo %60countDownUp%60 fornecido no enunciado ilustra bem esse comportamento: quando colocamos o comando de impress%C3%A3o **ap%C3%B3s** a chamada recursiva, o computador guarda aquela linha na mem%C3%B3ria (pilha de execu%C3%A7%C3%A3o) e s%C3%B3 imprime quando a recurs%C3%A3o atinge o caso base e come%C3%A7a a voltar.%0A%0AAqui est%C3%A1 o c%C3%B3digo completo em Go, estruturado de forma recursiva e sem coment%C3%A1rios internos:%0A%0A%60%60%60go%0A\n pack\n@@ -10,26 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -53,17 +53,20 @@\n ring) %7B%0A\n-%09\n+    \n if len(s\n@@ -78,21 +78,33 @@\n 0 %7B%0A\n-%09%09return%0A%09%7D%0A%09\n+        return%0A    %7D%0A    \n impr\n@@ -122,17 +122,20 @@\n (s%5B1:%5D)%0A\n-%09\n+    \n fmt.Prin\n@@ -143,17 +143,16 @@\n ln(s)%0A%7D%0A\n-%0A\n func mai\n@@ -157,17 +157,20 @@\n ain() %7B%0A\n-%09\n+    \n var pala\n@@ -184,21 +184,11 @@\n ing%0A\n-%09if _, err :=\n+   \n  fmt\n@@ -197,17 +197,16 @@\n can(\n-&\n palavra)\n ; er\n@@ -205,25 +205,13 @@\n vra)\n-; err == nil %7B%0A%09%09\n+%0A    \n impr\n@@ -235,10 +235,6 @@\n ra)%0A\n-%09\n %7D%0A\n-%7D%0A%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-05-25_02-24-17",
+            "content": "@@ -1,8 +1,573 @@\n+Para resolver esse problema invertendo a ordem da impress%C3%A3o (do menor sufixo para o maior), o segredo est%C3%A1 em empilhar as chamadas recursivas antes de realizar a a%C3%A7%C3%A3o de imprimir.%0A%0AO exemplo %60countDownUp%60 fornecido no enunciado ilustra bem esse comportamento: quando colocamos o comando de impress%C3%A3o **ap%C3%B3s** a chamada recursiva, o computador guarda aquela linha na mem%C3%B3ria (pilha de execu%C3%A7%C3%A3o) e s%C3%B3 imprime quando a recurs%C3%A3o atinge o caso base e come%C3%A7a a voltar.%0A%0AAqui est%C3%A1 o c%C3%B3digo completo em Go, estruturado de forma recursiva e sem coment%C3%A1rios internos:%0A%0A%60%60%60go%0A\n package \n@@ -810,8 +810,9 @@\n a)%0A%09%7D%0A%7D%0A\n+%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-05-25_02-24-42",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc imprimirSufixos(s string) {\n\tif len(s) == 0 {\n\t\treturn\n\t}\n\timprimirSufixos(s[1:])\n\tfmt.Println(s)\n}\n\nfunc main() {\n\tvar palavra string\n\tif _, err := fmt.Scan(&palavra); err == nil {\n\t\timprimirSufixos(palavra)\n\t}\n}\n",
+            "lines": "20"
+        }
+    ]
+}

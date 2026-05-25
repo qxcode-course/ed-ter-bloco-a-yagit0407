@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_02-14-43",
+            "content": "@@ -118,13 +118,8 @@\n   %7D%0A\n-    %0A\n     \n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-05-25_02-14-59",
+            "content": "@@ -89,11 +89,8 @@\n  len\n-(s)\n  == \n@@ -114,16 +114,20 @@\n n%0A    %7D%0A\n+    \n %0A    fmt\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-25_02-15-00",
+            "content": "package main\nimport (\n    \"fmt\"\n    \"strings\"\n)\n\nfunc diagonal(s string, k int) {\n    if len(s) == 0 {\n        return\n    }\n\n    fmt.Print(strings.Repeat(\" \", k))\n    fmt.Printf(\"%c\\n\", s[0])\n    diagonal(s[1:], k+1)\n}\n\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n    diagonal(palavra, 0)\n}\n",
+            "lines": "21"
+        }
+    ]
+}

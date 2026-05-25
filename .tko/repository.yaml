@@ -25,22 +25,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- fup@string
-- fup@for_extra
 - ed@map_set
-- fup@if1
-- ed@rec
-- fup@mat
-- fup@dict
-- fup@rec
-- fup@list
-- fup@struct
 flags:
-  inbox: inbox
-  panel: graph
+  inbox: all
+  panel: skills
   show_panel: 'true'
-  task_graph_mode: time
+  task_graph_mode: executions
   show_time: 'true'
 lang: go
 selected: ed@list
-selected_index: 12
+selected_index: 14

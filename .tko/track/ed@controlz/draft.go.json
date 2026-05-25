@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_18-18-07",
+            "content": "@@ -412,17 +412,17 @@\n shBack('\n-%7C\n+l\n ')%0A%0A    \n@@ -600,17 +600,16 @@\n r _, ch \n-:\n = range \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-25_18-18-40",
+            "content": "@@ -849,155 +849,6 @@\n  %7D%0A%0A\n-    var sb strings.Builder%0A%09for curr := l.Front(); curr != nil; curr = curr.Next() %7B%0A%09%09sb.WriteRune(curr.Value.(rune))%0A%09%7D%0A%09fmt.Println(sb.String())%0A%0A\n %7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-25_18-18-58",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -19,17 +19,30 @@\n t (%0A\n-%09\n+    %22fmt%22%0A    \n %22bufio%22%0A\n %09%22co\n@@ -37,17 +37,20 @@\n %22bufio%22%0A\n-%09\n+    \n %22contain\n@@ -62,22 +62,21 @@\n st%22%0A\n-%09%22fmt%22%0A%09\n+    \n %22os%22%0A\n-%09\n+    \n %22str\n@@ -84,16 +84,163 @@\n ngs%22%0A)%0A%0A\n+type OpType int%0A%0Aconst (%0A    Insert OpType = iota%0A    Delete%0A)%0A%0Atype Action struct %7B%0A    TypeOp OpType%0A    value rune%0A    Before *list.Element%0A%7D%0A%0A%0A\n func mai\n@@ -245,17 +245,20 @@\n ain() %7B%0A\n-%09\n+    \n scanner \n@@ -287,18 +287,25 @@\n .Stdin)%0A\n-%0A%09\n+    %0A    \n if !scan\n@@ -321,21 +321,33 @@\n ) %7B%0A\n-%09%09return%0A%09%7D%0A%09\n+        return%0A    %7D%0A    \n line\n@@ -366,17 +366,20 @@\n Text()%0A%0A\n-%09\n+    \n l := lis\n@@ -386,17 +386,20 @@\n t.New()%0A\n-%09\n+    \n cursor :\n@@ -417,17 +417,189 @@\n k('%7C')%0A%0A\n-%09\n+    var undoStack %5B%5DAction%0A    var redoStack %5B%5D %5B%5DAction%0A%0A    pushToUndo := func(act Action) %7B%0A        undoStack = append(undoStack, act)%0A        redoStack = nil%0A    %7D%0A%0A    \n for _, c\n@@ -616,18 +616,24 @@\n  line %7B%0A\n-%09%09\n+        \n switch c\n@@ -636,18 +636,24 @@\n ch ch %7B%0A\n-%09%09\n+        \n case '%3C'\n@@ -654,19 +654,28 @@\n se '%3C':%0A\n-%09%09%09\n+            \n if curso\n@@ -692,20 +692,32 @@\n = nil %7B%0A\n-%09%09%09%09\n+                \n prev := \n@@ -730,20 +730,32 @@\n .Prev()%0A\n-%09%09%09%09\n+                \n l.Remove\n@@ -767,12 +767,24 @@\n or)%0A\n-%09%09%09%09\n+                \n curs\n@@ -818,22 +818,43 @@\n ev)%0A\n-%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09\n+            %7D%0A        %7D%0A    %7D%0A%0A    \n var \n@@ -993,10 +993,11 @@\n ring())%0A\n+%0A\n %7D%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-05-25_18-20-10",
+            "content": "@@ -405,213 +405,8 @@\n %09%09%7D%0A\n-        case '%3E':%0A            if cursor.Next() != nil %7B%0A                next := cursor.Next()%0A                l.Remove(cursor)%0A                cursor = l.InsertBefore('%7C', next)%0A            %7D%0A            %0A\n %09%09%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-05-25_18-21-55",
+            "content": "@@ -430,16 +430,17 @@\n         \n+ \n if curso\n@@ -457,20 +457,32 @@\n = nil %7B%0A\n-%09%09%09%09\n+                \n next := \n@@ -495,20 +495,32 @@\n .Next()%0A\n-%09%09%09%09\n+                \n l.Remove\n@@ -520,36 +520,48 @@\n .Remove(cursor)%0A\n-%09%09%09%09\n+                \n cursor = l.Inser\n@@ -565,13 +565,14 @@\n sert\n-After\n+Before\n ('%7C'\n@@ -579,21 +579,42 @@\n , next)%0A\n-%09%09%09%7D%0A\n+            %7D%0A            \n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-25_18-22-33",
+            "content": "@@ -549,118 +549,8 @@\n %09%09%09%7D\n-%0A        case 'B':%0A            if cursor.Prev() != nil %7B%0A                l.Remove(cursor.Prev())%0A            %7D\n %0A%0A%09%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-05-25_18-26-24",
+            "content": "@@ -659,247 +659,8 @@\n    %7D\n-%0A            case 'R', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '-':%0A%09%09%09val := ch%0A%09%09%09if ch == 'R' %7B%0A%09%09%09%09val = '%5Cn'%0A%09%09%09%7D%0A%09%09%09l.InsertBefore(val, cursor)\n %0A%0A%09%09\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-05-25_18-26-43",
+            "content": "@@ -656,17 +656,20 @@\n       %7D%0A\n-%0A\n+    \n         \n@@ -894,29 +894,16 @@\n  cursor)\n-%0A            \n %0A%0A%09%09%7D%0A%09%7D\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-25_18-27-14",
+            "content": "@@ -659,132 +659,8 @@\n    %7D\n-%0A            %0A        case 'D': %0A            if cursor.Next() != nil %7B%0A                l.Remove(cursor.Prev())%0A            %7D\n %0A%0A  \n@@ -892,16 +892,28 @@\n cursor)%0A\n+            \n %0A%0A%09%09%7D%0A%09%7D\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-05-25_18-28-43",
+            "content": "@@ -785,120 +785,8 @@\n  %7D%0A%0A\n-        case 'D': %0A            if cursor.Next() != nil %7B%0A                l.Remove(cursor.Next())%0A            %7D%0A%0A\n     \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-25_18-30-11",
+            "content": "@@ -397,26 +397,32 @@\n  prev)%0A%09%09%09%7D%0A\n-%09%09\n+        \n case '%3E':%0A%09%09\n@@ -419,19 +419,27 @@\n se '%3E':%0A\n-%09%09%09\n+           \n if curso\n@@ -542,26 +542,32 @@\n  next)%0A%09%09%09%7D%0A\n-%09%09\n+        \n case 'B':%0A%09%09\n@@ -564,19 +564,28 @@\n se 'B':%0A\n-%09%09%09\n+            \n if curso\n@@ -606,56 +606,218 @@\n l %7B%0A\n-%09%09%09%09l.Remove(cursor.Prev())%0A%09%09%09%7D%0A%09%09case 'D':%0A%09%09%09\n+                l.Remove(cursor.Prev())%0A            %7D%0A            %0A        case 'D': %0A            if cursor.Next() != nil %7B%0A                l.Remove(cursor.Prev())%0A            %7D%0A%0A        case 'D': %0A            \n if c\n@@ -838,20 +838,32 @@\n = nil %7B%0A\n-%09%09%09%09\n+                \n l.Remove\n@@ -878,23 +878,39 @@\n Next())%0A\n-%09%09%09%7D%0A%09%09\n+            %7D%0A%0A        \n case 'R'\n@@ -1097,16 +1097,16 @@\n n'%0A%09%09%09%7D%0A\n-\n %09%09%09l.Ins\n@@ -1128,16 +1128,18 @@\n cursor)%0A\n+%0A%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-25_18-31-01",
+            "content": "@@ -913,432 +913,8 @@\n or)%0A\n-            %0A        case 'Z':%0A            if len(undoStack) %3E 0 %7B%0A                act := undoStack%5Blen(undoStack)-1%5D%0A                undoStack = undoStack%5B:len(undoStack)-1%5D%0A                redoStack = append(redoStack, act)%0A%0A                if act.TypeOp == Insert %7B%0A                    curr := l.Front()%0A                    for curr != nil %7B%0A                        %0A                    %7D%0A                %7D%0A            %7D%0A\n %09%09%7D%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-25_18-34-40",
+            "content": "@@ -1282,427 +1282,8 @@\n     \n-if curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before %7B%0A%09%09%09%09%09%09%09l.Remove(curr)%0A%09%09%09%09%09%09%09break%0A%09%09%09%09%09%09%7D%0A                        curr = curr.Next()%0A                    %7D%0A                %7D else if act.TypeOp == Delete %7B%0A                    if act.Before == nil %7B%0A                        l.pushFront(act.value)%0A                    %7D else %7B%0A                        l.InsertAfter(act.value, act.Before)\n %0A   \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-25_18-37-30",
+            "content": "@@ -74,140 +74,8 @@\n %0A)%0A%0A\n-type OpType int%0A%0Aconst (%0A%09Insert OpType = iota%0A%09Delete%0A)%0A%0Atype Action struct %7B%0A%09TypeOp OpType%0A%09value  rune%0A%09Before *list.Element%0A%7D%0A%0A\n func\n@@ -232,108 +232,8 @@\n ')%0A%0A\n-%09var undoStack %5B%5DAction%0A%0A%09pushToUndo := func(act Action) %7B%0A%09%09undoStack = append(undoStack, act)%0A%09%7D%0A%0A\n %09for\n@@ -573,36 +573,33 @@\n = nil %7B%0A%09%09%09%09\n-to\n+l.\n Remove\n- := \n+(\n cursor.Prev(\n@@ -603,160 +603,8 @@\n ev()\n-%0A%09%09%09%09val := toRemove.Value.(rune)%0A%09%09%09%09before := toRemove.Prev()%0A%09%09%09%09l.Remove(toRemove)%0A%09%09%09%09pushToUndo(Action%7BTypeOp: Delete, value: val, Before: before%7D\n )%0A%09%09\n@@ -655,20 +655,17 @@\n %09%09%09%09\n-to\n+l.\n Remove\n- := \n+(\n curs\n@@ -677,158 +677,8 @@\n xt()\n-%0A%09%09%09%09val := toRemove.Value.(rune)%0A%09%09%09%09before := cursor.Prev()%0A%09%09%09%09l.Remove(toRemove)%0A%09%09%09%09pushToUndo(Action%7BTypeOp: Delete, value: val, Before: before%7D\n )%0A%09%09\n@@ -885,20 +885,8 @@\n %0A%09%09%09\n-inserted := \n l.In\n@@ -913,98 +913,51 @@\n or)%0A\n-%09%09%09pushToUndo(Action%7BTypeOp: Insert, value: val, Before: inserted.Prev()%7D)%0A%09%09case 'Z':%0A%09%09%09\n+            %0A        case 'Z':%0A            \n if l\n@@ -976,20 +976,32 @@\n ) %3E 0 %7B%0A\n-%09%09%09%09\n+                \n act := u\n@@ -1027,20 +1027,32 @@\n ack)-1%5D%0A\n-%09%09%09%09\n+                \n undoStac\n@@ -1088,91 +1088,202 @@\n -1%5D%0A\n-%0A%09%09%09%09if act.TypeOp == Insert %7B%0A%09%09%09%09%09curr := l.Front()%0A%09%09%09%09%09for curr != nil %7B%0A%09%09%09%09%09%09\n+                redoStack = append(redoStack, act)%0A%0A                if act.TypeOp == Insert %7B%0A                    curr := l.Front()%0A                    for curr != nil %7B%0A                        \n if c\n@@ -1408,44 +1408,89 @@\n %09%09%7D%0A\n-%09%09%09%09%09%09curr = curr.Next()%0A%09%09%09%09%09%7D%0A%09%09%09%09\n+                        curr = curr.Next()%0A                    %7D%0A                \n %7D el\n@@ -1518,21 +1518,36 @@\n elete %7B%0A\n-%09%09%09%09%09\n+                    \n if act.B\n@@ -1565,17 +1565,35 @@\n l %7B%0A\n-%09%09%09%09%09%09l.P\n+                        l.p\n ushF\n@@ -1612,81 +1612,150 @@\n ue)%0A\n-%09%09%09%09%09%7D else %7B%0A%09%09%09%09%09%09l.InsertAfter(act.value, act.Before)%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%09%09%09\n+                    %7D else %7B%0A                        l.InsertAfter(act.value, act.Before)%0A                    %7D%0A                %7D%0A            \n %7D%0A%09%09\n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-05-25_18-44-51",
+            "content": "@@ -460,32 +460,8 @@\n ct)%0A\n-        redoStack = nil%0A\n %09%7D%0A%0A\n@@ -2062,283 +2062,8 @@\n %09%09%7D%0A\n-                case 'Y':%0A                    if len(redoStack) %3E 0 %7B%0A                        act := redoStack%5Blen(redoStack)-1%5D%0A                        redoStack = redoStack%5B:len(redoStack)-1%5D%0A                        undoStack = append(undoStack, act)%0A                    %7D%0A\n %09%09%09%09\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-05-25_18-48-04",
+            "content": "@@ -2338,800 +2338,8 @@\n act)\n-%0A%0A                        if act.TypeOp == Insert %7B%0A                            if act.Before == nil %7B%0A                                l.pushFront(act.value)%0A                            %7D else %7B%0A                                l.InsertAfter(act.value, act.Before)%0A                            %7D%0A%0A                        %7D else if act.typeOp == Delete %7B%0A                            curr := l.Front()%0A                            for curr != nil %7B%0A                                if curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before %7B%0A                                    l.Remove(curr)%0A                                    break%0A                                %7D%0A                                curr = curr.Next()%0A                            %7D%0A                        %7D\n %0A   \n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-05-25_18-53-23",
+            "content": "@@ -387,65 +387,8 @@\n tion\n-%0A%09var redoStack %5B%5DAction // Declarando a pilha de refazer\n %0A%0A%09p\n@@ -456,18 +456,24 @@\n k, act)%0A\n-%09%09\n+        \n redoStac\n@@ -1686,47 +1686,8 @@\n )-1%5D\n-%0A%09%09%09%09redoStack = append(redoStack, act)\n %0A%0A%09%09\n@@ -2086,114 +2086,102 @@\n %09%09%7D%0A\n-%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09case 'Y': // Agora posicionado corretamente no switch externo%0A%09%09%09if len(redoStack) %3E 0 %7B%0A%09%09%09%09\n+                case 'Y':%0A                    if len(redoStack) %3E 0 %7B%0A                        \n act \n@@ -2211,20 +2211,40 @@\n ack)-1%5D%0A\n-%09%09%09%09\n+                        \n redoStac\n@@ -2268,36 +2268,56 @@\n n(redoStack)-1%5D%0A\n-%09%09%09%09\n+                        \n undoStack = appe\n@@ -2336,20 +2336,40 @@\n , act)%0A%0A\n-%09%09%09%09\n+                        \n if act.T\n@@ -2390,45 +2390,94 @@\n t %7B%0A\n-%09%09%09%09%09if act.Before == nil %7B%0A%09%09%09%09%09%09l.P\n+                            if act.Before == nil %7B%0A                                l.p\n ushF\n@@ -2496,76 +2496,169 @@\n ue)%0A\n-%09%09%09%09%09%7D else %7B%0A%09%09%09%09%09%09l.InsertAfter(act.value, act.Before)%0A%09%09%09%09%09%7D%0A%09%09%09%09\n+                            %7D else %7B%0A                                l.InsertAfter(act.value, act.Before)%0A                            %7D%0A%0A                        \n %7D el\n@@ -2659,33 +2659,33 @@\n   %7D else if act.\n-T\n+t\n ypeOp == Delete \n@@ -2690,216 +2690,469 @@\n e %7B%0A\n-%09%09%09%09%09curr := l.Front()%0A%09%09%09%09%09for curr != nil %7B%0A%09%09%09%09%09%09if curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before %7B%0A%09%09%09%09%09%09%09l.Remove(curr)%0A%09%09%09%09%09%09%09break%0A%09%09%09%09%09%09%7D%0A%09%09%09%09%09%09curr = curr.Next()%0A%09%09%09%09%09\n+                            curr := l.Front()%0A                            for curr != nil %7B%0A                                if curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before %7B%0A                                    l.Remove(curr)%0A                                    break%0A                                %7D%0A                                curr = curr.Next()%0A                            %7D%0A                        %7D%0A                    \n %7D%0A%09%09\n",
+            "lines": "133"
+        },
+        {
+            "label": "2026-05-25_18-54-04",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"container/list\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\ntype OpType int\n\nconst (\n\tInsert OpType = iota\n\tDelete\n)\n\ntype Action struct {\n\tTypeOp OpType\n\tvalue  rune\n\tBefore *list.Element\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\n\tl := list.New()\n\tcursor := l.PushBack('|')\n\n\tvar undoStack []Action\n\tvar redoStack []Action // Declarando a pilha de refazer\n\n\tpushToUndo := func(act Action) {\n\t\tundoStack = append(undoStack, act)\n\t\tredoStack = nil\n\t}\n\n\tfor _, ch := range line {\n\t\tswitch ch {\n\t\tcase '<':\n\t\t\tif cursor.Prev() != nil {\n\t\t\t\tprev := cursor.Prev()\n\t\t\t\tl.Remove(cursor)\n\t\t\t\tcursor = l.InsertBefore('|', prev)\n\t\t\t}\n\t\tcase '>':\n\t\t\tif cursor.Next() != nil {\n\t\t\t\tnext := cursor.Next()\n\t\t\t\tl.Remove(cursor)\n\t\t\t\tcursor = l.InsertAfter('|', next)\n\t\t\t}\n\t\tcase 'B':\n\t\t\tif cursor.Prev() != nil {\n\t\t\t\ttoRemove := cursor.Prev()\n\t\t\t\tval := toRemove.Value.(rune)\n\t\t\t\tbefore := toRemove.Prev()\n\t\t\t\tl.Remove(toRemove)\n\t\t\t\tpushToUndo(Action{TypeOp: Delete, value: val, Before: before})\n\t\t\t}\n\t\tcase 'D':\n\t\t\tif cursor.Next() != nil {\n\t\t\t\ttoRemove := cursor.Next()\n\t\t\t\tval := toRemove.Value.(rune)\n\t\t\t\tbefore := cursor.Prev()\n\t\t\t\tl.Remove(toRemove)\n\t\t\t\tpushToUndo(Action{TypeOp: Delete, value: val, Before: before})\n\t\t\t}\n\t\tcase 'R', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '-':\n\t\t\tval := ch\n\t\t\tif ch == 'R' {\n\t\t\t\tval = '\\n'\n\t\t\t}\n\t\t\tinserted := l.InsertBefore(val, cursor)\n\t\t\tpushToUndo(Action{TypeOp: Insert, value: val, Before: inserted.Prev()})\n\t\tcase 'Z':\n\t\t\tif len(undoStack) > 0 {\n\t\t\t\tact := undoStack[len(undoStack)-1]\n\t\t\t\tundoStack = undoStack[:len(undoStack)-1]\n\t\t\t\tredoStack = append(redoStack, act)\n\n\t\t\t\tif act.TypeOp == Insert {\n\t\t\t\t\tcurr := l.Front()\n\t\t\t\t\tfor curr != nil {\n\t\t\t\t\t\tif curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before {\n\t\t\t\t\t\t\tl.Remove(curr)\n\t\t\t\t\t\t\tbreak\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcurr = curr.Next()\n\t\t\t\t\t}\n\t\t\t\t} else if act.TypeOp == Delete {\n\t\t\t\t\tif act.Before == nil {\n\t\t\t\t\t\tl.PushFront(act.value)\n\t\t\t\t\t} else {\n\t\t\t\t\t\tl.InsertAfter(act.value, act.Before)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\tcase 'Y': // Agora posicionado corretamente no switch externo\n\t\t\tif len(redoStack) > 0 {\n\t\t\t\tact := redoStack[len(redoStack)-1]\n\t\t\t\tredoStack = redoStack[:len(redoStack)-1]\n\t\t\t\tundoStack = append(undoStack, act)\n\n\t\t\t\tif act.TypeOp == Insert {\n\t\t\t\t\tif act.Before == nil {\n\t\t\t\t\t\tl.PushFront(act.value)\n\t\t\t\t\t} else {\n\t\t\t\t\t\tl.InsertAfter(act.value, act.Before)\n\t\t\t\t\t}\n\t\t\t\t} else if act.TypeOp == Delete {\n\t\t\t\t\tcurr := l.Front()\n\t\t\t\t\tfor curr != nil {\n\t\t\t\t\t\tif curr != cursor && curr.Value.(rune) == act.value && curr.Prev() == act.Before {\n\t\t\t\t\t\t\tl.Remove(curr)\n\t\t\t\t\t\t\tbreak\n\t\t\t\t\t\t}\n\t\t\t\t\t\tcurr = curr.Next()\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tvar sb strings.Builder\n\tfor curr := l.Front(); curr != nil; curr = curr.Next() {\n\t\tsb.WriteRune(curr.Value.(rune))\n\t}\n\tfmt.Println(sb.String())\n}\n",
+            "lines": "134"
+        }
+    ]
+}

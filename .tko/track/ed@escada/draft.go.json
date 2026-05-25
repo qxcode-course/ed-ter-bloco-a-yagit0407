@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-23_13-37-23",
+            "content": "@@ -109,24 +109,16 @@\n 1%0A    %7D \n-%0A    if \n n == 3 %7B\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-23_13-37-34",
+            "content": "package main\nimport (\n    \"fmt\"\n)\n\nfunc maneirasSubir(n int) int {\n    if n == 1 || n == 2 {\n        return 1\n    } \n    if n == 3 {\n        return 2\n    }\n    return maneirasSubir(n-1) + maneirasSubir(n-3)\n}\nfunc main() {\n    var n int\n    \n    fmt.Scan(&n)\n    fmt.Println(maneirasSubir(n))\n}\n",
+            "lines": "20"
+        }
+    ]
+}

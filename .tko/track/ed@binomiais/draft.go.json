@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_02-06-37",
+            "content": "package main\nimport \"fmt\"\n\nfunc calcularCombinacao(n, k int, memo [][]int) int {\n    if k == 0 || k == n {\n        return 1\n    } \n    if memo[n][k] != 0 {\n        return memo[n][k]\n    }\n    memo[n][k] = calcularCombinacao(n-1, k-1, memo) + calcularCombinacao(n-1, k, memo)\n    return memo[n][k]\n}\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n\n    memo := make([][]int, n+1)\n\n    for i := range memo {\n\t\t\tmemo[i] = make([]int, k+1)\n\t\t}\n\t\tfmt.Println(calcularCombinacao(n, k, memo))\n}\n",
+            "lines": "24"
+        }
+    ]
+}
