@@ -1,0 +1,64 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_21-20-22",
+            "content": "@@ -855,467 +855,6 @@\n   %7D%0A\n-    tamBuscas, _ := strconv.Atoi(strings.TrimSpace(scanner.Text()))%0A%0A    if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%0A    buscas := strings.Fields(scanner.Text())%0A    if len(buscas) %3E tamBuscas %7B%0A%09%09buscas = buscas%5B:tamBuscas%5D%0A%09%7D%0A%0A    res := matchingString(buscas, consultas)%0A%0A    var sb strings.Builder%0A%0A    for i, val := range res %7B%0A        if i %3E 0 %7B%0A            sb.WriteString(%22 %22)%0A        %7D%0A        sb.WriteString(strconv.Itoa(val))%0A    %7D%0A    fmt.Println(sb.String())%0A\n %7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-25_21-24-27",
+            "content": "@@ -305,16 +305,17 @@\n ultas)) \n+%7B\n %0A       \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-25_21-25-03",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -19,42 +19,57 @@\n t (%0A\n-%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09\n+    %22fmt%22%0A    %22bufio%22%0A    %22strconv%22%0A    %22os%22%0A    \n %22str\n@@ -148,17 +148,20 @@\n %5B%5Dint %7B%0A\n-%09\n+    \n frequenc\n@@ -188,17 +188,20 @@\n ng%5Dint)%0A\n-%09\n+    \n for _, s\n@@ -227,18 +227,24 @@\n rings %7B%0A\n-%09%09\n+        \n frequenc\n@@ -258,14 +258,18 @@\n %5D++%0A\n-%09%7D%0A%09%0A%09\n+    %7D%0A    \n resu\n@@ -304,18 +304,26 @@\n sultas))\n-%0A%09\n+ %0A        \n for i, q\n@@ -344,18 +344,28 @@\n ultas %7B%0A\n-%09%09\n+            \n resultad\n@@ -386,20 +386,34 @@\n cias%5Bq%5D%0A\n-%09%7D%0A%09\n+        %7D%0A        \n return r\n@@ -420,19 +420,29 @@\n esultado\n+    %0A    %7D%0A\n %0A%7D\n-%0A\n %0Afunc ma\n@@ -448,17 +448,20 @@\n ain() %7B%0A\n-%09\n+    \n scanner \n@@ -491,17 +491,20 @@\n Stdin)%0A%0A\n-%09\n+    \n if !scan\n@@ -516,29 +516,42 @@\n can() %7B%0A\n-%09%09return%0A%09%7D%0A%09\n+        return %0A    %7D%0A    \n tamConsu\n@@ -601,34 +601,41 @@\n canner.Text()))%0A\n-%0A%09\n+    %0A    \n if !scanner.Scan\n@@ -639,30 +639,43 @@\n can() %7B%0A\n-%09%09return%0A%09%7D%0A%0A%09\n+        return %0A    %7D%0A%0A    \n consulta\n@@ -711,17 +711,20 @@\n ext())%0A%0A\n-%09\n+    \n if len(c\n@@ -750,18 +750,24 @@\n ultas %7B%0A\n-%09%09\n+        \n consulta\n@@ -781,16 +781,17 @@\n sultas%5B:\n+ \n tamConsu\n@@ -796,21 +796,27 @@\n sultas%5D%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n if !scan\n@@ -832,21 +832,34 @@\n ) %7B%0A\n-%09%09return%0A%09%7D%0A%09\n+        return %0A    %7D%0A    \n tamB\n@@ -919,17 +919,20 @@\n xt()))%0A%0A\n-%09\n+    \n if !scan\n@@ -957,17 +957,20 @@\n urn%0A%09%7D%0A%0A\n-%09\n+    \n buscas :\n@@ -1002,17 +1002,20 @@\n Text())%0A\n-%09\n+    \n if len(b\n@@ -1069,17 +1069,20 @@\n as%5D%0A%09%7D%0A%0A\n-%09\n+    \n res := m\n@@ -1115,17 +1115,20 @@\n ultas)%0A%0A\n-%09\n+    \n var sb s\n@@ -1143,17 +1143,20 @@\n uilder%0A%0A\n-%09\n+    \n for i, v\n@@ -1173,18 +1173,24 @@\n e res %7B%0A\n-%09%09\n+        \n if i %3E 0\n@@ -1196,11 +1196,20 @@\n 0 %7B%0A\n-%09%09%09\n+            \n sb.W\n@@ -1228,14 +1228,26 @@\n  %22)%0A\n-%09%09%7D%0A%09%09\n+        %7D%0A        \n sb.W\n@@ -1280,12 +1280,18 @@\n l))%0A\n-%09%7D%0A%09\n+    %7D%0A    \n fmt.\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-25_21-25-15",
+            "content": "@@ -259,20 +259,21 @@\n (%5B%5Dint, \n-tamC\n+len(c\n onsultas\n@@ -277,59 +277,29 @@\n tas)\n+)\n %0A%09for i\n+, q\n  := \n-0; i %3C tamConsultas; i++ %7B%0A%09%09if i %3C len(\n+range \n cons\n@@ -303,21 +303,19 @@\n onsultas\n-)\n  %7B%0A\n-%09\n %09%09result\n@@ -339,61 +339,13 @@\n ias%5B\n-consultas%5Bi%5D%5D%0A%09%09%7D else %7B%0A%09%09%09resultado%5Bi%5D = 0%0A%09%09%7D%0A%09%7D%0A%09\n+q%5D%0A%09%7D\n %0A%09re\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-25_21-25-53",
+            "content": "@@ -128,26 +128,8 @@\n ring\n-, tamConsultas int\n ) %5B%5D\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-25_21-26-45",
+            "content": "@@ -255,86 +255,8 @@\n %7D%0A%09%0A\n-%09// O tamanho do resultado deve ser fixado pelo tamanho esperado de consultas%0A\n %09res\n@@ -436,16 +436,18 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09%0A\n %09return \n@@ -650,16 +650,17 @@\n turn%0A%09%7D%0A\n+%0A\n %09consult\n@@ -688,32 +688,33 @@\n scanner.Text())%0A\n+%0A\n %09if len(consulta\n@@ -910,16 +910,17 @@\n turn%0A%09%7D%0A\n+%0A\n %09buscas \n@@ -1057,30 +1057,16 @@\n onsultas\n-, tamConsultas\n )%0A%0A%09var \n@@ -1084,16 +1084,17 @@\n Builder%0A\n+%0A\n %09for i, \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-05-25_21-26-55",
+            "content": "@@ -245,24 +245,103 @@\n s%5Bstr%5D++%0A%09%7D%0A\n+%09%0A%09// O tamanho do resultado deve ser fixado pelo tamanho esperado de consultas\n %0A%09resultado \n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-05-25_21-27-18",
+            "content": "@@ -49,16 +49,27 @@\n trconv%22%0A\n+%09%22strings%22%0A\n )%0A%0Afunc \n@@ -124,16 +124,34 @@\n %5B%5Dstring\n+, tamConsultas int\n ) %5B%5Dint \n@@ -280,13 +280,12 @@\n nt, \n-len(c\n+tamC\n onsu\n@@ -293,29 +293,59 @@\n tas)\n-)\n %0A%09for i\n-, q\n  := \n-range \n+0; i %3C tamConsultas; i++ %7B%0A%09%09if i %3C len(\n cons\n@@ -349,19 +349,21 @@\n onsultas\n+)\n  %7B%0A\n+%09\n %09%09result\n@@ -387,10 +387,56 @@\n ias%5B\n-q%5D\n+consultas%5Bi%5D%5D%0A%09%09%7D else %7B%0A%09%09%09resultado%5Bi%5D = 0%0A%09%09%7D\n %0A%09%7D%0A\n@@ -474,13 +474,9 @@\n ) %7B%0A\n-%0A    \n+%09\n scan\n@@ -513,42 +513,8 @@\n in)%0A\n-%09scanner.Split(bufio.ScanWords)%0A%0A%09\n %0A%09if\n@@ -569,32 +569,50 @@\n := strconv.Atoi(\n+strings.TrimSpace(\n scanner.Text())%0A\n@@ -614,70 +614,151 @@\n t())\n+)\n %0A%0A%09\n-consultas := make(%5B%5Dstring, tamConsultas)%0A%09for i := 0; i %3C \n+if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09consultas := strings.Fields(scanner.Text())%0A%09if len(consultas) %3E tamConsultas %7B%0A%09%09consultas = consultas%5B:\n tamC\n@@ -765,29 +765,27 @@\n onsultas\n-; i++ %7B%0A%09\n+%5D%0A%09%7D%0A%0A\n %09if \n+!\n scanner.\n@@ -799,24 +799,66 @@\n %7B%0A%09%09\n-%09consultas%5Bi%5D = \n+return%0A%09%7D%0A%09tamBuscas, _ := strconv.Atoi(strings.TrimSpace(\n scan\n@@ -867,23 +867,18 @@\n r.Text()\n-%0A%09%09%7D%0A%09%7D\n+))\n %0A%0A%09if !s\n@@ -910,36 +910,32 @@\n %09%7D%0A%09\n-tamB\n+b\n uscas\n-, _\n  := str\n-conv.Atoi\n+ings.Fields\n (sca\n@@ -951,135 +951,67 @@\n ())%0A\n-%0A%09buscas := make(%5B%5Dstring, tamBuscas)%0A%09for i := 0; i %3C tamBuscas; i++ %7B%0A%09%09if scanner.Scan() %7B%0A%09%09%09buscas%5Bi%5D = scanner.Text()%0A%09%09%7D\n+%09if len(buscas) %3E tamBuscas %7B%0A%09%09buscas = buscas%5B:tamBuscas%5D\n %0A%09%7D%0A\n@@ -1051,18 +1051,56 @@\n onsultas\n-)%0A\n+, tamConsultas)%0A%0A%09var sb strings.Builder\n %0A%09for i,\n@@ -1135,25 +1135,30 @@\n  0 %7B%0A%09%09%09\n-fmt.Print\n+sb.WriteString\n (%22 %22)%0A%09%09\n@@ -1165,22 +1165,41 @@\n %7D%0A%09%09\n-fmt.Print\n+sb.WriteString(strconv.Itoa\n (val)\n+)\n %0A%09%7D%0A\n@@ -1211,12 +1211,23 @@\n Println(\n+sb.String()\n )%0A%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-05-25_21-28-27",
+            "content": "@@ -38,16 +38,27 @@\n %22%0A%09%22os%22%0A\n+%09%22strconv%22%0A\n )%0A%0Afunc \n@@ -67,27 +67,31 @@\n tchingString\n-s(s\n+(vetorS\n trings %5B%5Dstr\n@@ -95,22 +95,24 @@\n string, \n-querie\n+consulta\n s %5B%5Dstri\n@@ -134,16 +134,17 @@\n equencia\n+s\n  := make\n@@ -160,17 +160,16 @@\n ng%5Dint)%0A\n-%0A\n %09for _, \n@@ -169,16 +169,18 @@\n for _, s\n+tr\n  := rang\n@@ -181,17 +181,22 @@\n = range \n-s\n+vetorS\n trings %7B\n@@ -208,18 +208,21 @@\n equencia\n+s\n %5Bs\n+tr\n %5D++%0A%09%7D%0A%0A\n@@ -251,18 +251,30 @@\n nt, \n-0)%0A\n+len(consultas))\n %0A%09for \n-_\n+i\n , q \n@@ -282,22 +282,24 @@\n = range \n-querie\n+consulta\n s %7B%0A%09%09re\n@@ -309,28 +309,13 @@\n tado\n- = append(resultado,\n+%5Bi%5D =\n  fre\n@@ -325,17 +325,16 @@\n ncia\n+s\n %5Bq%5D\n-)\n %0A%09%7D%0A\n-%0A\n %09ret\n@@ -368,11 +368,20 @@\n ) %7B%0A\n-%09in\n+%0A    scanner\n  := \n@@ -393,12 +393,13 @@\n .New\n-Read\n+Scann\n er(o\n@@ -411,47 +411,136 @@\n in)%0A\n-%0A%09var n int%0A%09fmt.Fscan(in, &n)%0A%0A%09string\n+%09scanner.Split(bufio.ScanWords)%0A%0A%09%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09tamConsultas, _ := strconv.Atoi(scanner.Text())%0A%0A%09consulta\n s :=\n@@ -555,19 +555,29 @@\n string, \n-n)%0A\n+tamConsultas)\n %0A%09for i \n@@ -590,88 +590,178 @@\n i %3C \n-n; i++ %7B%0A%09%09fmt.Fscan(in, &strings%5Bi%5D)%0A%09%7D%0A%0A%09var m int%0A%09fmt.Fscan(in, &m)%0A%0A%09querie\n+tamConsultas; i++ %7B%0A%09%09if scanner.Scan() %7B%0A%09%09%09consultas%5Bi%5D = scanner.Text()%0A%09%09%7D%0A%09%7D%0A%0A%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09tamBuscas, _ := strconv.Atoi(scanner.Text())%0A%0A%09busca\n s :=\n@@ -780,11 +780,18 @@\n ng, \n-m)%0A\n+tamBuscas)\n %0A%09fo\n@@ -804,17 +804,25 @@\n  0; i %3C \n-m\n+tamBuscas\n ; i++ %7B%0A\n@@ -827,34 +827,61 @@\n %7B%0A%09%09\n-fmt.Fscan(in, &queries%5Bi%5D)\n+if scanner.Scan() %7B%0A%09%09%09buscas%5Bi%5D = scanner.Text()%0A%09%09%7D\n %0A%09%7D%0A\n@@ -881,30 +881,24 @@\n %09%09%7D%0A%09%7D%0A%0A%09res\n-ultado\n  := matching\n@@ -907,25 +907,25 @@\n ring\n-s(strings, querie\n+(buscas, consulta\n s)%0A%0A\n@@ -933,16 +933,18 @@\n for i, v\n+al\n  := rang\n@@ -948,22 +948,16 @@\n ange res\n-ultado\n  %7B%0A%09%09if \n@@ -1003,11 +1003,28 @@\n nt(v\n+al\n )%0A%09%7D%0A\n+%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-05-25_21-29-19",
+            "content": "@@ -743,16 +743,15 @@\n .Print(v\n- \n )%0A%09%7D%0A%7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-25_21-29-39",
+            "content": "@@ -747,29 +747,12 @@\n nt(v\n+ \n )%0A%09%7D%0A\n-    fmt.Println()%0A\n %7D%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-05-25_21-29-53",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc matchingStrings(strings []string, queries []string) []int {\n\tfrequencia := make(map[string]int)\n\n\tfor _, s := range strings {\n\t\tfrequencia[s]++\n\t}\n\n\tresultado := make([]int, 0)\n\n\tfor _, q := range queries {\n\t\tresultado = append(resultado, frequencia[q])\n\t}\n\n\treturn resultado\n}\n\nfunc main() {\n\tin := bufio.NewReader(os.Stdin)\n\n\tvar n int\n\tfmt.Fscan(in, &n)\n\n\tstrings := make([]string, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Fscan(in, &strings[i])\n\t}\n\n\tvar m int\n\tfmt.Fscan(in, &m)\n\n\tqueries := make([]string, m)\n\n\tfor i := 0; i < m; i++ {\n\t\tfmt.Fscan(in, &queries[i])\n\t}\n\n\tresultado := matchingStrings(strings, queries)\n\n\tfor i, v := range resultado {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t\tfmt.Print(v)\n\t}\n    fmt.Println()\n}\n",
+            "lines": "55"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_21-45-21",
+            "content": "@@ -85,16 +85,16 @@\n tln(\n-7\n+5\n *n + 1\n-0\n+2\n )%0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-05-25_21-45-35",
+            "content": "@@ -92,9 +92,9 @@\n  + 1\n-2\n+0\n )%0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-05-25_21-47-03",
+            "content": "@@ -85,9 +85,9 @@\n tln(\n-8\n+7\n *n +\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-05-25_21-47-10",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(8*n + 12)\n}\n",
+            "lines": "8"
+        }
+    ]
+}

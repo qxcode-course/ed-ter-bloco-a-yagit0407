@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_22-40-32",
+            "content": "@@ -99,60 +99,6 @@\n  b)%0A\n-    fmt.Println(a %25 b)%0A    fmt.Printf(%22%25.2f%5Cn%22 a / b)%0A\n %7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-05-25_22-42-05",
+            "content": "@@ -141,17 +141,16 @@\n %22%25.2f%5Cn%22\n-,\n  a / b)%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-05-25_22-42-10",
+            "content": "@@ -54,34 +54,8 @@\n int%0A\n-    var resultado = a / b%0A\n     \n@@ -147,17 +147,13 @@\n n%22, \n-resultado\n+a / b\n )%0A%7D%0A\n",
+            "lines": "10"
+        },
+        {
+            "label": "2026-05-25_22-42-38",
+            "content": "@@ -54,16 +54,20 @@\n int%0A    \n+var \n resultad\n@@ -72,9 +72,8 @@\n ado \n-:\n = a \n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-05-25_22-42-56",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n var a, b\n@@ -54,104 +54,57 @@\n int%0A\n-%0A%09fmt.Scan(&a, &b)%0A%0A%09resto := a %25 b%0A%09divInteira := a / b%0A%09divFloat := float64(a) / float64(b)%0A%0A%09\n+    resultado := a / b%0A    fmt.Scan(&a, &b)%0A%0A    \n fmt.\n@@ -115,16 +115,19 @@\n tln(\n-resto)%0A%09\n+a / b)%0A    \n fmt.\n@@ -138,21 +138,19 @@\n tln(\n-divInteira)%0A%09\n+a %25 b)%0A    \n fmt.\n@@ -170,16 +170,17 @@\n n%22, \n-divFloat\n+resultado\n )%0A%7D%0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-05-25_22-45-31",
+            "content": "@@ -157,26 +157,21 @@\n Println(\n-divInteira\n+resto\n )%0A%09fmt.P\n@@ -169,37 +169,42 @@\n o)%0A%09fmt.Println(\n-resto\n+divInteira\n )%0A%09fmt.Printf(%22%25\n",
+            "lines": "17"
+        },
+        {
+            "label": "2026-05-25_22-45-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar a, b int\n\n\tfmt.Scan(&a, &b)\n\n\tresto := a % b\n\tdivInteira := a / b\n\tdivFloat := float64(a) / float64(b)\n\n\tfmt.Println(divInteira)\n\tfmt.Println(resto)\n\tfmt.Printf(\"%.2f\\n\", divFloat)\n}\n",
+            "lines": "17"
+        }
+    ]
+}

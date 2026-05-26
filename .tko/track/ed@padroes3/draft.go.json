@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_21-59-53",
+            "content": "@@ -217,46 +217,6 @@\n    %0A\n-    fmt.Println(combinacao(m+n-2, n-1))%0A\n %7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-05-25_22-01-16",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -52,17 +52,20 @@\n ) int %7B%0A\n-%09\n+    \n res := 1\n@@ -66,17 +66,20 @@\n s := 1%0A%0A\n-%09\n+    \n for i :=\n@@ -100,10 +100,16 @@\n + %7B%0A\n-%09%09\n+        \n res \n@@ -115,17 +115,16 @@\n  = res *\n- \n (n - i +\n@@ -135,13 +135,18 @@\n / i%0A\n-%09%7D%0A%0A%09\n+    %7D%0A    \n retu\n@@ -169,17 +169,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, m\n@@ -187,17 +187,20 @@\n  m int%0A%0A\n-%09\n+    \n fmt.Scan\n@@ -212,10 +212,17 @@\n &m)%0A\n-%0A%09\n+    %0A    \n fmt.\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-25_22-01-54",
+            "content": "@@ -30,114 +30,205 @@\n unc \n-main() %7B%0A%09var n, m int%0A%0A%09fmt.Scan(&n, &m)%0A%0A%09resultado := ((n-2)*m*m - (n-4)*m) / 2%0A%0A%09fmt.Println(resultado\n+combinacao(n, k int) int %7B%0A%09res := 1%0A%0A%09for i := 1; i %3C= k; i++ %7B%0A%09%09res = res * (n - i + 1) / i%0A%09%7D%0A%0A%09return res%0A%7D%0A%0Afunc main() %7B%0A%09var n, m int%0A%0A%09fmt.Scan(&n, &m)%0A%0A%09fmt.Println(combinacao(m+n-2, n-1)\n )%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-05-25_22-03-21",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, m int\n\n\tfmt.Scan(&n, &m)\n\n\tresultado := ((n-2)*m*m - (n-4)*m) / 2\n\n\tfmt.Println(resultado)\n}\n",
+            "lines": "13"
+        }
+    ]
+}

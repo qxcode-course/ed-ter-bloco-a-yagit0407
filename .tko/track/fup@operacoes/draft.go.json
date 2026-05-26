@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_22-51-24",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -34,33 +34,36 @@\n oma(a, b int) %7B%0A\n-%09\n+    \n fmt.Println(a + \n@@ -87,33 +87,36 @@\n cao(a, b int) %7B%0A\n-%09\n+    \n fmt.Println(a - \n@@ -144,33 +144,36 @@\n cao(a, b int) %7B%0A\n-%09\n+    \n fmt.Println(a * \n@@ -195,33 +195,36 @@\n sao(a, b int) %7B%0A\n-%09\n+    \n fmt.Println(a / \n@@ -252,17 +252,20 @@\n  int) %7B%0A\n-%09\n+    \n fmt.Prin\n@@ -273,25 +273,24 @@\n ln(a %25 b)%0A%7D%0A\n-%0A\n func main() \n@@ -291,17 +291,20 @@\n ain() %7B%0A\n-%09\n+    \n var a, b\n@@ -309,17 +309,20 @@\n  b int%0A%0A\n-%09\n+    \n fmt.Scan\n@@ -331,17 +331,20 @@\n a, &b)%0A%0A\n-%09\n+    \n soma(a, \n@@ -346,17 +346,20 @@\n a(a, b)%0A\n-%09\n+    \n subtraca\n@@ -366,17 +366,20 @@\n o(a, b)%0A\n-%09\n+    \n multipli\n@@ -394,43 +394,30 @@\n  b)%0A\n-%09divisao(a, b)%0A%09\n+    \n divisao\n-Real\n (a, b)%0A\n-%09\n+    \n rest\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-05-25_22-52-08",
+            "content": "@@ -377,16 +377,35 @@\n o(a, b)%0A\n+%09divisaoReal(a, b)%0A\n %09resto(a\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-25_22-52-16",
+            "content": "@@ -170,17 +170,16 @@\n * b)%0A%7D%0A%0A\n-%0A\n func div\n@@ -209,41 +209,16 @@\n rint\n-f(%22%25.2f%5Cn%22, float64(a)/float64(b)\n+ln(a / b\n )%0A%7D%0A\n@@ -377,17 +377,16 @@\n o(a, b)%0A\n-%0A\n %09resto(a\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-05-25_22-52-48",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc soma(a, b int) {\n\tfmt.Println(a + b)\n}\n\nfunc subtracao(a, b int) {\n\tfmt.Println(a - b)\n}\n\nfunc multiplicacao(a, b int) {\n\tfmt.Println(a * b)\n}\n\n\nfunc divisao(a, b int) {\n\tfmt.Printf(\"%.2f\\n\", float64(a)/float64(b))\n}\n\nfunc resto(a, b int) {\n\tfmt.Println(a % b)\n}\n\nfunc main() {\n\tvar a, b int\n\n\tfmt.Scan(&a, &b)\n\n\tsoma(a, b)\n\tsubtracao(a, b)\n\tmultiplicacao(a, b)\n\tdivisao(a, b)\n\n\tresto(a, b)\n}\n",
+            "lines": "37"
+        }
+    ]
+}

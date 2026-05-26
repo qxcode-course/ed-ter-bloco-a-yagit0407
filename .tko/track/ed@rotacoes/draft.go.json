@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_22-35-24",
+            "content": "@@ -137,269 +137,7 @@\n     \n-for i := 0; i %3C t; i++ %7B%0A        fmt.Scan(&v%5Bi%5D)%0A    %7D%0A%0A    r = r %25 t%0A%0A    for i := 0; i %3C t; i++ %7B%0A        novaPos := (i + r) %25 t%0A        res%5BnovaPos%5D = v%5Bi%5D%0A    %7D%0A%0A    fmt.Print(%22%5B %22)%0A%0A    for i := 0; i %3C t; i++ %7B%0A%09%09fmt.Print(res%5Bi%5D, %22 %22)%0A%09%7D%0A%0A%09fmt.Println(%22%5D%22)\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-25_22-37-39",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    \n    var t, r int\n\n    fmt.Scan(&t, &r)\n\n    v := make([]int, t)\n    res := make([]int, t)\n\n    for i := 0; i < t; i++ {\n        fmt.Scan(&v[i])\n    }\n\n    r = r % t\n\n    for i := 0; i < t; i++ {\n        novaPos := (i + r) % t\n        res[novaPos] = v[i]\n    }\n\n    fmt.Print(\"[ \")\n\n    for i := 0; i < t; i++ {\n\t\tfmt.Print(res[i], \" \")\n\t}\n\n\tfmt.Println(\"]\")\n}\n",
+            "lines": "30"
+        }
+    ]
+}

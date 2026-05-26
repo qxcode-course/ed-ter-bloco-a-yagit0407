@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_21-53-40",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(n * (n+2))\n}\n",
+            "lines": "8"
+        }
+    ]
+}

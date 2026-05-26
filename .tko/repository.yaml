@@ -25,13 +25,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@map_set
+- fup@base
 flags:
-  inbox: all
-  panel: skills
+  inbox: inbox
+  panel: graph
   show_panel: 'true'
-  task_graph_mode: executions
+  task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@list
-selected_index: 14
+selected: fup@data
+selected_index: 8
