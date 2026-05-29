@@ -1,0 +1,30 @@
+2026-05-29 00:01:29, EXEC, v:1, k:ed@bufferring, mode:FULL, size:182, fail:COMP
+2026-05-29 00:01:40, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-05-29 00:06:48, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:66, size:183
+2026-05-29 00:07:40, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-05-29 00:08:18, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:83, size:189
+2026-05-29 00:09:34, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:83, size:197
+2026-05-29 00:09:41, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:83, size:197
+2026-05-29 00:09:47, EXEC, v:1, k:ed@bufferring, mode:FULL, rate:100
+2026-05-29 00:09:51, MOVE, v:1, k:ed@bufferring, mode:BACK
+2026-05-29 00:10:19, SELF, v:1, k:ed@bufferring, self:1, rate:100, concept:1, refactor:1
+2026-05-29 00:11:35, MOVE, v:1, k:ed@quadrado, mode:PICK
+2026-05-29 00:09:41, MOVE, v:1, k:ed@bufferring, mode:EDIT
+2026-05-29 00:12:40, MOVE, v:1, k:ed@quadrado, mode:EDIT
+2026-05-29 00:17:41, MOVE, v:1, k:ed@quadrado, mode:EDIT
+2026-05-29 00:18:27, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:0, size:22
+2026-05-29 00:18:40, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:0, size:23
+2026-05-29 00:19:13, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:23
+2026-05-29 00:19:26, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:23
+2026-05-29 00:20:07, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:23
+2026-05-29 00:20:42, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:0, size:23
+2026-05-29 00:20:47, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5
+2026-05-29 00:20:49, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5
+2026-05-29 00:21:31, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:5, size:23
+2026-05-29 00:21:43, EXEC, v:1, k:ed@quadrado, mode:FULL, rate:100, size:23
+2026-05-29 00:21:45, MOVE, v:1, k:ed@quadrado, mode:BACK
+2026-05-29 00:21:49, SELF, v:1, k:ed@quadrado, self:1, rate:100
+2026-05-29 00:21:56, SELF, v:1, k:ed@fib1, self:1
+2026-05-29 00:21:59, MOVE, v:1, k:ed@fib1, mode:PICK
+2026-05-29 00:22:02, MOVE, v:1, k:ed@fib1, mode:BACK
+2026-05-29 00:21:42, MOVE, v:1, k:ed@quadrado, mode:EDIT

@@ -25,7 +25,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- fup@base
+- ed@rec
 flags:
   inbox: inbox
   panel: graph
@@ -33,5 +33,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: fup@data
-selected_index: 8
+selected: ed@rec
+selected_index: 1

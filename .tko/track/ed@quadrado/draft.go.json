@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-29_00-18-27",
+            "content": "@@ -433,24 +433,6 @@\n (n)%0A\n-    fmt.Println()%0A\n %7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-29_00-18-40",
+            "content": "@@ -77,17 +77,18 @@\n mt.Print\n-f\n+ln\n (%221%5E2 = \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-19-13",
+            "content": "@@ -77,16 +77,17 @@\n mt.Print\n+f\n (%221%5E2 = \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-19-26",
+            "content": "@@ -431,11 +431,24 @@\n (n)%0A    \n+fmt.Println()\n %0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-20-07",
+            "content": "@@ -81,10 +81,8 @@\n rint\n-ln\n (%221%5E\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-20-42",
+            "content": "@@ -165,10 +165,8 @@\n  = ?\n-%5Cn\n %22, n\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-21-31",
+            "content": "@@ -313,18 +313,16 @@\n + 1 = %25d\n-%5Cn\n %22, n, n-\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-05-29_00-21-43",
+            "content": "package main\nimport \"fmt\"\n\nfunc aragao(n int) int {\n    if n == 1{\n        fmt.Println(\"1^2 = 1\")\n        return 1\n    }\n    \n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = ?\\n\", n, n-1, n-1)\n    resultadoAnterior := aragao(n-1)\n    quadradoAtual := resultadoAnterior + 2*(n-1) + 1\n\n    fmt.Printf(\"%d^2 = %d^2 + 2*%d + 1 = %d\\n\", n, n-1, n-1, quadradoAtual)\n    return quadradoAtual\n}\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    aragao(n)\n    \n}\n",
+            "lines": "23"
+        }
+    ]
+}
