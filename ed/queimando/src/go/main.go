@@ -6,9 +6,35 @@ import (
 	"os"
 )
 
+type Pos struct {
+	l, c int
+}
+
 func burnTrees(grid [][]rune, l, c int) {
 	stack := NewStack[Pos]()
-	_ , _ , _ = mat, l, c
+	stack.Push(Pos{l, c})
+	nl := len(grid)
+	if nl == 0{
+		return 
+	}
+	nc := len(grid[0])
+
+	for !stack.IsEmpty() {
+		curr := stack.Pop()
+
+		if curr.l >= 0 && curr.l < nl && curr.c >= 0 && curr.c < nc {
+			if grid[curr.l][curr.c] == '#' {
+				grid[curr.l][curr.c] = 'o'
+
+				stack.Push(Pos{curr.l - 1, curr.c})
+				stack.Push(Pos{curr.l + 1, curr.c})
+				stack.Push(Pos{curr.l, curr.c - 1})
+				stack.Push(Pos{curr.l, curr.c + 1})
+				
+			}
+		}
+	}
+}
 
 	// Essa função deve usar uma list como pilha
 	// e marcar as árvores na matriz como queimados
@@ -18,7 +44,7 @@ func burnTrees(grid [][]rune, l, c int) {
 	//   - retirar o elemento do topo
 	//   - se puder ser queimado, queime e adicione seus vizinhos à pilha
 
-}
+
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)

@@ -1,0 +1,33 @@
+2026-05-30 14:40:17, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-05-30 14:40:18, EXEC, v:1, k:ed@queimando, mode:FULL, fail:COMP
+2026-05-30 14:40:18, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-05-30 14:40:19, MOVE, v:1, k:ed@queimando, mode:PICK
+2026-05-30 14:44:47, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-30 14:49:47, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-30 14:50:09, EXEC, v:1, k:ed@queimando, mode:FULL, size:106, fail:COMP
+2026-05-30 14:50:41, EXEC, v:1, k:ed@queimando, mode:FULL, size:106, fail:COMP
+2026-05-30 14:51:44, EXEC, v:1, k:ed@queimando, mode:FULL, size:102, fail:COMP
+2026-05-30 14:51:51, EXEC, v:1, k:ed@queimando, mode:FULL, size:102, fail:COMP
+2026-05-30 14:53:18, EXEC, v:1, k:ed@queimando, mode:FULL, rate:100, size:103
+2026-05-30 14:53:20, MOVE, v:1, k:ed@queimando, mode:BACK
+2026-05-30 14:53:28, SELF, v:1, k:ed@queimando, self:1, rate:100, concept:1, refactor:1
+2026-05-30 14:53:54, MOVE, v:1, k:ed@fila_enc, mode:DOWN
+2026-05-30 14:53:55, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-30 14:54:25, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:0, size:82
+2026-05-30 14:53:17, MOVE, v:1, k:ed@queimando, mode:EDIT
+2026-05-30 14:53:54, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 14:53:54, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 14:53:54, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 15:04:47, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 15:05:39, EXEC, v:1, k:ed@fila_enc, mode:FULL, size:94, fail:COMP
+2026-05-30 15:05:50, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:33, size:95
+2026-05-30 15:06:04, MOVE, v:1, k:ed@fila_enc, mode:BACK
+2026-05-30 15:06:24, MOVE, v:1, k:ed@fila_enc, mode:PICK
+2026-05-30 15:09:40, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:66, size:114
+2026-05-30 15:09:39, MOVE, v:1, k:ed@fila_enc, mode:EDIT
+2026-05-30 15:12:52, EXEC, v:1, k:ed@fila_enc, mode:FULL, size:126, fail:COMP
+2026-05-30 15:13:00, EXEC, v:1, k:ed@fila_enc, mode:FULL, size:126, fail:COMP
+2026-05-30 15:13:13, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:100, size:126
+2026-05-30 15:13:48, EXEC, v:1, k:ed@fila_enc, mode:FULL, rate:100, size:132
+2026-05-30 15:13:50, MOVE, v:1, k:ed@fila_enc, mode:BACK
+2026-05-30 15:14:01, SELF, v:1, k:ed@fila_enc, self:1, rate:100, concept:1, refactor:1

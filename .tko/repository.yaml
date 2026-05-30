@@ -25,7 +25,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@rec
+- ed@linear
 flags:
   inbox: inbox
   panel: graph
@@ -33,5 +33,5 @@ flags:
   task_graph_mode: time
   show_time: 'true'
 lang: go
-selected: ed@rec
-selected_index: 1
+selected: ed@linear
+selected_index: 4

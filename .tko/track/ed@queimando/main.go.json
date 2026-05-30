@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-05-26_10-49-48",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tstack := NewStack[Pos]()\n\t_ , _ , _ = mat, l, c\n\n\t// Essa fun\u00e7\u00e3o deve usar uma list como pilha\n\t// e marcar as \u00e1rvores na matriz como queimados\n\t// Uma sugest\u00e3o de como fazer isso \u00e9:\n\t// - adicionar a primeira posi\u00e7\u00e3o na pilha\n\t// - enquanto a pilha n\u00e3o estiver vazia:\n\t//   - retirar o elemento do topo\n\t//   - se puder ser queimado, queime e adicione seus vizinhos \u00e0 pilha\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "content": "@@ -45,534 +45,8 @@\n %0A)%0A%0A\n-tyoe Pos struct %7B%0A%09l, c int%0A%7D%0A%0Afunc burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09stact := NewStack%5BPos%7Bl, c%7D%5D%0A%09nl := len(grid)%0A%09if nl == 0%7B%0A%09%09return %0A%09%7D%0A%09nc := len(grid%5B0%5D)%0A%0A%09for !stack.IsEmpty() %7B%0A%09%09curr := stack.Pop()%0A%0A%09%09if curr.l %3E= 0 && curr.l %3C nl && curr.c %3E= 0 && curr.c %3C nc %7B%0A%09%09%09if grid%5Bcurr.l%5D%5Bcurr.c%5D == '#' %7B%0A%09%09%09%09grid%5Bcurr.l%5D%5Bcurr.c%5D = 'o'%0A%0A%09%09%09%09stack.Push(Pos%7Bcurr.l - 1, curr.c%7D)%0A%09%09%09%09stack.Push(Pos%7Bcurr.l + 1, curr.c%7D)%0A%09%09%09%09stack.Push(Pos%7Bcurr.l, curr.c - 1%7D)%0A%09%09%09%09stack.Push(Pos%7Bcurr.l, curr.c + 1%7D)%0A%09%09%09%09%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%0A%0A\n func\n",
             "lines": "44"
+        },
+        {
+            "label": "2026-05-30_14-50-09",
+            "content": "@@ -43,17 +43,17 @@\n s%22%0A)%0A%0Aty\n-p\n+o\n e Pos st\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-30_14-50-41",
+            "content": "@@ -119,17 +119,17 @@\n  %7B%0A%09stac\n-k\n+t\n  := NewS\n@@ -567,16 +567,108 @@\n %7D%0A%09%7D%0A%7D%0A%0A\n+func burnTrees(grid %5B%5D%5B%5Drune, l, c int) %7B%0A%09stack := NewStack%5BPos%5D()%0A%09_ , _ , _ = mat, l, c%0A%0A\n %09// Essa\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-05-30_14-51-44",
+            "content": "@@ -894,16 +894,17 @@\n  pilha%0A%0A\n+%7D\n %0A%0Afunc m\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-30_14-51-51",
+            "content": "@@ -140,34 +140,15 @@\n %5BPos\n-%5D()%0A%09stack.Push(Pos\n %7Bl, c%7D\n-)\n+%5D\n %0A%09nl\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-05-30_14-53-18",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc burnTrees(grid [][]rune, l, c int) {\n\tstack := NewStack[Pos]()\n\tstack.Push(Pos{l, c})\n\tnl := len(grid)\n\tif nl == 0{\n\t\treturn \n\t}\n\tnc := len(grid[0])\n\n\tfor !stack.IsEmpty() {\n\t\tcurr := stack.Pop()\n\n\t\tif curr.l >= 0 && curr.l < nl && curr.c >= 0 && curr.c < nc {\n\t\t\tif grid[curr.l][curr.c] == '#' {\n\t\t\t\tgrid[curr.l][curr.c] = 'o'\n\n\t\t\t\tstack.Push(Pos{curr.l - 1, curr.c})\n\t\t\t\tstack.Push(Pos{curr.l + 1, curr.c})\n\t\t\t\tstack.Push(Pos{curr.l, curr.c - 1})\n\t\t\t\tstack.Push(Pos{curr.l, curr.c + 1})\n\t\t\t\t\n\t\t\t}\n\t\t}\n\t}\n}\n\n\t// Essa fun\u00e7\u00e3o deve usar uma list como pilha\n\t// e marcar as \u00e1rvores na matriz como queimados\n\t// Uma sugest\u00e3o de como fazer isso \u00e9:\n\t// - adicionar a primeira posi\u00e7\u00e3o na pilha\n\t// - enquanto a pilha n\u00e3o estiver vazia:\n\t//   - retirar o elemento do topo\n\t//   - se puder ser queimado, queime e adicione seus vizinhos \u00e0 pilha\n\n\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc, lfire, cfire int\n\tfmt.Sscanf(line, \"%d %d %d %d\", &nl, &nc, &lfire, &cfire)\n\n\tgrid := make([][]rune, 0, nl)\n\tfor range nl {\n\t\tscanner.Scan()\n\t\tline := []rune(scanner.Text())\n\t\tgrid = append(grid, line)\n\t}\n\tburnTrees(grid, lfire, cfire)\n\tshowGrid(grid)\n}\n\nfunc showGrid(mat [][]rune) {\n\tfor _, linha := range mat {\n\t\tfmt.Println(string(linha))\n\t}\n}\n",
+            "lines": "70"
         }
     ]
 }
