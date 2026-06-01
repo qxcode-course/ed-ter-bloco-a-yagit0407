@@ -30,8 +30,8 @@ flags:
   inbox: inbox
   panel: graph
   show_panel: 'true'
-  task_graph_mode: time
+  task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@linear
-selected_index: 4
+selected: ed@chaves
+selected_index: 5
