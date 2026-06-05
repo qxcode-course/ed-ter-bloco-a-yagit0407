@@ -12,8 +12,53 @@
         },
         {
             "label": "2026-06-01_01-44-12",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"bufio\"\n\t\"container/list\"\n\t\"os\"\n)\n\ntype Queue[T any] struct {\n\titems *list.List\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{items: list.New()}\n}\n\nfunc (q *Queue[T]) Enqueue(item T) {\n\tq.items.PushBack(item)\n}\n\nfunc (q  Queue[T]) Dequeue() T {\n\tif q.items.Len() == 0 {\n\t\tvar zero T\n\t\treturn zero\n\t}\n\tfront := q.items.Front().Value.(T)\n\tq.items.Remove(q.items.Front())\n\treturn front\n}\n\nfunc (q *Queue[T]) Size() int {\n\treturn q.items.Len()\n}\n\n\nfunc main() {\n\n\tqueue := NewQueue[string]()\n\n\tfor c:= 'A'; c <= 'P'; c++ {\n\t\tqueue.Enqueue(string(c))\n\t}\n\n\tscanner := bufio.NewScanner(os.Stdin)\n\tjogosContador := 1\n\n\tfor queue.Size() > 1 {\n\t\tteam.Left := queue.Dequeue()\n\t\tteam.Right := queue.Dequeue()\n\t\t\n\t}\n}\n",
+            "content": "@@ -481,188 +481,8 @@\n %0A%7D%0A%0A\n-func (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e= e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value(T) + %22%22)%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22%0A%7D%0A\n %0Afun\n@@ -738,581 +738,8 @@\n %0A%09%09%0A\n-%09%09if scanner.Scan() %7B%0A%09%09%09line := scanner.Text()%0A%09%09%09var goalsLeft, goalsRight int%0A%09%09%09fmt.Sscanf(line, %22%25d %25d%22, &goalsLeft, &goalsRight)%0A%0A%09%09%09vencedor := %22%22%0A%09%09%09if goalsLeft %3E goalsRight %7B%0A%09%09%09%09vencedor = teamLeft%0A%09%09%09%09queue.Enqueue(teamLeft)%0A%09%09%09%7D else %7B%0A%09%09%09%09vencedor = teamRight%0A%09%09%09%09queue.Enqueue(teamRight)%0A%09%09%09%7D%0A%0A%09%09%09fmt.Printf(%22Jogo %25d: %25s (%25d) vs (%25d) %25s -%3E Vencedor: %25s%5Cn%22, %0A%09%09%09%09jogosContador, teamLeft, goalsLeft, goalsRight, teamRight, vencedor)%0A%09%09%09fmt.Println(%22Fila atual:%22, queue)%0A%09%09%09fmt.Println(%22------------------------------------------------%22)%0A%09%09%09jogosContador++%0A%09%09%7D%0A\n %09%7D%0A%7D\n",
             "lines": "53"
+        },
+        {
+            "label": "2026-06-01_19-17-28",
+            "content": "@@ -246,33 +246,33 @@\n tem)%0A%7D%0A%0Afunc (q \n-*\n+ \n Queue%5BT%5D) Dequeu\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-01_19-18-13",
+            "content": "@@ -16,16 +16,23 @@\n mport (%0A\n+%09%22fmt%22%0A\n %09%22bufio%22\n@@ -37,24 +37,155 @@\n o%22%0A%09\n-%0A%09%22fmt%22%0A%09%22os%22%0A)%0A\n+%22container/list%22%0A%09%22os%22%0A)%0A%0Atype Queue%5BT any%5D struct %7B%0A%09items *list.List%0A%7D%0A%0Afunc NewQueue%5BT any%5D() *Queue%5BT%5D %7B%0A%09return &Queue%5BT%5D%7Bitems: list.New()%7D%0A%7D\n %0A%0Afu\n@@ -571,17 +571,16 @@\n = nil; e\n- \n = e.Next\n@@ -618,19 +618,17 @@\n alue\n-.\n (T)\n-)\n  + %22\n- \n %22\n+)\n %0A%09%7D%0A\n@@ -672,16 +672,17 @@\n ain() %7B%0A\n+%0A\n %09queue :\n@@ -709,17 +709,16 @@\n %0A%0A%09for c\n- \n := 'A'; \n@@ -850,24 +850,25 @@\n %3E 1 %7B%0A%09%09team\n+.\n Left := queu\n@@ -881,24 +881,25 @@\n eue()%0A%09%09team\n+.\n Right := que\n@@ -911,16 +911,18 @@\n queue()%0A\n+%09%09\n %0A%09%09if sc\n@@ -1285,16 +1285,17 @@\n : %25s%5Cn%22,\n+ \n %0A%09%09%09%09jog\n@@ -1493,50 +1493,7 @@\n %7D%0A%09%7D\n-%0A%0A%09fmt.Println(%22Campe%C3%A3o:%22, queue.Dequeue())\n %0A%7D%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-06-01_19-20-44",
+            "content": "@@ -43,16 +43,496 @@\n %22os%22%0A)%0A%0A\n+%0Afunc (q *Queue%5BT%5D) Enqueue(item T) %7B%0A%09q.items.PushBack(item)%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Dequeue() T %7B%0A%09if q.items.Len() == 0 %7B%0A%09%09var zero T%0A%09%09return zero%0A%09%7D%0A%09front := q.items.Front().Value.(T)%0A%09q.items.Remove(q.items.Front())%0A%09return front%0A%7D%0A%0Afunc (q *Queue%5BT%5D) Size() int %7B%0A%09return q.items.Len()%0A%7D%0A%0Afunc (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e = e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value.(T)) + %22 %22%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22%0A%7D%0A%0A\n func mai\n",
+            "lines": "74"
+        },
+        {
+            "label": "2026-06-01_19-21-49",
+            "content": "@@ -47,249 +47,8 @@\n %0A)%0A%0A\n-func (q *Queue%5BT%5D) Size() int %7B%0A%09return q.items.Len()%0A%7D%0A%0Afunc (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e = e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value.(T)) + %22 %22%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22%0A%7D%0A%0A\n func\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-06-01_19-22-01",
+            "content": "@@ -100,16 +100,198 @@\n en()%0A%7D%0A%0A\n+func (q *Queue%5BT%5D) String() string %7B%0A%09var result string%0A%09for e := q.items.Front(); e != nil; e = e.Next() %7B%0A%09%09result += fmt.Sprint(e.Value.(T)) + %22 %22%0A%09%7D%0A%09return %22%5B %22 + result + %22%5D%22%0A%7D\n %0A%0Afunc m\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-06-01_19-22-13",
+            "content": "@@ -665,16 +665,272 @@\n %09%09%09%7D%0A%0A%09%09\n+%09fmt.Printf(%22Jogo %25d: %25s (%25d) vs (%25d) %25s -%3E Vencedor: %25s%5Cn%22,%0A%09%09%09%09jogosContador, teamLeft, goalsLeft, goalsRight, teamRight, vencedor)%0A%09%09%09fmt.Println(%22Fila atual:%22, queue)%0A%09%09%09fmt.Println(%22------------------------------------------------%22)%0A%09%09%09jogosContador++\n %0A%09%09%7D%0A%09%7D%0A\n@@ -943,16 +943,28 @@\n Println(\n+%22Campe%C3%A3o:%22, \n queue.De\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-06-01_19-23-11",
+            "content": "@@ -493,16 +493,30 @@\n ht)%0A%0A%09%09%09\n+vencedor := %22%22\n %0A%09%09%09if g\n@@ -539,24 +539,43 @@\n Right %7B%0A%09%09%09%09\n+vencedor = teamLeft\n %0A%09%09%09%09queue.E\n@@ -607,16 +607,36 @@\n e %7B%0A%09%09%09%09\n+vencedor = teamRight\n %0A%09%09%09%09que\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-01_19-23-39",
+            "content": "@@ -247,16 +247,35 @@\n .Stdin)%0A\n+%09jogosContador := 1\n %0A%0A%09for q\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-01_19-23-46",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc (q *Queue[T]) Size() int {\n\treturn q.items.Len()\n}\n\n\n\nfunc main() {\n\tqueue := NewQueue[string]()\n\n\tfor c := 'A'; c <= 'P'; c++ {\n\t\tqueue.Enqueue(string(c))\n\t}\n\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\n\tfor queue.Size() > 1 {\n\t\tteamLeft := queue.Dequeue()\n\t\tteamRight := queue.Dequeue()\n\n\t\tif scanner.Scan() {\n\t\t\tline := scanner.Text()\n\t\t\tvar goalsLeft, goalsRight int\n\t\t\tfmt.Sscanf(line, \"%d %d\", &goalsLeft, &goalsRight)\n\n\t\t\t\n\t\t\tif goalsLeft > goalsRight {\n\t\t\t\t\n\t\t\t\tqueue.Enqueue(teamLeft)\n\t\t\t} else {\n\t\t\t\t\n\t\t\t\tqueue.Enqueue(teamRight)\n\t\t\t}\n\n\t\t\n\t\t}\n\t}\n\n\tfmt.Println(queue.Dequeue())\n}\n",
+            "lines": "49"
         }
     ]
 }

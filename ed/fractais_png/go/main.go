@@ -2,80 +2,156 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"math/rand"
 )
 
-func arvore(pen *Pen, dist float64) {
-    // Comece definindo o seu Caso Base aqui
-	if dist < 5 {
-		pen.SetRGB(0, 5, 0)
-		pen.FillCircle(3)
+func ri(inf, sup int) float64 {
+	return float64(rand.Intn(sup-inf+1) + inf)
+}
+
+func gelo(pen *Pen, dist float64, nivel int) {
+	if nivel == 0 || dist < 2 {
 		return
 	}
-	ang := 27.5
-	fator := 0.75
 
-	pen.SetLineWidth(dist / 10)
-	
-	if(dist > 30) {
-		pen.SetRGB(101, 67, 33)
-	} else {
-		pen.SetRGB(50, 0, 50)
+	for range 5 {
+		pen.Walk(dist)
+		gelo(pen, dist*0.35, nivel-3)
+		pen.Walk(-dist)
+		pen.Right(72)
+	}
+}
+
+func rotacao(pen *Pen, dist float64) {
+	if dist < 1 {
+		return
 	}
 
-	pen.Walk(dist)
-	pen.Right(ang)
-	arvore(pen, dist*fator)
-	pen.Left(ang)
+	r := float64(int(dist*1.5) % 256)
+	g := float64(int(dist*0.5) % 256)
+	b := float64(255 - (int(dist) % 256))
 
-	pen.Left(ang)
-	arvore(pen, dist*fator)
-	pen.Right(ang)
+	pen.SetRGB(r, g, b)
+	pen.Walk(dist)
+	pen.Right(90)
+
+	rotacao(pen, dist-4)
+}
+
+func trigo(pen *Pen, dist float64) {
+	if dist < 5 {
+		return
+	}
+
+	pen.SetLineWidth(dist / 35)
+	pen.Walk(dist)
+	trigo(pen, dist*0.25)
+
+	pen.Left(35)
+	trigo(pen, dist*0.5)
+	pen.Right(35)
+
+	pen.Right(35)
+	trigo(pen, dist*0.5)
+	pen.Left(35)
+
+	pen.Left(4)
+	trigo(pen, dist*0.3)
+	pen.Right(4)
+
+	pen.Right(4)
+	trigo(pen, dist*0.3)
+	pen.Left(4)
+
+	trigo(pen, dist*0.8)
 
 	pen.Walk(-dist)
-	
-
-    
-    // Desenhe o tronco, vire a caneta e mergulhe na recursão
-}
-func circulo( pen *Pen) {
-	pen.SetRGB(0, 120, 105)
-
-	for i := 0; i < 5; i++ {
-		pen.SetPosition(100 + float64(i)*90, 300)
-		pen.DrawCircle(40)
-	}
-
 }
 
-func circulosFractal(pen *Pen, x, y, r float64, nivel int) {
-	if nivel == 0 || r < 2 {
+func triangulo(pen *Pen, tamanho float64, nivel int) {
+	if nivel == 0 {
 		return
 	}
-
-	pen.SetPosition(x, y)
-	pen.DrawCircle(r)
-
-	for i := 0; i < 6; i++ {
-		ang := 2 * math.Pi * float64(i) / 6.0
-		nx := x + math.Cos(ang)*r
-		ny := y + math.Sin(ang)*r
-		circulosFractal(pen, nx, ny, r/3.0, nivel-1)
+	for range 3 {
+		pen.Walk(tamanho)
+		pen.Left(120)
 	}
+
+	metade := tamanho / 2
+
+	triangulo(pen, metade, nivel-1)
+
+	pen.Walk(metade)
+	triangulo(pen, metade, nivel-1)
+
+	pen.Left(120)
+	pen.Walk(metade)
+	pen.Right(120)
+	triangulo(pen, metade, nivel-1)
+
+	pen.Right(120)
+	pen.Walk(metade)
+	pen.Left(120)
+}
+
+func circulos(pen *Pen, raio float64, nivel int) {
+	if nivel == 0 {
+		return
+	}
+	pen.DrawCircle(raio)
+
+	for range 6 {
+		pen.Right(60)
+
+		pen.Up()
+		pen.Walk(raio)
+		pen.Down()
+
+		pen.Right(90)
+
+		circulos(pen, raio*0.33, nivel-1)
+
+		pen.Up()
+		pen.Left(90)
+		pen.Walk(-raio)
+		pen.Down()
+	}
+}
+
+func arvere(pen *Pen, dist float64) {
+	if dist < 10 {
+		if ri(0, 50) == 0 {
+			pen.SetRGB(255, 0, 0)
+			pen.FillCircle(10)
+		}
+		return
+	}
+	ang_dir := ri(10, 40)
+	ang_esq := ri(10, 40)
+
+	pen.SetLineWidth(dist / 5)
+	pen.SetRGB(0, 0, 0)
+	pen.Walk(dist)
+
+	pen.Right(ang_dir)
+	arvere(pen, dist*(ri(80, 85)/100.0))
+
+	pen.Left(ang_dir + ang_esq)
+	arvere(pen, dist*(ri(80, 85)/100.0))
+
+	pen.Right(ang_esq)
+	pen.SetRGB(0, 0, 0)
+	pen.Walk(-dist)
 }
 
 func main() {
-	// Cria o canvas
-	pen := NewPen(600, 600)   
-	
-	// Configurações iniciais
-	pen.SetHeading(90)
-	pen.SetPosition(300, 550)
+	pen := NewPen(800, 800)
 
-	// Chama sua função
-	circulosFractal(pen, 150, 150, 150, 2)
+	pen.SetHeading(0)
+	pen.SetPosition(400, 400)
 
-	// Salva o arquivo (sem tentar capturar retorno de erro)
+	gelo(pen, 200, 12)
+
 	pen.SavePNG("tree.png")
-	fmt.Println("Processo finalizado!")
+	fmt.Println("PNG file created successfully.")
 }

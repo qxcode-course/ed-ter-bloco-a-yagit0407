@@ -7,8 +7,58 @@
         },
         {
             "label": "2026-05-23_13-37-34",
-            "content": "package main\nimport (\n    \"fmt\"\n)\n\nfunc maneirasSubir(n int) int {\n    if n == 1 || n == 2 {\n        return 1\n    } \n    if n == 3 {\n        return 2\n    }\n    return maneirasSubir(n-1) + maneirasSubir(n-3)\n}\nfunc main() {\n    var n int\n    \n    fmt.Scan(&n)\n    fmt.Println(maneirasSubir(n))\n}\n",
+            "content": "@@ -17,60 +17,54 @@\n ort \n+(%0A    \n %22fmt%22%0A\n+)%0A%0A\n func ma\n-in() %7B%0A    var n int%0A%0A    fmt.Scan(&n)%0A\n+neirasSubir(n int) int %7B\n %0A   \n@@ -90,31 +90,8 @@\n 2 %7B%0A\n-        fmt.Println(1)%0A\n     \n@@ -96,24 +96,26 @@\n       return\n+ 1\n %0A    %7D %0A    \n@@ -138,27 +138,23 @@\n     \n-fmt.Println(2)\n+return 2\n %0A    \n+%7D%0A\n     \n@@ -163,19 +163,133 @@\n turn\n-%0A    %7D%0A%0A    \n+ maneirasSubir(n-1) + maneirasSubir(n-3)%0A%7D%0Afunc main() %7B%0A    var n int%0A    %0A    fmt.Scan(&n)%0A    fmt.Println(maneirasSubir(n))\n %0A%7D%0A\n",
             "lines": "20"
+        },
+        {
+            "label": "2026-06-02_23-01-43",
+            "content": "@@ -201,173 +201,12 @@\n   %7D%0A\n+%0A\n     \n-dp := make(%5B%5Dint, n+1)%0A    dp%5B1%5D = 1%0A    dp%5B2%5D = 2%0A    dp%5B3%5D = 3%0A%0A    for i := 4; i %3C= n; i++ %7B%0A        dp%5Bi%5D = dp%5Bi - 1%5D + dp%5Bi - 2%5D%0A    %7D%0A    fmt.Println(dp%5Bn%5D)\n %0A%7D%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-06-02_23-02-56",
+            "content": "@@ -338,18 +338,8 @@\n - 2%5D\n- dp%5Bi - 3%5D\n %0A   \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-03-14",
+            "content": "@@ -334,18 +334,16 @@\n p%5Bi - 2%5D\n- -\n  dp%5Bi - \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-03-27",
+            "content": "@@ -334,16 +334,28 @@\n p%5Bi - 2%5D\n+ - dp%5Bi - 3%5D\n %0A    %7D%0A \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-05-38",
+            "content": "@@ -332,17 +332,17 @@\n  dp%5Bi - \n-4\n+2\n %5D%0A    %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-05-43",
+            "content": "@@ -332,17 +332,17 @@\n  dp%5Bi - \n-2\n+4\n %5D%0A    %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-05-49",
+            "content": "@@ -332,17 +332,17 @@\n  dp%5Bi - \n-1\n+2\n %5D%0A    %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-05-51",
+            "content": "@@ -332,17 +332,17 @@\n  dp%5Bi - \n-3\n+1\n %5D%0A    %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-05-59",
+            "content": "@@ -246,25 +246,25 @@\n     dp%5B2%5D = \n-1\n+2\n %0A    dp%5B3%5D =\n@@ -264,17 +264,17 @@\n dp%5B3%5D = \n-2\n+3\n %0A%0A    fo\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_23-07-31",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n\n    fmt.Scan(&n)\n\n    if n == 1 || n == 2 {\n        fmt.Println(1)\n        return\n    } \n    if n == 3 {\n        fmt.Println(2)\n        return\n    }\n    dp := make([]int, n+1)\n    dp[1] = 1\n    dp[2] = 1\n    dp[3] = 2\n\n    for i := 4; i <= n; i++ {\n        dp[i] = dp[i - 1] + dp[i - 3]\n    }\n    fmt.Println(dp[n])\n}\n",
+            "lines": "25"
         }
     ]
 }

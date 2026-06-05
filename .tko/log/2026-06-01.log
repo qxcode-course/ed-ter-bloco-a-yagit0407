@@ -13,3 +13,19 @@
 2026-06-01 01:43:55, MOVE, v:1, k:ed@chaves, mode:EDIT
 2026-06-01 01:44:12, EXEC, v:1, k:ed@chaves, mode:FULL, size:93, fail:COMP
 2026-06-01 01:44:12, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-01 19:12:11, MOVE, v:1, k:ed@chaves, mode:PICK
+2026-06-01 19:16:08, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-01 19:17:28, EXEC, v:1, k:ed@chaves, mode:FULL, size:120, fail:COMP
+2026-06-01 19:18:13, EXEC, v:1, k:ed@chaves, mode:FULL, size:120, fail:COMP
+2026-06-01 19:20:45, EXEC, v:1, k:ed@chaves, mode:FULL, size:114, fail:COMP
+2026-06-01 19:20:43, MOVE, v:1, k:ed@chaves, mode:EDIT
+2026-06-01 19:21:49, EXEC, v:1, k:ed@chaves, mode:FULL, size:87, fail:COMP
+2026-06-01 19:22:01, EXEC, v:1, k:ed@chaves, mode:FULL, size:99, fail:COMP
+2026-06-01 19:22:13, EXEC, v:1, k:ed@chaves, mode:FULL, rate:0, size:93
+2026-06-01 19:23:11, EXEC, v:1, k:ed@chaves, mode:FULL, size:89, fail:COMP
+2026-06-01 19:23:13, EXEC, v:1, k:ed@chaves, mode:FULL, fail:COMP
+2026-06-01 19:23:39, EXEC, v:1, k:ed@chaves, mode:FULL, size:89, fail:COMP
+2026-06-01 19:23:46, EXEC, v:1, k:ed@chaves, mode:FULL, rate:100, size:89
+2026-06-01 19:23:51, MOVE, v:1, k:ed@chaves, mode:BACK
+2026-06-01 19:24:11, SELF, v:1, k:ed@chaves, self:1, rate:100, concept:1, refactor:1
+2026-06-01 19:23:45, MOVE, v:1, k:ed@chaves, mode:EDIT

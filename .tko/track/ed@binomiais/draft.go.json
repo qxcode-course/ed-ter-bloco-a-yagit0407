@@ -2,8 +2,23 @@
     "patches": [
         {
             "label": "2026-05-25_02-06-37",
-            "content": "package main\nimport \"fmt\"\n\nfunc calcularCombinacao(n, k int, memo [][]int) int {\n    if k == 0 || k == n {\n        return 1\n    } \n    if memo[n][k] != 0 {\n        return memo[n][k]\n    }\n    memo[n][k] = calcularCombinacao(n-1, k-1, memo) + calcularCombinacao(n-1, k, memo)\n    return memo[n][k]\n}\nfunc main() {\n    var n, k int\n    fmt.Scan(&n, &k)\n\n    memo := make([][]int, n+1)\n\n    for i := range memo {\n\t\t\tmemo[i] = make([]int, k+1)\n\t\t}\n\t\tfmt.Println(calcularCombinacao(n, k, memo))\n}\n",
+            "content": "@@ -18,16 +18,289 @@\n rt %22fmt%22\n+%0A%0Afunc calcularCombinacao(n, k int, memo %5B%5D%5B%5Dint) int %7B%0A    if k == 0 %7C%7C k == n %7B%0A        return 1%0A    %7D %0A    if memo%5Bn%5D%5Bk%5D != 0 %7B%0A        return memo%5Bn%5D%5Bk%5D%0A    %7D%0A    memo%5Bn%5D%5Bk%5D = calcularCombinacao(n-1, k-1, memo) + calcularCombinacao(n-1, k, memo)%0A    return memo%5Bn%5D%5Bk%5D%0A%7D\n %0Afunc ma\n@@ -323,17 +323,16 @@\n , k int%0A\n-%0A\n     fmt.\n@@ -353,174 +353,12 @@\n     \n-if k %3C 0 %7C%7C k %3E 0 %7B%0A        fmt.Println(0)%0A    %7D%0A    if k == 0 %7C%7C k == n %7B%0A        fmt.Println(1)%0A        return%0A    %7D%0A    if k %3E n-k %7B%0A        k = n - k%0A    %7D%0A    dp\n+memo\n  := \n@@ -368,253 +368,125 @@\n e(%5B%5D\n+%5B%5D\n int, \n-k + 1)%0A    dp%5B0%5D = 1%0A%0A    for i := 1; i %3C= n; i++ %7B%0A        limite := i%0A        if limite %3E k %7B%0A            limite = k%0A        %7D%0A        for j := limite; j %3E 1; j-- %7B%0A            dp%5Bj%5D = dp%5Bj%5D + dp%5Bj-1%5D%0A        %7D%0A    %7D%0A    fmt.Println(dp%5Bk%5D\n+n+1)%0A%0A    for i := range memo %7B%0A%09%09%09memo%5Bi%5D = make(%5B%5Dint, k+1)%0A%09%09%7D%0A%09%09fmt.Println(calcularCombinacao(n, k, memo)\n )%0A%7D%0A\n",
             "lines": "24"
+        },
+        {
+            "label": "2026-06-02_22-52-48",
+            "content": "@@ -417,17 +417,17 @@\n te; j %3E \n-0\n+1\n ; j-- %7B%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-06-02_22-52-55",
+            "content": "@@ -93,17 +93,17 @@\n  %7C%7C k %3E \n-n\n+0\n  %7B%0A     \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-06-02_22-53-38",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n, k int\n\n    fmt.Scan(&n, &k)\n\n    if k < 0 || k > n {\n        fmt.Println(0)\n    }\n    if k == 0 || k == n {\n        fmt.Println(1)\n        return\n    }\n    if k > n-k {\n        k = n - k\n    }\n    dp := make([]int, k + 1)\n    dp[0] = 1\n\n    for i := 1; i <= n; i++ {\n        limite := i\n        if limite > k {\n            limite = k\n        }\n        for j := limite; j > 0; j-- {\n            dp[j] = dp[j] + dp[j-1]\n        }\n    }\n    fmt.Println(dp[k])\n}\n",
+            "lines": "31"
         }
     ]
 }

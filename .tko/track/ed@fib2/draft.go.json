@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-02_14-50-37",
+            "content": "@@ -240,17 +240,16 @@\n  - 3)%0A%7D%0A\n-%0A\n func mai\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-02_14-50-58",
+            "content": "@@ -242,31 +242,8 @@\n  3)%0A\n-    return memo%5Bn%5D    %0A\n %7D%0A%0Af\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-02_14-51-28",
+            "content": "@@ -138,17 +138,17 @@\n  return \n-2\n+1\n %0A    %7D%0A \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-02_14-51-45",
+            "content": "@@ -218,12 +218,8 @@\n  f(n\n- - 1\n ) + \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-02_14-53-59",
+            "content": "@@ -24,140 +24,94 @@\n t%22%0A%0A\n-type Populacao struct %7B%0A    idade0\n+var memo%5B50%5D int%0A%0Afunc f(n int)\n  int\n+ %7B\n %0A    i\n-dade1 int%0A    idade2 int%0A%7D%0Avar memo map%5Bint%5D Populacao %0A%0Afunc simular(n int) Populacao %7B\n+f n == 1 %7C%7C n == 2 %7B%0A        return 1%0A    %7D\n %0A   \n@@ -119,17 +119,17 @@\n if n == \n-1\n+3\n  %7B%0A     \n@@ -142,94 +142,35 @@\n urn \n-Populacao%7Bidade0: 1, idade1: 0, idade2: 0%7D%0A    %7D%0A    if res, existe := memo%5Bn%5D; existe\n+2%0A    %7D%0A    if memo%5Bn%5D != 0\n  %7B%0A \n@@ -187,237 +187,89 @@\n urn \n-res\n+memo%5Bn%5D\n %0A    %7D\n-    \n %0A    \n-anterior := simular(n - 1)%0A    var atual Populacao%0A    atual.idade0 = anterior.idade1 + anterior.idade2%0A    atual.idade1 = anterior.idade0%0A    atual.idade2 = anterior.idade1%0A%0A    memo%5Bn%5D = atual%0A    return atual\n+memo%5Bn%5D = f(n - 1) + f(n - 2) - f(n - 3)%0A    return memo%5Bn%5D    \n %0A%7D%0A%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-06-02_14-58-34",
+            "content": "@@ -572,140 +572,8 @@\n n)%0A%0A\n-    memo = make(map%5Bint%5DPopulacao)%0A    popFinal := simular(n)%0A    total := popFinal.idade0 + popFinal.idade1 + popFinal.idade2%0A    %0A\n     \n@@ -584,12 +584,16 @@\n Println(\n+f(n)\n )%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-06-02_14-59-59",
+            "content": "@@ -716,17 +716,12 @@\n Println(\n-total\n )%0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-06-02_15-00-02",
+            "content": "package main\nimport \"fmt\"\n\ntype Populacao struct {\n    idade0 int\n    idade1 int\n    idade2 int\n}\nvar memo map[int] Populacao \n\nfunc simular(n int) Populacao {\n    if n == 1 {\n        return Populacao{idade0: 1, idade1: 0, idade2: 0}\n    }\n    if res, existe := memo[n]; existe {\n        return res\n    }    \n    anterior := simular(n - 1)\n    var atual Populacao\n    atual.idade0 = anterior.idade1 + anterior.idade2\n    atual.idade1 = anterior.idade0\n    atual.idade2 = anterior.idade1\n\n    memo[n] = atual\n    return atual\n}\n\nfunc main() {\n    var n int\n\n    fmt.Scan(&n)\n\n    memo = make(map[int]Populacao)\n    popFinal := simular(n)\n    total := popFinal.idade0 + popFinal.idade1 + popFinal.idade2\n    \n    fmt.Println(total)\n}\n",
+            "lines": "38"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-04_23-10-18",
+            "content": "@@ -604,176 +604,12 @@\n   %7D%0A\n+%0A\n     \n-if len(pilha) != 0 %7B%0A        balanceado = false%0A    %7D%0A%0A    if balanceado %7B%0A        fmt.Println(%22balanceado%22)%0A    %7D else %7B%0A        fmt.Println(%22no balanceado%22)%0A    %7D%0A\n %0A%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-06-04_23-25-18",
+            "content": "@@ -752,9 +752,8 @@\n n(%22n\n-%C3%A3\n o ba\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-04_23-46-53",
+            "content": "@@ -748,17 +748,17 @@\n intln(%22n\n-a\n+%C3%A3\n o balanc\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-06-04_23-47-01",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var s string\n    fmt.Scan(&s)\n\n    pilha := []rune{}\n    balanceado := true\n\n    for _, c := range s {\n        if c == '(' || c == '[' {\n            pilha = append(pilha, c)\n        } else {\n            if len(pilha) == 0 {\n                balanceado = false\n                break\n            }\n\n            topo := pilha[len(pilha)-1]\n\n            if (c == ')' && topo == '(') || (c == ']' && topo == '[') {\n                pilha = pilha[:len(pilha)-1]\n            } else {\n                balanceado = false\n                break\n            }\n\n        }\n    }\n    if len(pilha) != 0 {\n        balanceado = false\n    }\n\n    if balanceado {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}
