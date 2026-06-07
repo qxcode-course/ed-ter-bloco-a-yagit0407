@@ -17,8 +17,23 @@
         },
         {
             "label": "2026-05-25_21-47-10",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(8*n + 12)\n}\n",
+            "content": "@@ -22,102 +22,8 @@\n fmt%22\n-%0A%0Afunc blocos(n int) int %7B%0A    if n == 1 %7B%0A        return 20%0A    %7D%0A    return blocos(n ) + 8%0A%7D\n %0Afun\n@@ -85,17 +85,16 @@\n tln(\n-blocos(n)\n+8*n + 12\n )%0A%7D%0A\n",
             "lines": "8"
+        },
+        {
+            "label": "2026-06-05_15-19-51",
+            "content": "@@ -109,11 +109,8 @@\n s(n \n-- 2\n ) + \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-05_15-19-59",
+            "content": "@@ -107,17 +107,17 @@\n cos(n - \n-1\n+2\n ) + 8%0A%7D%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-05_15-20-05",
+            "content": "package main\nimport \"fmt\"\n\nfunc blocos(n int) int {\n    if n == 1 {\n        return 20\n    }\n    return blocos(n - 1) + 8\n}\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(blocos(n))\n}\n",
+            "lines": "15"
         }
     ]
 }

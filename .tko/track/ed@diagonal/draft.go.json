@@ -12,7 +12,32 @@
         },
         {
             "label": "2026-05-25_02-15-00",
-            "content": "package main\nimport (\n    \"fmt\"\n    \"strings\"\n)\n\nfunc diagonal(s string, k int) {\n    if len(s) == 0 {\n        return\n    }\n\n    fmt.Print(strings.Repeat(\" \", k))\n    fmt.Printf(\"%c\\n\", s[0])\n    diagonal(s[1:], k+1)\n}\n\nfunc main() {\n    var palavra string\n    fmt.Scan(&palavra)\n    diagonal(palavra, 0)\n}\n",
+            "content": "@@ -17,13 +17,35 @@\n ort \n-%22fmt%22\n+(%0A    %22fmt%22%0A    %22strings%22%0A)\n %0A%0Afu\n@@ -127,98 +127,69 @@\n    f\n-or i := 1; i %3C k; i++ %7B%0A        fmt.Println(%22 %22)%0A    %7D%0A    %0A    fmt.Println(string(\n+mt.Print(strings.Repeat(%22 %22, k))%0A    fmt.Printf(%22%25c%5Cn%22, \n s%5B0%5D)\n-)%0A\n %0A   \n@@ -204,18 +204,21 @@\n l(s%5B\n-2\n+1\n :%5D, k\n++1\n )%0A%7D%0A\n+%0A\n func\n@@ -239,17 +239,23 @@\n var \n-s\n+palavra\n  string%0A\n %09fmt\n@@ -254,17 +254,20 @@\n ing%0A\n-%09\n+    \n fmt.Scan\n ln(&\n@@ -266,17 +266,23 @@\n Scan\n-ln\n (&\n-s)%0A%0A%09\n+palavra)%0A    \n diag\n@@ -286,16 +286,22 @@\n iagonal(\n-s\n+palavra\n , 0)%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-06_13-07-01",
+            "content": "@@ -207,17 +207,17 @@\n gonal(s%5B\n-1\n+2\n :%5D, k)%0A%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-06_13-07-07",
+            "content": "@@ -109,17 +109,17 @@\n or i := \n-0\n+1\n ; i %3C k;\n@@ -217,12 +217,8 @@\n %5D, k\n- + 1\n )%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-06_13-26-57",
+            "content": "@@ -235,17 +235,20 @@\n ain() %7B%0A\n-%09\n+    \n var s st\n@@ -265,13 +265,16 @@\n Scan\n+ln\n (&s)%0A\n+%0A\n %09dia\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-06_13-27-50",
+            "content": "@@ -53,17 +53,20 @@\n  int) %7B%0A\n-%09\n+    \n if len(s\n@@ -78,22 +78,34 @@\n 0 %7B%0A\n-%09%09return%0A%09%7D%0A%0A%09\n+        return%0A    %7D%0A%0A    \n for \n@@ -129,10 +129,16 @@\n + %7B%0A\n-%09%09\n+        \n fmt.\n@@ -146,19 +146,31 @@\n rint\n+ln\n (%22 %22)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A    %0A    \n fmt.\n@@ -192,17 +192,20 @@\n s%5B0%5D))%0A%0A\n-%09\n+    \n diagonal\n@@ -213,17 +213,19 @@\n s%5B1:%5D, k\n-+\n+ + \n 1)%0A%7D%0Afun\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-06-06_13-28-18",
+            "content": "package main\nimport \"fmt\"\n\nfunc diagonal(s string, k int) {\n\tif len(s) == 0 {\n\t\treturn\n\t}\n\n\tfor i := 0; i < k; i++ {\n\t\tfmt.Print(\" \")\n\t}\n\n\tfmt.Println(string(s[0]))\n\n\tdiagonal(s[1:], k+1)\n}\nfunc main() {\n\tvar s string\n\tfmt.Scan(&s)\n\tdiagonal(s, 0)\n}\n",
             "lines": "21"
         }
     ]

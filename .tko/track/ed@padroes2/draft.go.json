@@ -2,8 +2,23 @@
     "patches": [
         {
             "label": "2026-05-25_21-53-40",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(n * (n+2))\n}\n",
+            "content": "@@ -22,103 +22,8 @@\n fmt%22\n-%0A%0Afunc pecas(n int) int %7B%0A    if n == 1%7B%0A        return 3%0A    %7D%0A    return pecas(n) + 2*n + 1%0A%7D\n %0Afun\n@@ -85,15 +85,16 @@\n tln(\n-pecas(n\n+n * (n+2\n ))%0A%7D\n",
             "lines": "8"
+        },
+        {
+            "label": "2026-06-05_15-29-27",
+            "content": "@@ -100,20 +100,16 @@\n  pecas(n\n- + 1\n ) + 2*n \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-05_15-29-45",
+            "content": "@@ -105,9 +105,9 @@\n s(n \n--\n++\n  1) \n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-06-05_15-29-49",
+            "content": "package main\nimport \"fmt\"\n\nfunc pecas(n int) int {\n    if n == 1{\n        return 3\n    }\n    return pecas(n - 1) + 2*n + 1\n}\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n\n    fmt.Println(pecas(n))\n}\n",
+            "lines": "15"
         }
     ]
 }

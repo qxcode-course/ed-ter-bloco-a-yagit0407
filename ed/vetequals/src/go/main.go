@@ -14,24 +14,26 @@ func EhVazio(vet []int) bool {
 
 // não altere a assinatura
 func equals(a []int, b []int) bool {
-	if EhVazio(a) && EhVazio(b) {
-		return true
-	}
-	if EhVazio(a) || EhVazio(b) {
-        return false
-    }
-	if a[0] != b[0] {
-        return false
-    }
-	return equals(a[1:], b[1:])
 	// não use a função len para ver ou comparar os tamanhos
 	// utilize a função EhVazio para ver se o vetor é vazio
 	// você só pode consultar o primeiro elemento do vetor
 	// e não pode usar nenhum tipo de laço
 	// Use recursao para consultar os outros elementos equals(a[1:], b[1:])
 	// não altere o protótipo da função nem crie funções auxiliares
-	_, _ = a, b
-	return false
+	if EhVazio(a) && EhVazio(b) {
+		return true
+	}
+
+	if EhVazio(a) || EhVazio(b) {
+		return false
+	}
+
+	if a[0] != b[0] {
+		return false
+	}
+
+
+	return equals(a[1:], b[1:])
 }
 
 func main() {

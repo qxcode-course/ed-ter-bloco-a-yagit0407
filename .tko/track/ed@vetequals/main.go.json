@@ -2,8 +2,28 @@
     "patches": [
         {
             "label": "2026-04-07_00-12-14",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc EhVazio(vet []int) bool {\n\treturn fmt.Sprint(vet) == \"[]\"\n}\n\n// n\u00e3o altere a assinatura\nfunc equals(a []int, b []int) bool {\n\tif EhVazio(a) && EhVazio(b) {\n\t\treturn true\n\t}\n\tif EhVazio(a) || EhVazio(b) {\n        return false\n    }\n\tif a[0] != b[0] {\n        return false\n    }\n\treturn equals(a[1:], b[1:])\n\t// n\u00e3o use a fun\u00e7\u00e3o len para ver ou comparar os tamanhos\n\t// utilize a fun\u00e7\u00e3o EhVazio para ver se o vetor \u00e9 vazio\n\t// voc\u00ea s\u00f3 pode consultar o primeiro elemento do vetor\n\t// e n\u00e3o pode usar nenhum tipo de la\u00e7o\n\t// Use recursao para consultar os outros elementos equals(a[1:], b[1:])\n\t// n\u00e3o altere o prot\u00f3tipo da fun\u00e7\u00e3o nem crie fun\u00e7\u00f5es auxiliares\n\t_, _ = a, b\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\tvet1 := str2slice(scanner.Text())\n\tscanner.Scan()\n\tvet2 := str2slice(scanner.Text())\n\tif equals(vet1, vet2) {\n\t\tfmt.Println(\"iguais\")\n\t} else {\n\t\tfmt.Println(\"diferentes\")\n\t}\n}\n\nfunc str2slice(line string) []int {\n\tparts := strings.Fields(line)\n\tnums := make([]int, 0)\n\tfor i := 1; i < len(parts)-1; i++ {\n\t\tvalue, _ := strconv.Atoi(parts[i])\n\t\tnums = append(nums, value)\n\t}\n\treturn nums\n}\n",
+            "content": "@@ -193,16 +193,197 @@\n  bool %7B%0A\n+%09if EhVazio(a) && EhVazio(b) %7B%0A%09%09return true%0A%09%7D%0A%09if EhVazio(a) %7C%7C EhVazio(b) %7B%0A        return false%0A    %7D%0A%09if a%5B0%5D != b%5B0%5D %7B%0A        return false%0A    %7D%0A%09return equals(a%5B1:%5D, b%5B1:%5D)%0A\n %09// n%C3%A3o \n@@ -728,55 +728,19 @@\n es%0A%09\n-if EhVazio(a) && EhVazio(b) %7B%0A%09%09return true%0A%09%7D%0A\n+_, _ = a, b\n %0A%09re\n",
             "lines": "59"
+        },
+        {
+            "label": "2026-06-05_15-04-58",
+            "content": "@@ -595,58 +595,8 @@\n %09%7D%0A%0A\n-%09if EhVazio(a) %7C%7C EhVazio(b) %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-06-05_15-05-20",
+            "content": "@@ -645,18 +645,16 @@\n %09%7D%0A%0A\n-%0A%0A\n %09return \n equa\n@@ -649,36 +649,21 @@\n %09return \n-equals(a%5B1:%5D, b%5B1:%5D)\n+false\n %0A%7D%0A%0Afunc\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-05_15-06-01",
+            "content": "@@ -645,45 +645,8 @@\n %09%7D%0A%0A\n-%09if a%5B0%5D != b%5B0%5D %7B%0A%09%09return false%0A%09%7D%0A\n %0A%0A%09r\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-06-05_15-10-22",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc EhVazio(vet []int) bool {\n\treturn fmt.Sprint(vet) == \"[]\"\n}\n\n// n\u00e3o altere a assinatura\nfunc equals(a []int, b []int) bool {\n\t// n\u00e3o use a fun\u00e7\u00e3o len para ver ou comparar os tamanhos\n\t// utilize a fun\u00e7\u00e3o EhVazio para ver se o vetor \u00e9 vazio\n\t// voc\u00ea s\u00f3 pode consultar o primeiro elemento do vetor\n\t// e n\u00e3o pode usar nenhum tipo de la\u00e7o\n\t// Use recursao para consultar os outros elementos equals(a[1:], b[1:])\n\t// n\u00e3o altere o prot\u00f3tipo da fun\u00e7\u00e3o nem crie fun\u00e7\u00f5es auxiliares\n\tif EhVazio(a) && EhVazio(b) {\n\t\treturn true\n\t}\n\n\tif EhVazio(a) || EhVazio(b) {\n\t\treturn false\n\t}\n\n\tif a[0] != b[0] {\n\t\treturn false\n\t}\n\n\n\treturn equals(a[1:], b[1:])\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\tvet1 := str2slice(scanner.Text())\n\tscanner.Scan()\n\tvet2 := str2slice(scanner.Text())\n\tif equals(vet1, vet2) {\n\t\tfmt.Println(\"iguais\")\n\t} else {\n\t\tfmt.Println(\"diferentes\")\n\t}\n}\n\nfunc str2slice(line string) []int {\n\tparts := strings.Fields(line)\n\tnums := make([]int, 0)\n\tfor i := 1; i < len(parts)-1; i++ {\n\t\tvalue, _ := strconv.Atoi(parts[i])\n\t\tnums = append(nums, value)\n\t}\n\treturn nums\n}\n",
+            "lines": "61"
         }
     ]
 }

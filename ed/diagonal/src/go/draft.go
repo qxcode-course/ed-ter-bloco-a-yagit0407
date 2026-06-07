@@ -1,21 +1,21 @@
 package main
-import (
-    "fmt"
-    "strings"
-)
+import "fmt"
 
 func diagonal(s string, k int) {
-    if len(s) == 0 {
-        return
-    }
+	if len(s) == 0 {
+		return
+	}
 
-    fmt.Print(strings.Repeat(" ", k))
-    fmt.Printf("%c\n", s[0])
-    diagonal(s[1:], k+1)
+	for i := 0; i < k; i++ {
+		fmt.Print(" ")
+	}
+
+	fmt.Println(string(s[0]))
+
+	diagonal(s[1:], k+1)
 }
-
 func main() {
-    var palavra string
-    fmt.Scan(&palavra)
-    diagonal(palavra, 0)
+	var s string
+	fmt.Scan(&s)
+	diagonal(s, 0)
 }

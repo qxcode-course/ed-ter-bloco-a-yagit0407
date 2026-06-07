@@ -25,8 +25,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@list
-- ed@linear
+- ed@tree
 flags:
   inbox: inbox
   panel: graph
@@ -34,5 +33,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@list
-selected_index: 0
+selected: ed@compare
+selected_index: 6
