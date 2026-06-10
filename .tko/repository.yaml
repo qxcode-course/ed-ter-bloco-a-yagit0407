@@ -24,14 +24,13 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@tree
+expanded: []
 flags:
   inbox: inbox
-  panel: graph
-  show_panel: 'true'
+  panel: skills
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
 selected: ed@dfs
-selected_index: 2
+selected_index: 3

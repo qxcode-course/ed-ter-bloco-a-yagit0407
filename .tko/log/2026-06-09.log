@@ -56,3 +56,31 @@
 2026-06-09 14:18:01, EXEC, v:1, k:ed@bst_serial, mode:FULL, rate:100, size:103
 2026-06-09 14:18:02, MOVE, v:1, k:ed@bst_serial, mode:BACK
 2026-06-09 14:18:10, SELF, v:1, k:ed@bst_serial, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:26:03, SELF, v:1, k:ed@queimando, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:26:34, SELF, v:1, k:ed@lista_d1, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:26:39, SELF, v:1, k:ed@lista_d2, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:26:49, SELF, v:1, k:ed@lista_d4, self:1, rate:100, code:1
+2026-06-09 22:26:58, SELF, v:1, k:ed@editor, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:27:09, SELF, v:1, k:ed@lista_d3, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:27:24, SELF, v:1, k:ed@resto, self:1, rate:100, concept:1, refactor:1
+2026-06-09 22:27:37, SELF, v:1, k:ed@quadrado, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:27:41, SELF, v:1, k:ed@padroes3, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:27:48, SELF, v:1, k:ed@padroes1, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:27:54, SELF, v:1, k:ed@sufixos, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:28:04, SELF, v:1, k:ed@fib1, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:28:15, SELF, v:1, k:ed@resto, self:1, rate:100, concept:1, refactor:1
+2026-06-09 22:28:28, SELF, v:1, k:ed@eh_primo, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:28:39, SELF, v:1, k:ed@priminhos, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:28:43, SELF, v:1, k:ed@binomiais, self:1, rate:100, concept:1, debug:1, refactor:1
+2026-06-09 22:28:54, SELF, v:1, k:ed@triangulo, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:29:01, SELF, v:1, k:ed@queimada, self:1, rate:100, concept:1, problem:1, refactor:1
+2026-06-09 22:29:05, SELF, v:1, k:ed@labirinto, self:1, rate:100, concept:1, problem:1, refactor:1
+2026-06-09 22:29:55, SELF, v:1, k:ed@apagando, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:29:58, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-06-09 22:29:59, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-06-09 22:30:05, SELF, v:1, k:ed@manipulacao, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:30:14, SELF, v:1, k:ed@buscas, self:1, rate:100, concept:1, problem:1, refactor:1
+2026-06-09 22:31:00, SELF, v:1, k:ed@chaves, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:31:51, SELF, v:1, k:ed@serial, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-09 22:31:58, SELF, v:1, k:ed@clonar, self:1, rate:100, concept:1, debug:1, refactor:1
+2026-06-09 22:32:05, SELF, v:1, k:ed@bst_insert, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
