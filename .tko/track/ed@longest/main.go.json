@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-12_10-13-57",
+            "content": "@@ -117,168 +117,33 @@\n  %7B%0A%09\n-rows := len(matrix)%0A%09cols := len(matrix%5B0%5D)%0A%0A%09memo := make(%5B%5D%5B%5Dint, rows)%0A%09for i := range memo %7B%0A%09%09memo%5Bi%5D = make(%5B%5Dint, cols)%0A%09%7D%0A%0A%09var dfs func(int, int) int%0A%0A\n+//%0A%09_ := matrix%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-12_10-36-11",
+            "content": "@@ -277,157 +277,8 @@\n nt%0A%0A\n-%09dfs = func(r, c int) int %7B%0A%09%09if memo%5Br%5D%5Bc%5D != 0 %7B%0A%09%09%09return memo%5Br%5D%5Bc%5D%0A%09%09%7D%0A%0A%09best := 1%0A%0A%09dirs := %5B%5D%5B%5Dint%7B%0A%09%09%7B-1, 0%7D,%0A%09%09%7B1, 0%7D,%0A%09%09%7B0, -1%7D,%0A%09%09%7B0, 1%7D,%0A\n %0A%7D%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-13_14-58-25",
+            "content": "@@ -430,245 +430,8 @@\n %0A%7D%0A%0A\n-for _, d := range dirs %7B%0A%09%09%09nr := r + d%5B1%5D%0A%09%09%09nc := c + d%5B0%5D%0A%0A%09%09%09if nr %3E= 0 && nr %3C rows && nc %3E= 0 && nc %3C cols && matrix%5Bnr%5D%5Bnc%5D %3E matrix%5Br%5D%5Bc%5D %7B%0A%0A%09%09%09%09path := 1 + dfs(nr, nc)%0A%0A%09%09%09%09if path %3E best %7B%0A%09%09%09%09%09best = path%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%09%09%09%0A%0A\n // N\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-13_14-59-31",
+            "content": "@@ -426,17 +426,16 @@\n 1%7D,%0A%0A%7D%0A%0A\n-%09\n for _, d\n@@ -451,16 +451,17 @@\n  dirs %7B%0A\n+%09\n %09%09nr := \n@@ -471,16 +471,17 @@\n  d%5B1%5D%0A%09%09\n+%09\n nc := c \n@@ -488,16 +488,17 @@\n + d%5B0%5D%0A%0A\n+%09\n %09%09if nr \n@@ -578,16 +578,17 @@\n %5D %7B%0A%0A%09%09%09\n+%09\n path := \n@@ -607,16 +607,17 @@\n nc)%0A%0A%09%09%09\n+%09\n if path \n@@ -625,16 +625,17 @@\n  best %7B%0A\n+%09\n %09%09%09%09best\n@@ -661,51 +661,8 @@\n %09%09%7D%0A\n-%0A%09%09memo%5Br%5D%5Bc%5D = best%0A%09%09return best%0A%0A%09%09%7D%0A%09%0A%0A\n %09%09%09%09\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-06-13_15-01-26",
+            "content": "@@ -350,17 +350,16 @@\n c%5D%0A%09%09%7D%0A%0A\n-%09\n %09best :=\n@@ -362,17 +362,16 @@\n t := 1%0A%0A\n-%09\n %09dirs :=\n@@ -380,17 +380,16 @@\n %5D%5B%5Dint%7B%0A\n-%09\n %09%09%7B-1, 0\n@@ -397,17 +397,16 @@\n ,%0A%09%09\n-%09\n %7B1, 0%7D,%0A\n %09%09%09%7B\n@@ -401,17 +401,16 @@\n %7B1, 0%7D,%0A\n-%09\n %09%09%7B0, -1\n@@ -412,17 +412,16 @@\n 0, -1%7D,%0A\n-%09\n %09%09%7B0, 1%7D\n@@ -422,22 +422,20 @@\n %7B0, 1%7D,%0A\n-%09%09\n+%0A\n %7D%0A%0A\n-%09\n %09for _, \n@@ -454,17 +454,16 @@\n irs %7B%0A%09%09\n-%09\n nr := r \n@@ -470,12 +470,11 @@\n + d%5B\n-0\n+1\n %5D%0A\n-%09\n %09%09nc\n@@ -487,13 +487,12 @@\n + d%5B\n-1\n+0\n %5D%0A%0A\n-%09\n %09%09if\n@@ -515,21 +515,17 @@\n  rows &&\n-%0A%09%09%09%09\n+ \n nc %3E= 0 \n@@ -539,21 +539,17 @@\n  cols &&\n-%0A%09%09%09%09\n+ \n matrix%5Bn\n@@ -576,17 +576,16 @@\n %5D %7B%0A%0A%09%09%09\n-%09\n path := \n@@ -604,17 +604,16 @@\n nc)%0A%0A%09%09%09\n-%09\n if path \n@@ -621,17 +621,16 @@\n  best %7B%0A\n-%09\n %09%09%09%09best\n@@ -691,160 +691,14 @@\n est%0A\n-%09%7D%0A%0A%09ans := 0%0A%0A%09for i := 0; i %3C rows; i++ %7B%0A%09%09for j := 0; j %3C cols; j++ %7B%0A%09%09%09cur := dfs(j, j)%0A%09%09%09if cur %3E ans %7B%0A%09%09%09%09ans = cur%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09return ans%0A%7D\n+%0A%09%09%7D%0A%09\n %0A%0A%09%09\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-06-13_15-02-08",
+            "content": "@@ -797,17 +797,17 @@\n  := dfs(\n-i\n+j\n , j)%0A%09%09%09\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-06-13_15-15-33",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc longestIncreasingPath(matrix [][]int) int {\n\trows := len(matrix)\n\tcols := len(matrix[0])\n\n\tmemo := make([][]int, rows)\n\tfor i := range memo {\n\t\tmemo[i] = make([]int, cols)\n\t}\n\n\tvar dfs func(int, int) int\n\n\tdfs = func(r, c int) int {\n\t\tif memo[r][c] != 0 {\n\t\t\treturn memo[r][c]\n\t\t}\n\n\t\tbest := 1\n\n\t\tdirs := [][]int{\n\t\t\t{-1, 0},\n\t\t\t{1, 0},\n\t\t\t{0, -1},\n\t\t\t{0, 1},\n\t\t}\n\n\t\tfor _, d := range dirs {\n\t\t\tnr := r + d[0]\n\t\t\tnc := c + d[1]\n\n\t\t\tif nr >= 0 && nr < rows &&\n\t\t\t\tnc >= 0 && nc < cols &&\n\t\t\t\tmatrix[nr][nc] > matrix[r][c] {\n\n\t\t\t\tpath := 1 + dfs(nr, nc)\n\n\t\t\t\tif path > best {\n\t\t\t\t\tbest = path\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tmemo[r][c] = best\n\t\treturn best\n\t}\n\n\tans := 0\n\n\tfor i := 0; i < rows; i++ {\n\t\tfor j := 0; j < cols; j++ {\n\t\t\tcur := dfs(i, j)\n\t\t\tif cur > ans {\n\t\t\t\tans = cur\n\t\t\t}\n\t\t}\n\t}\n\n\treturn ans\n}\n\n\t\t\t\t\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tif len(parts) < 2 {\n\t\treturn\n\t}\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\tmatrix := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tif !scanner.Scan() {\n\t\t\treturn\n\t\t}\n\t\ttokens := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc && j < len(tokens); j++ {\n\t\t\tv, _ := strconv.Atoi(tokens[j])\n\t\t\trow[j] = v\n\t\t}\n\t\tmatrix[i] = row\n\t}\n\n\tfmt.Println(longestIncreasingPath(matrix))\n}\n",
+            "lines": "101"
+        }
+    ]
+}
