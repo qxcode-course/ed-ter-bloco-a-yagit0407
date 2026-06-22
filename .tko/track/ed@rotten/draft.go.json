@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-22_15-01-33",
+            "content": "@@ -676,25 +676,25 @@\n make(%5B%5Dint, \n-m\n+n\n )%0A        fo\n@@ -770,70 +770,6 @@\n   %7D%0A\n-    resultado := orangeRotting(grid)%0A    fmt.Println(resultado)%0A\n %7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-22_15-02-36",
+            "content": "@@ -680,17 +680,17 @@\n (%5B%5Dint, \n-n\n+m\n )%0A      \n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-06-22_15-02-41",
+            "content": "package main\nimport \"fmt\"\n\ntype Node struct {\n    l, c int\n    minuto int\n}\n\nfunc orangeRotting(grid[][] int) int {\n    linhas := len(grid)\n    colunas := len(grid)\n\n    queue := []Node{}\n    laranjasFrescas := 0\n\n    for l := 0; l < linhas; l++ {\n        for c := 0; c < colunas; c++ {\n            if grid[l][c] == 2 {\n                queue = append(queue, Node{l, c, 0})\n            } else if grid[l][c] == 1 {\n                laranjasFrescas++\n            }\n        }\n    }\n    if laranjasFrescas == 0 {\n        return 0\n    }\n    return 0\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n\n    grid := make([][]int, m)\n    for i := 0; i < m; i++ {\n        grid[i] = make([]int, n)\n        for j := 0; j < n; j++ {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n    resultado := orangeRotting(grid)\n    fmt.Println(resultado)\n}\n",
+            "lines": "44"
+        }
+    ]
+}
