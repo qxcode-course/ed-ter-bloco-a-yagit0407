@@ -13,3 +13,22 @@
 2026-06-22 15:06:56, MOVE, v:1, k:ed@rotten, mode:EDIT
 2026-06-22 15:07:11, MOVE, v:1, k:ed@rotten, mode:PICK
 2026-06-22 15:07:13, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-06-22 21:22:25, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-06-22 21:26:49, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-06-22 21:26:51, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-06-22 21:26:13, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-06-22 21:31:52, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-06-22 21:32:27, EXEC, v:1, k:ed@rotten, mode:FULL, size:68, fail:COMP
+2026-06-22 21:34:17, EXEC, v:1, k:ed@rotten, mode:FULL, size:68, fail:COMP
+2026-06-22 21:34:19, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-06-22 21:34:24, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:69
+2026-06-22 21:35:18, EXEC, v:1, k:ed@rotten, mode:FULL, rate:33, size:67
+2026-06-22 21:36:43, EXEC, v:1, k:ed@rotten, mode:FULL, size:67, fail:COMP
+2026-06-22 21:36:44, EXEC, v:1, k:ed@rotten, mode:FULL, fail:COMP
+2026-06-22 21:36:43, MOVE, v:1, k:ed@rotten, mode:EDIT
+2026-06-22 21:37:37, EXEC, v:1, k:ed@rotten, mode:FULL, rate:100, size:69
+2026-06-22 21:37:42, MOVE, v:1, k:ed@rotten, mode:BACK
+2026-06-22 21:38:10, SELF, v:1, k:ed@rotten, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-22 21:38:37, SELF, v:1, k:ed@rotten, self:1, rate:100, concept:1, problem:1, debug:1, refactor:1
+2026-06-22 21:38:46, SELF, v:1, k:ed@caminho, self:1, rate:100, concept:1, problem:1, code:1, debug:1, refactor:1
+2026-06-22 21:39:15, SELF, v:1, k:ed@cercado, self:1, rate:100, concept:1, problem:1, code:1, refactor:1

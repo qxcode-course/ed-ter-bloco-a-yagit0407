@@ -8,7 +8,7 @@ type Node struct {
 
 func orangeRotting(grid[][] int) int {
     linhas := len(grid)
-    colunas := len(grid)
+    colunas := len(grid[0])
 
     queue := []Node{}
     laranjasFrescas := 0
@@ -22,20 +22,36 @@ func orangeRotting(grid[][] int) int {
             }
         }
     }
-    if laranjasFrescas == 0 {
-        return 0
-    }
-    return 0
+    
+    
 
     direcoes := [][]int {{-1, 0}, {1, 0}, {0, - 1}, {0, 1}}
-    minutos := 0
+    minutosPassados := 0
 
     for len(queue) > 0 {
+        curr := queue[0]
+        queue = queue[1:]
+       
+        minutosPassados = curr.minuto
+        for _, dir := range direcoes {
+            nl, nc := curr.l+dir[0], curr.c+dir[1]
+
+                if nl >= 0 && nl < linhas && nc >= 0 && nc < colunas && grid[nl][nc] == 1 {
+                grid[nl][nc] = 2
+                laranjasFrescas--
+
+                queue = append(queue, Node{nl, nc, minutosPassados + 1})
+            }
+        }
 
     }
+    if laranjasFrescas > 0 {
+        return -1
+    }
+
+    return minutosPassados
+
 }
-
-
 
 func main() {
     var m, n int

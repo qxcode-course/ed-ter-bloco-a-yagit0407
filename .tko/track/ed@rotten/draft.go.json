@@ -12,8 +12,38 @@
         },
         {
             "label": "2026-06-22_15-02-41",
-            "content": "package main\nimport \"fmt\"\n\ntype Node struct {\n    l, c int\n    minuto int\n}\n\nfunc orangeRotting(grid[][] int) int {\n    linhas := len(grid)\n    colunas := len(grid)\n\n    queue := []Node{}\n    laranjasFrescas := 0\n\n    for l := 0; l < linhas; l++ {\n        for c := 0; c < colunas; c++ {\n            if grid[l][c] == 2 {\n                queue = append(queue, Node{l, c, 0})\n            } else if grid[l][c] == 1 {\n                laranjasFrescas++\n            }\n        }\n    }\n    if laranjasFrescas == 0 {\n        return 0\n    }\n    return 0\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n\n    grid := make([][]int, m)\n    for i := 0; i < m; i++ {\n        grid[i] = make([]int, n)\n        for j := 0; j < n; j++ {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n    resultado := orangeRotting(grid)\n    fmt.Println(resultado)\n}\n",
+            "content": "@@ -540,573 +540,9 @@\n n 0%0A\n-%0A    direcoes := %5B%5D%5B%5Dint %7B%7B-1, 0%7D, %7B1, 0%7D, %7B0, - 1%7D, %7B0, 1%7D%7D%0A    minutosPassados := 0%0A%0A    for len(queue) %3E 0 %7B%0A        curr := queue%5B0%5D%0A        queue = queue%5B1%5D%0A       %0A        minutosPassados = curr.minuto%0A        for _, dir := range direcoes %7B%0A            nl, nc := curr.l+dir%5B0%5D, curr.c+dir%5B1%5D%0A%0A            if nl %3E= 0 nl && nl %3C linhas && nc = 0 && nc %3C colunas && grid%5Bnl%5D%5Bnc%5D == 1 %7B%0A                grid%5Bnl%5D%5Bnc%5D = 2%0A                laranjasFrescas--%0A%0A                queue = append(queue, Node%7Bnl, nc, minutosPassados + 1%7D)%0A            %7D%0A        %7D%0A%0A    %7D%0A%0A%7D%0A%0A\n+%7D\n %0A%0Afu\n",
             "lines": "44"
+        },
+        {
+            "label": "2026-06-22_21-32-27",
+            "content": "@@ -156,19 +156,16 @@\n len(grid\n-%5B0%5D\n )%0A%0A    q\n@@ -527,17 +527,25 @@\n   %7D%0A    \n+return 0\n %0A\n-\n %0A    dir\n@@ -696,17 +696,16 @@\n  queue%5B1\n-:\n %5D%0A      \n@@ -847,20 +847,16 @@\n         \n-    \n if nl %3E=\n@@ -854,24 +854,27 @@\n  if nl %3E= 0 \n+nl \n && nl %3C linh\n@@ -882,17 +882,16 @@\n s && nc \n-%3E\n = 0 && n\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-22_21-34-17",
+            "content": "@@ -1098,21 +1098,8 @@\n    %7D\n-%0A    return 0\n %0A%0A%7D%0A\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-22_21-34-24",
+            "content": "@@ -1108,24 +1108,26 @@\n eturn 0%0A%0A%7D%0A%0A\n+%0A%0A\n func main() \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-22_21-35-18",
+            "content": "@@ -1105,16 +1105,18 @@\n   return\n+ 0\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-22_21-36-43",
+            "content": "@@ -473,24 +473,72 @@\n %7D%0A    %7D%0A    \n+if laranjasFrescas == 0 %7B%0A        return 0%0A    %7D\n %0A    %0A%0A    d\n@@ -1103,84 +1103,14 @@\n     \n-if laranjasFrescas %3E 0 %7B%0A        return -1%0A    %7D%0A%0A    return minutosPassados\n+return\n %0A%0A%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-22_21-37-37",
+            "content": "package main\nimport \"fmt\"\n\ntype Node struct {\n    l, c int\n    minuto int\n}\n\nfunc orangeRotting(grid[][] int) int {\n    linhas := len(grid)\n    colunas := len(grid[0])\n\n    queue := []Node{}\n    laranjasFrescas := 0\n\n    for l := 0; l < linhas; l++ {\n        for c := 0; c < colunas; c++ {\n            if grid[l][c] == 2 {\n                queue = append(queue, Node{l, c, 0})\n            } else if grid[l][c] == 1 {\n                laranjasFrescas++\n            }\n        }\n    }\n    \n    \n\n    direcoes := [][]int {{-1, 0}, {1, 0}, {0, - 1}, {0, 1}}\n    minutosPassados := 0\n\n    for len(queue) > 0 {\n        curr := queue[0]\n        queue = queue[1:]\n       \n        minutosPassados = curr.minuto\n        for _, dir := range direcoes {\n            nl, nc := curr.l+dir[0], curr.c+dir[1]\n\n                if nl >= 0 && nl < linhas && nc >= 0 && nc < colunas && grid[nl][nc] == 1 {\n                grid[nl][nc] = 2\n                laranjasFrescas--\n\n                queue = append(queue, Node{nl, nc, minutosPassados + 1})\n            }\n        }\n\n    }\n    if laranjasFrescas > 0 {\n        return -1\n    }\n\n    return minutosPassados\n\n}\n\nfunc main() {\n    var m, n int\n    fmt.Scan(&m, &n)\n\n    grid := make([][]int, m)\n    for i := 0; i < m; i++ {\n        grid[i] = make([]int, n)\n        for j := 0; j < n; j++ {\n            fmt.Scan(&grid[i][j])\n        }\n    }\n    resultado := orangeRotting(grid)\n    fmt.Println(resultado)\n}\n",
+            "lines": "69"
         }
     ]
 }
